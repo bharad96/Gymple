@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "615815590459",
+    "firebase_url": "https://gymple-6541e.firebaseio.com",
+    "project_id": "gymple-6541e",
+    "storage_bucket": "gymple-6541e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615815590459:android:481031c80da5bb1a49221e",
+        "android_client_info": {
+          "package_name": "com.example.android.gymple"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615815590459-t72phnm2bf7takg0m7qdamghtq2hbca3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.gymple",
+            "certificate_hash": "719dff2a9bd9c6ef827bdb01c4442c5583cd4b1a"
+          }
+        },
+        {
+          "client_id": "615815590459-gbkdfkqoobbomd0jbjel4tspd6a4025c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_mu12yjFiR3I0OpTUcUxyzvMS0uCTjmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615815590459-gbkdfkqoobbomd0jbjel4tspd6a4025c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
