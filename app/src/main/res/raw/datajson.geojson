@@ -1,0 +1,4724 @@
+{ 
+   "type":"FeatureCollection",
+   "name":"EXERCISEFACILITIES",
+   "crs":{ 
+      "type":"name",
+      "properties":{ 
+         "name":"urn:ogc:def:crs:OGC:1.3:CRS84"
+      }
+   },
+   "features":[ 
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Bedok ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday)  \nTel: 6244 5387",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"39686.5124",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"34232.3088",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"75B1D5A52513200F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"469645",
+            "ADDRESSSTREETNAME":"Bedok North St 2",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"5",
+            "Field_1":"Bedok ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.938328173262306,
+               1.325857121406928
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Spaboutique",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27177.9979",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32233.8231",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"6A3697AF1FF07C6F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"258373",
+            "ADDRESSSTREETNAME":"Nassim Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"6",
+            "Field_1":"Spaboutique"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.825932498525304,
+               1.307785751965845
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"The Gym At Orchard",
+            "description":"Operating Hours:\n Monday - Friday:   7am - 10pm     \nSaturday:   8am - 10pm     \nSunday:   8am - 8pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27628.9841",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31981.7518",
+            "ADDRESSBUILDINGNAME":"Liat Towers",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"ECC6FB237686A01D",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238882",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"4",
+            "Field_1":"The Gym At Orchard"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.829984827986706,
+               1.305506116707395
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"The Pilates Place",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29203.6388",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28926.2226",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"900FFAC2BAC9586E",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"78999",
+            "ADDRESSSTREETNAME":"Tras Street",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"60",
+            "Field_1":"The Pilates Place"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.844133723257301,
+               1.277872964568791
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"One Wellness Fitness Club",
+            "description":"Operating Hours:\n Monday - Friday:   7.00 am - 10.00 pm \n    Saturday:   10.00 am - 7.00 pm\n    Sunday:   10.00 am - 4.00 pm    \nTel: 6221 9663",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30440.5329",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"5\/4\/2016 5:01:34 PM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31474.431",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"F4CBBAAE83F1BB8F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"188440",
+            "ADDRESSSTREETNAME":"New Bugis St",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"164A",
+            "Field_1":"One Wellness Fitness Club"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.855247873281598,
+               1.300917993455684
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pure Yoga - Ngee Ann City",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28151.0835",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31640.9668",
+            "ADDRESSBUILDINGNAME":"Ngee Ann City Tower A",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"80D12C516CF43CFE",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238873",
+            "ADDRESSSTREETNAME":"391A Orchard Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"18",
+            "Field_1":"Pure Yoga - Ngee Ann City"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.83467613466,
+               1.30242417909532
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Impakt Singapore",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29644.6199",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28959.0545",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"AD9F9000BEBC9F24",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"68909",
+            "ADDRESSSTREETNAME":"Robinson Road",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"146",
+            "Field_1":"Impakt Singapore"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.848096103438905,
+               1.278169864013051
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Plaza Singapura",
+            "description":"Operating Hours:\n Monday - Friday: 9.00 AM - 10.00 PM\n    Saturday: 9.00 AM - 10.00 PM\n    Sunday & Public Holiday: 9.00 AM - 10.00 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29299.1013",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31385.9045",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"836FA88D678E4536",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238839",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"9",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"68",
+            "Field_1":"Amore Fitness - Plaza Singapura"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.844991589634404,
+               1.30011745872649
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Balancing Rocks Yoga Studio",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"31023.0187",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31480.9706",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"0315F25C07EC3F64",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"199551",
+            "ADDRESSSTREETNAME":"Beach Road",
+            "ADDRESSUNITNUMBER":"0",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"287",
+            "Field_1":"Balancing Rocks Yoga Studio"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.860481773328999,
+               1.300977084083259
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Bikram Yoga Harbourfront",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"26523.4184",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"27393.6535",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"9B7B639658CD1632",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"99253",
+            "ADDRESSSTREETNAME":"<Null>",
+            "ADDRESSUNITNUMBER":"13",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"Bikram Yoga Harbourfront"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.820051015353599,
+               1.264012934551435
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Absolute Yoga - Telok Ayer",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29593.6555",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29207.1655",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D5CF6BE11AFD0623",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"68611",
+            "ADDRESSSTREETNAME":"Telok Ayer Street",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"157A",
+            "Field_1":"Absolute Yoga - Telok Ayer"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847638181705406,
+               1.280413695472872
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Yishun ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday)  \nTel: 6851 8604",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27761.7165",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"43759.333",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"04252044DEABBBC4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"769130",
+            "ADDRESSSTREETNAME":"YishunAve 1",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"101",
+            "Field_1":"Yishun ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.831177396510199,
+               1.412018365745054
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"YogaDivas - Nassim Road",
+            "description":"Tel: 68870760\/ 94571096",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"25911.9934",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31143.3681",
+            "ADDRESSBUILDINGNAME":"Spa Boutique",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"932A900A6346F19A",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"247974",
+            "ADDRESSSTREETNAME":"Nassim Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"6",
+            "Field_1":"YogaDivas - Nassim Road"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.8145569165967,
+               1.297924001819548
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - Paragon",
+            "description":"Facilities: Cardio equipment, weight machines, free weights, Group Exercise studio , cycling studio, Mind & Body studio  \nOperating Hours:\n Monday ~ Saturday : 6.30am ~ 10.30pm     Sunday and Public Holidays : 8.00am ~ 10.00pm  \nTel: 6737 7889",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28213.8712",
+            "ADDRESSFLOORNUMBER":"8",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31784.6085",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"8DB4EB06CC571742",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238859",
+            "ADDRESSSTREETNAME":"<Null>",
+            "ADDRESSUNITNUMBER":"13",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"41282",
+            "Field_1":"Fitness First - Paragon"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.835240311922803,
+               1.303723223673695
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"The Pit",
+            "description":"Operating Hours:\n 7.00am - 10.00am",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29211.2462",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28952.8622",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"0E28997B4498C8C3",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"78989",
+            "ADDRESSSTREETNAME":"Tras Street",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"50",
+            "Field_1":"The Pit"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.844202079592193,
+               1.278113883482084
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"The Stable Mixed Martial Arts",
+            "description":"Operating Hours:\n Monday, Wednesday, Friday:   12.00pm - 9.30pm\n    Tuesday, Thursday:  12.00pm - 10.00pm\n    Saturday:  10.00am - 5.30pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"23835.5087",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35156.7726",
+            "ADDRESSBUILDINGNAME":"House J and S",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CAA5268B7BA8784D",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"287992",
+            "ADDRESSSTREETNAME":"Turf Club Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"100",
+            "Field_1":"The Stable Mixed Martial Arts"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.795898242377007,
+               1.33421959837729
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Bishan ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6353 9238",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29959.0673",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37485.7901",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E7A4A38558FA4D85",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"579783",
+            "ADDRESSSTREETNAME":"Bishan St. 4",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"5",
+            "Field_1":"Bishan ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.850922071158493,
+               1.355282627602167
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"The Yoga Place",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"31202.0959",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32470.0457",
+            "ADDRESSBUILDINGNAME":"King George's Building",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CBB24D03E2FE458E",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"208568",
+            "ADDRESSSTREETNAME":"King George's Ave",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"328",
+            "Field_1":"The Yoga Place"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.8620909637322,
+               1.309921910794514
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"E's FITNESS PTE. LTD.",
+            "description":"Working Hours:   Monday - Friday  7am - 10pm\n    Saturday  7am - 8pm\n    Sunday  7am - 6pm   \nTel: 6222 6517",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28786.6253",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"5\/4\/2016 5:01:34 PM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29018.7194",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"534BEFC669635369",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"89752",
+            "ADDRESSSTREETNAME":"Cantonment Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"51",
+            "Field_1":"E's FITNESS PTE. LTD."
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.840386703018694,
+               1.278709486312355
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"The Yoga Shala",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28957.0892",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28777.2542",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"73F9ADF677C46246",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"88266",
+            "ADDRESSSTREETNAME":"Yan Kit Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"11",
+            "Field_1":"The Yoga Shala"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.841918377904506,
+               1.276525754072743
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Tirisula Yoga",
+            "description":"Tel: 90098889\/ 85715701",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30878.9312",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31536.4166",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"C2942FE4B97C4489",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"199777",
+            "ADDRESSSTREETNAME":"B Arab Street",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"80",
+            "Field_1":"Tirisula Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.859187086130703,
+               1.301478530915412
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Total Yoga - Clarke Quay",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29608.619",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30035.2274",
+            "ADDRESSBUILDINGNAME":"Hui Seng Building",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"9156A96C5D5E3966",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"59917",
+            "ADDRESSSTREETNAME":"Carpenter Street",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"38",
+            "Field_1":"Total Yoga - Clarke Quay"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847772677377193,
+               1.287902396685445
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Total Yoga - Orchard Road",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27857.4908",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32217.1444",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CC585D49B7A6AB10",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"229572",
+            "ADDRESSSTREETNAME":"Claymore Hill",
+            "ADDRESSUNITNUMBER":"4",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"8",
+            "Field_1":"Total Yoga - Orchard Road"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.8320380669103,
+               1.307634926326107
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Fitness - Chevron House",
+            "description":"Operating Hours:\n Mon ~ Thurs: 6am ~ 11pm\n     Fri: 6am ~ 10pm\n     Sat: 6am ~ 8pm\n     Sun \/ Public Holiday: 8am ~ 6pm \nTel: 6438 3000",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30070.9937",
+            "ADDRESSFLOORNUMBER":"7",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29630.0316",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"55F348B658CA9A22",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48622",
+            "ADDRESSSTREETNAME":"Raffles Place",
+            "ADDRESSUNITNUMBER":"0",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"30",
+            "Field_1":"True Fitness - Chevron House"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.851927274914104,
+               1.284237920280947
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Fitness - Great World City",
+            "description":"Operating Hours:\n Mon ~ Fri: 6am ~ 10pm\n     Sat ~ Sun: 7am ~ 9pm\n     Public Holiday: 8am ~ 8pm  \nTel: 6235 9622",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27826.3112",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30687.6095",
+            "ADDRESSBUILDINGNAME":"Great World City Mall",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"1BBAB0ACD4A017FB",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"237994",
+            "ADDRESSSTREETNAME":"Kim Seng Promenade",
+            "ADDRESSUNITNUMBER":"14",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"True Fitness - Great World City"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.831757911004999,
+               1.293802350968091
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Fitness - NTUC Income Tampines Junction",
+            "description":"Operating Hours:\n Mon ~ Thurs: 6am ~ 11pm\n    Fri: 6am ~ 10pm\n    Sat: 6am ~ 9pm\n    Sun \/ Public Holiday: 8am ~ 8pm \nTel: 6788 9555",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"39831.9023",
+            "ADDRESSFLOORNUMBER":"8",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37376.8469",
+            "ADDRESSBUILDINGNAME":"NTUC Income Tampines Junction",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"41D9806063028807",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"529652",
+            "ADDRESSSTREETNAME":"Tampines Avenue 5",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"300",
+            "Field_1":"True Fitness - NTUC Income Tampines Junction"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.939635804140494,
+               1.354295103518484
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Fitness - Parkway Parade",
+            "description":"Operating Hours:\n Mon ~ Fri: 7am ~ 10pm\n     Sat \/ Sun \/ Public Holiday: 8am ~ 9.30pm  \nTel: 6348 2900",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"35990.1391",
+            "ADDRESSFLOORNUMBER":"7",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31504.7566",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"8F1010F8ADCA9342",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"449269",
+            "ADDRESSSTREETNAME":"Marine Parade Road",
+            "ADDRESSUNITNUMBER":"15",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"80",
+            "Field_1":"True Fitness - Parkway Parade"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.905113590458399,
+               1.301191314722924
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Fitness - VivoCity",
+            "description":"Operating Hours:\n Mon ~ Fri: 7am ~ 10.30pm\n     Sat - Sun: 7am ~ 9pm\n     Public Holiday: 8am ~ 8pm  \nTel: 6278 3000",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"26719.028",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"27435.8642",
+            "ADDRESSBUILDINGNAME":"VivoCity",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"EBADE26CDF33C220",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"98585",
+            "ADDRESSSTREETNAME":"Harbourfront Walk",
+            "ADDRESSUNITNUMBER":"10",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"True Fitness - VivoCity"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.821808629395804,
+               1.264394681812523
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Yoga - Ocean Financial Centre",
+            "description":"Operating Hours:\n 7am to 11pm daily",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30061.1644",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29491.0175",
+            "ADDRESSBUILDINGNAME":"Ocean Financial Centre",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"5279FD4AB71A1AD6",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"49315",
+            "ADDRESSSTREETNAME":"Collyer Quay",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"10",
+            "Field_1":"True Yoga - Ocean Financial Centre"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.851838945740496,
+               1.282980726237883
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Yoga - Pacific Plaza",
+            "description":"Operating Hours:\n 7am to 11pm daily",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27867.3223",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32095.7661",
+            "ADDRESSBUILDINGNAME":"Pacific Plaza",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"0A374185578ECB2D",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"228210",
+            "ADDRESSSTREETNAME":"Scotts Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"9",
+            "Field_1":"True Yoga - Pacific Plaza"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.832126408153499,
+               1.306537223809257
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Viva Fit Singapore - Beach Road",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30558.1743",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31036.6733",
+            "ADDRESSBUILDINGNAME":"Bulkhaul House",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E49D75A98E1B1ED4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"189688",
+            "ADDRESSSTREETNAME":"Beach Rd",
+            "ADDRESSUNITNUMBER":"2",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"67",
+            "Field_1":"Viva Fit Singapore - Beach Road"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.856304899664394,
+               1.29695905772102
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Viva Fit Singapore - Raffles Place",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29935.7018",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29597.3414",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"146FD2E7D4B5A1AB",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48979",
+            "ADDRESSSTREETNAME":"Malacca Street",
+            "ADDRESSUNITNUMBER":"0",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"20",
+            "Field_1":"Viva Fit Singapore - Raffles Place"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.850711622747895,
+               1.283942291107349
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"WabiSabi Holistic Lifestyle",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29473.2132",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30141.4364",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CA6518431554247F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"59817",
+            "ADDRESSSTREETNAME":"Eu Tong Sen St. The Central",
+            "ADDRESSUNITNUMBER":"12",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"6",
+            "Field_1":"WabiSabi Holistic Lifestyle"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.846556006064702,
+               1.288862919301133
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Yaatra",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28940.5598",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29070.6389",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"83CABA853785A748",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"88852",
+            "ADDRESSSTREETNAME":"A Neil Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"114",
+            "Field_1":"Yaatra"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.841769864720902,
+               1.279179022965199
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Yoga Connections",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"36979.3469",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"33499.6316",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"2FEB34F5ECC38C52",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"419903",
+            "ADDRESSSTREETNAME":"A Changi Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"498",
+            "Field_1":"Yoga Connections"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.914002641120504,
+               1.31923197325173
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Om Shiva Yoga - Chip Bee",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"24018.0481",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32588.5094",
+            "ADDRESSBUILDINGNAME":"Chip Bee Gardens",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"019967C0B5FEC648",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"278000",
+            "ADDRESSSTREETNAME":"Jalan Rumia",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"45",
+            "Field_1":"Om Shiva Yoga - Chip Bee"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.797538795862195,
+               1.31099316329493
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Om Shiva Yoga - Horse City",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"23835.5087",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35156.7726",
+            "ADDRESSBUILDINGNAME":"Horse City",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CAA5268B7356F9BB",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"287992",
+            "ADDRESSSTREETNAME":"Turf Club Road",
+            "ADDRESSUNITNUMBER":"02B",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"100",
+            "Field_1":"Om Shiva Yoga - Horse City"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.795898242377007,
+               1.33421959837729
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"OMG Yoga",
+            "description":"Operating Hours:\n Monday & Friday: 10.00am - 6.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"17470.8587",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35117.4531",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"47C03D160CFA8054",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"600134",
+            "ADDRESSSTREETNAME":"Jurong Gateway Road",
+            "ADDRESSUNITNUMBER":"309",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"134",
+            "Field_1":"OMG Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.738708272229502,
+               1.333862463597308
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Philip Wain",
+            "description":"Operating Hours:\n Monday - Friday:   7.00 am - 10.00 pm \n    Saturday:   7.00 am - 8.00 pm\n    Sunday:   9.00 am - 6.00 pm\n    Public holidays:   10.00 am - 7.00 pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29128.9959",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"33289.6914",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"65E2947EF964CB81",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"307591",
+            "ADDRESSSTREETNAME":"Thomson Road",
+            "ADDRESSUNITNUMBER":"10",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"101",
+            "Field_1":"Philip Wain"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.843463185078093,
+               1.317334642536017
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Physical ABuse",
+            "description":"Operating Hours:\n Monday ~ Friday : 7.00am ~ 10.00pm\n     Saturday, Sunday and Public Holidays : 8.00am ~ 8.00pm  \nTel: 6536 5580",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29317.1542",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29952.0985",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"72075B2D395CA676",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"59763",
+            "ADDRESSSTREETNAME":"Havelock Road 2HR",
+            "ADDRESSUNITNUMBER":"28",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"2",
+            "Field_1":"Physical ABuse"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.845153743964104,
+               1.287150620787085
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pure Fitness - Knightsbridge (Asia Square)",
+            "description":"Facilities: Kettlebells, bulgarian bags, medicine balls, 4 x 35m indoor running track, mixed martial arts zone, VO2 testing area,  group fitness studios, swimming pool, cardio equipment, resistance equipment, free weights  \nOperating Hours:\n Monday - Saturday  6am - 12 midnight\n    Sun",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28320.9001",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31716.2782",
+            "ADDRESSBUILDINGNAME":"Asia Square Tower 1",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"8CA6543133538778",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238857",
+            "ADDRESSSTREETNAME":"Marina View",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"8",
+            "Field_1":"Pure Fitness - Knightsbridge (Asia Square)"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.836202014578802,
+               1.303105267590637
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Krav Maga Singapore",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29525.4868",
+            "ADDRESSFLOORNUMBER":"5",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29949.5833",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"1B056E088123BADB",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"59295",
+            "ADDRESSSTREETNAME":"North Canal Road",
+            "ADDRESSUNITNUMBER":"0",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"39",
+            "Field_1":"Krav Maga Singapore"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847025695669998,
+               1.287127865683553
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Rhythmic Yoga Works",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30628.2751",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31151.9791",
+            "ADDRESSBUILDINGNAME":"Far East Shopping Centre",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"193BAB36DB0C0EC5",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"188091",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"575",
+            "Field_1":"Rhythmic Yoga Works"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.856934794867499,
+               1.298001835987265
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"California Fitness - Bugis",
+            "description":"Facilities: - Group X Studio  - Indoor Cycling Studio  - Cardio Machines  - Resistance Machines  - Free Weights  - Xpress Zone  - Kick Fit Area  - Steam & Sauna  \nOperating Hours:\n Monday to Saturday: 6:00 am - 12:00 midnight    \nSunday and Public Holidays*: 8:00 am - 10:00 pm. \nTel: 6337 257",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30515.7324",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31352.6235",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E7E070533A577769",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"188024",
+            "ADDRESSSTREETNAME":"Victoria Street",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"230",
+            "Field_1":"California Fitness - Bugis"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.855923565937402,
+               1.299816402487026
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - Tampines",
+            "description":"Facilities: Cardio equipment (steppers, bikes, treadmills, rowers etc), Technogym resistance machines, free-weights, Group Exercise studio, Mind and Body studio and cycling studio   \nOperating Hours:\n Mon to Fri: 6.00am -10.00pm\n    Sat : 7.00am - 7.00pm\n    Sun & PH : 8.00am ~ 6.00pm   ",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"40271.6251",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37243.0435",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"0E5BDF23B9B550FF",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"529508",
+            "ADDRESSSTREETNAME":"Tampines Central",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Fitness First - Tampines"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.943586936734206,
+               1.353084856922872
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"iPilates",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27857.4908",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32217.1444",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CC585D492FF046BB",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"229572",
+            "ADDRESSSTREETNAME":"Claymore Hill",
+            "ADDRESSUNITNUMBER":"6",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"8",
+            "Field_1":"iPilates"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.8320380669103,
+               1.307634926326107
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"California Fitness - Orchard- Ngee Ann City",
+            "description":"Facilities: - Energy Studio  - Mind Body Studio  - Indoor Cycling Studio  - Cardio Machines  - Resistance Machines  - Free Weights  - Xpress Zone  - Kick Fit Area  - Internet Kiosks  \nOperating Hours:\n Monday to Saturday: 6:00 am - 12:00 midnight\n    Sunday and Public Holidays*: 8:00 am to 10",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28151.0835",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31640.9668",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"80D12C5172266541",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238873",
+            "ADDRESSSTREETNAME":"Ngee Ann City",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"8",
+            "Field_1":"California Fitness - Orchard- Ngee Ann City"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.83467613466,
+               1.30242417909532
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"California Fitness - Raffles",
+            "description":"Facilities: - Energy Studio   - Mind Body Studio   - Indoor Cycling Studio   - Cardio Machines   - Resistance Machines   - Free Weights   - Xpress Zone   - Kick Fit Area   - Steam & Sauna  \nOperating Hours:\n Monday to Friday: 6:00 am - 12:00 midnight\n\n    Saturday: 6:00 am to 10:00 pm\n    ",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29946.0103",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29512.7817",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"053FF1ECD8E51DE6",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48619",
+            "ADDRESSSTREETNAME":"Raffles Place",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"14",
+            "Field_1":"California Fitness - Raffles"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.850804242586406,
+               1.283177561340054
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Bugis Junction",
+            "description":"Operating Hours:\n Monday - Friday: 9.00 AM - 10.00 PM\n    Saturday: 9.00 AM - 9.00 PM    Sunday and Public Holiday: 9.00 AM - 9.00 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30449.4469",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31269.8673",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D641A1261476D87A",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"188021",
+            "ADDRESSSTREETNAME":"Victoria Street Bugis Junction",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"200",
+            "Field_1":"Amore Fitness - Bugis Junction"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.855327954497398,
+               1.299067990789437
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - Alexandra (Mapletree Business City)",
+            "description":"Facilities: 44m heated pool, Group Exercise studio, outdoor TRX? Suspension Training? area, boxing area, cardiovascular equipment (treadmills, rowers etc), a free weights area, resistance machines and a functional training area.  \nOperating Hours:\n Monday ~ Friday : 6.30am ~ 10.00p",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"24188.8449",
+            "ADDRESSFLOORNUMBER":"7",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28589.3072",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"87B2C4437C45C1C0",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"117439",
+            "ADDRESSSTREETNAME":"Pasir Panjang Road",
+            "ADDRESSUNITNUMBER":"29",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"20",
+            "Field_1":"Fitness First - Alexandra (Mapletree Business City)"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.799073974086994,
+               1.274825813203062
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Fitness - China Square Central",
+            "description":"Operating Hours:\n Mon ~ Thurs: 6am ~ 11pm\n     Fri: 6am ~ 10pm \nSat: 6am ~ 9pm \n    Sun \/ Public Holiday: 8am ~ 8pm \nTel: 6438 3833",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29509.1533",
+            "ADDRESSFLOORNUMBER":"B1",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29550.116",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E95592F9A510E94C",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48423",
+            "ADDRESSSTREETNAME":"Cross Street",
+            "ADDRESSUNITNUMBER":"26",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"18",
+            "Field_1":"True Fitness - China Square Central"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.846878913529196,
+               1.283515223590521
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Sky Pilates",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27711.0895",
+            "ADDRESSFLOORNUMBER":"5",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31935.4337",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"5DDCD3528F520732",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238881",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"3",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"541",
+            "Field_1":"Sky Pilates"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.830722583996803,
+               1.305087233011573
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Slender Shapes - Eunos",
+            "description":"Operating Hours:\n Monday - Friday:  8.00am - 2.00pm  3.00pm - 9.00pm\n    Saturday:  9.00am - 4.00pm\n    Sunday & PH: Closed",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"35872.1245",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35140.5209",
+            "ADDRESSBUILDINGNAME":"Eunos Techpark",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"740A9C40632BFA6A",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"415979",
+            "ADDRESSSTREETNAME":"Kaki Bukit Place",
+            "ADDRESSUNITNUMBER":"6",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"60",
+            "Field_1":"Slender Shapes - Eunos"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.904054104623597,
+               1.334071888542224
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Bukit Gombak ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6896 2197",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"19064.1109",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37776.1262",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"00B7C4A8E6B769F1",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"659081",
+            "ADDRESSSTREETNAME":"Bukit Batok West Ave 5",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"810",
+            "Field_1":"Bukit Gombak ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.7530237503004,
+               1.357907046660575
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Canvass Art and Yoga Studio",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"22802.5289",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35335.4845",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"2C4C2676E4D02F56",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"589820",
+            "ADDRESSSTREETNAME":"A Binjai Park",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"5",
+            "Field_1":"Canvass Art and Yoga Studio"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.786616299313593,
+               1.335835645162499
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Central Pilates",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28958.5996",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32495.4039",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"70FFA2CE8BFA5AB2",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"227977",
+            "ADDRESSSTREETNAME":"Winstedt Road",
+            "ADDRESSUNITNUMBER":"9",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"10",
+            "Field_1":"Central Pilates"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.841932062572994,
+               1.310151393518207
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"COMO Shambhala Urban Escape",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27460.2554",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32166.627",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"52C2AA03A80F1CC5",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238876",
+            "ADDRESSSTREETNAME":"<Null>",
+            "ADDRESSUNITNUMBER":"5",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"COMO Shambhala Urban Escape"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.828468717265196,
+               1.307178060362917
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Choa Chu Kang ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6767 1739",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"18496.3307",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"41398.4872",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"657E21243B67D8C2",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"689236",
+            "ADDRESSSTREETNAME":"Choa Chu Kang St 53",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Choa Chu Kang ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.747920712445307,
+               1.390666172043658
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Clementi ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 68729180\/1",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"20381.363",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32590.9979",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"0ECC239A9E5BE231",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"129907",
+            "ADDRESSSTREETNAME":"Clementi Ave 3",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"518",
+            "Field_1":"Clementi ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.764861415666999,
+               1.311014984629702
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Delta ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6471 9030",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"26481.1789",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30194.2841",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"42C346AFB456B19F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"158790",
+            "ADDRESSSTREETNAME":"Tiong Bahru Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"900",
+            "Field_1":"Delta ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.819671346050995,
+               1.289340853897589
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Hougang ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6315 8674",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"34093.362",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"39176.638",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4799581394079A15",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"538832",
+            "ADDRESSSTREETNAME":"Hougang Ave 4",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"93",
+            "Field_1":"Hougang ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.888071733220301,
+               1.370573487857562
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Jurong East ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment and Exercise Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6896 3569",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"16372.1513",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"36483.4478",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"36E5745AABDF5045",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"609517",
+            "ADDRESSSTREETNAME":"Jurong East St. 31",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"21",
+            "Field_1":"Jurong East ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.728835249034404,
+               1.346215612271333
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Jurong West ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6515 5256",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"12469.5954",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35621.4276",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E4C452427E90B81F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"648965",
+            "ADDRESSSTREETNAME":"Jurong West St 93",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"20",
+            "Field_1":"Jurong West ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.6937689021903,
+               1.338418064928276
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Sengkang ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6315 3577",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"33838.7324",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"41933.0561",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4DBCC23E5FEED82A",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"544964",
+            "ADDRESSSTREETNAME":"Anchorvale Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"57",
+            "Field_1":"Sengkang ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.885784253768506,
+               1.395501587895655
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Tampines ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday). Lady Hours: 2.00 PM to 4.00 PM (Mon) \nTel: 6260 1162",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"39831.9023",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37376.8469",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"41D9806016B6F96F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"529652",
+            "ADDRESSSTREETNAME":"Tampines Ave 5",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"505",
+            "Field_1":"Tampines ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.939635804140494,
+               1.354295103518484
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Toa Payoh ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6256 7153",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29854.9995",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"34756.5217",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E68BF3E7C1D30BCF",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"319392",
+            "ADDRESSSTREETNAME":"Toa Payoh Lor 6",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"301",
+            "Field_1":"Toa Payoh ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.849986788241097,
+               1.330600101090059
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilates Body Pilot - Biopolis",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"23341.5261",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31871.7862",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4C534929B93B4FD1",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"138667",
+            "ADDRESSSTREETNAME":"Biopolis Way",
+            "ADDRESSUNITNUMBER":"4",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"11",
+            "Field_1":"Pilates Body Pilot - Biopolis"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.791460023589295,
+               1.304511278208553
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Evolve MMA - POMO Mall",
+            "description":"Operating Hours:\n Monday-Friday: 6:30am to 10:30pm\n  Saturday-Sunday: 9:00am to 7:00pm \nTel: 63370082\/ 63370037",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29763.7631",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31374.3657",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"22D665F0A25CCEA6",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"188306",
+            "ADDRESSSTREETNAME":"Selegie Road",
+            "ADDRESSUNITNUMBER":"11",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Evolve MMA - POMO Mall"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.849166784489199,
+               1.300013083010158
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilates Bodyworks - Finlayson Green",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29999.6924",
+            "ADDRESSFLOORNUMBER":"12",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29409.2074",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"270F7A5B7642F5B3",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"49246",
+            "ADDRESSSTREETNAME":"Finlayson Green",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Pilates Bodyworks - Finlayson Green"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.851286590696304,
+               1.282240869288034
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilates Fitness",
+            "description":"Operating Hours:\n Monday ~ Friday: 8.30am ~ 9.30pm\n     Saturday: 9am ~ 4pm\n     Closed on Sundays, Christmas, New Year and Chinese New Year. We are open on rest of the public holidays.",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"25730.9402",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28088.4067",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"5AB246115C3F248B",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"98854",
+            "ADDRESSSTREETNAME":"Telok Blangah Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"434",
+            "Field_1":"Pilates Fitness"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.812930291679905,
+               1.270295991798643
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilates Flow",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"24232.9921",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"34670.8841",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"B3C3A5372AD5DC1F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"269748",
+            "ADDRESSSTREETNAME":"2nd Avenue Junction",
+            "ADDRESSUNITNUMBER":"6",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"733",
+            "Field_1":"Pilates Flow"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.799469917651905,
+               1.329825448690264
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilates Inc - The Moving Body Group - Amoy Street",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29492.9824",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29247.7097",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D3A61E69D0424878",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"69901",
+            "ADDRESSSTREETNAME":"Amoy Street Level 1",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"82",
+            "Field_1":"Pilates Inc - The Moving Body Group - Amoy Street"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.846733598332605,
+               1.280780368816401
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilates Inc - The Moving Body Group - East Coast",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"35792.5941",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31857.8561",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D6386C12A786B0C7",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"428766",
+            "ADDRESSSTREETNAME":"East Coast Road",
+            "ADDRESSUNITNUMBER":"5",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"46",
+            "Field_1":"Pilates Inc - The Moving Body Group - East Coast"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.903338648384207,
+               1.304384670045328
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Platinum Yoga",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"36088.3455",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31581.7222",
+            "ADDRESSBUILDINGNAME":"Parkway Centre",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E63CC7C7DC804474",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"449408",
+            "ADDRESSSTREETNAME":"Marine Parade Central",
+            "ADDRESSUNITNUMBER":"5",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Platinum Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.905996039696703,
+               1.301887338525604
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"PowerMoves Pilates - Bishan Park",
+            "description":"Operating Hours:\n Monday to Thursday: 8:30am to 1:30pm & 4:30pm to 9:30pm\n     Friday:   8:30am to 1:30pm\n     Saturday:   8:30am to 5:30pm\n     Sunday:   9.30am to 1.30pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29577.4725",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"38288.7515",
+            "ADDRESSBUILDINGNAME":"Aramsa ~ The Garden Spa",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"A96E493522B51019",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"569931",
+            "ADDRESSSTREETNAME":"Bishan Park II",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"PowerMoves Pilates - Bishan Park"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847493236370298,
+               1.362544347700794
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"PowerMoves Pilates - Dempsey Hill",
+            "description":"Operating Hours:\n Monday to Thursday: 8:30am to 1:30pm & 4:30pm to 9:30pm\n     Friday:   8:30am to 1:30pm\n     Saturday:   8:30am to 5:30pm\n     Sunday:   9.30am to 1.30pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"25245.2533",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31909.1912",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CD2E40A13B047C9D",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"249683",
+            "ADDRESSSTREETNAME":"Dempsey Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"6",
+            "Field_1":"PowerMoves Pilates - Dempsey Hill"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.808565893546202,
+               1.304849784664393
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pure Yoga - Chevron House",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30070.9937",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29630.0316",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"55F348B63DA0EC03",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48622",
+            "ADDRESSSTREETNAME":"30 Raffles Place",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"4",
+            "Field_1":"Pure Yoga - Chevron House"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.851927274914104,
+               1.284237920280947
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - Captial Tower",
+            "description":"Facilities: Heated swimming pool, group exercise studio, cycling studio, cardiovascular and resistance strength training equipment  \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.00pm\n     Saturday : 7.00am ~ 7.00pm\n\n    Sunday and Public Holidays : Closed \nTel: 6536 5595",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29577.4615",
+            "ADDRESSFLOORNUMBER":"9",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28901.723",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"49BB141C142BAAD1",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"68912",
+            "ADDRESSSTREETNAME":"<Null>",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"Fitness First - Captial Tower"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847492657303803,
+               1.277651382355565
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Real Yoga",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28716.7492",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31591.6367",
+            "ADDRESSBUILDINGNAME":"The Centrepoint",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"17CFC6C940B57390",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238843",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"6",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"176",
+            "Field_1":"Real Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.839758898411205,
+               1.30197804716172
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Reebok CrossFit Enduro",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30765.625",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32126.4645",
+            "ADDRESSBUILDINGNAME":"Teck Heng Long Industrial Building",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"C1D57D06F78833B4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"207629",
+            "ADDRESSSTREETNAME":"Syed Alwi Road",
+            "ADDRESSUNITNUMBER":"3",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"11",
+            "Field_1":"Reebok CrossFit Enduro"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.858169031632301,
+               1.30681472605691
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Singapore CrossFit Hub",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"34053.6754",
+            "ADDRESSFLOORNUMBER":"7",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35109.1753",
+            "ADDRESSBUILDINGNAME":"Citimac Building",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"31AD9522FBA3F2BE",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"368241",
+            "ADDRESSSTREETNAME":"Blk B",
+            "ADDRESSUNITNUMBER":"11",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"605",
+            "Field_1":"Singapore CrossFit Hub"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.887714301748701,
+               1.333788827266898
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Sivananda Yoga Vedanta Centre",
+            "description":"Tel: 90679100\/ 98386704",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28802.7993",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29052.5515",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4E3130390C3D3425",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"89835",
+            "ADDRESSSTREETNAME":"Bukit Pasoh Rd",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"21B",
+            "Field_1":"Sivananda Yoga Vedanta Centre"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.8405320342317,
+               1.279015451559388
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Sky Fitness - Harbourfront",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"26371.5996",
+            "ADDRESSFLOORNUMBER":"16",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"27446.0022",
+            "ADDRESSBUILDINGNAME":"HarbourFront Tower 2",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"36A4F41E7C420D17",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"99254",
+            "ADDRESSSTREETNAME":"HarbourFront Place",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"3",
+            "Field_1":"Sky Fitness - Harbourfront"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.818686870632206,
+               1.264486350504279
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Core Fitness Physiotherapy & Pilates Centre  - Forum The Shopping Mall",
+            "description":"Operating Hours:\n Mon ~ Thu: 9 am to 9 pm    Fri: 9 am to 7 pm     Sat: 9 am to 5 pm    Sundays and Public Holidays: by appointments only",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27464.7401",
+            "ADDRESSFLOORNUMBER":"5",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32058.0135",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"1CBCEAA8DCE05C7D",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238884",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"4",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"583",
+            "Field_1":"Core Fitness Physiotherapy & Pilates Centre  - Forum The Shopping Mall"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.828509016301297,
+               1.306195799136297
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"CrossFit Fire City",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"31640.4731",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32314.8331",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"DBC99240555E4035",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"338988",
+            "ADDRESSSTREETNAME":"Kampong Bugis",
+            "ADDRESSUNITNUMBER":"5",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"11",
+            "Field_1":"CrossFit Fire City"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.866029977780997,
+               1.308518174399527
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"CrossFit Singapore",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"34504.8298",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35082.7149",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"032A31735DABE181",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"408830",
+            "ADDRESSSTREETNAME":"Ubi Avenue 4",
+            "ADDRESSUNITNUMBER":"13",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"81",
+            "Field_1":"CrossFit Singapore"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.891768174079999,
+               1.333549435412881
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Curves - Marine Parade",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27577.7308",
+            "ADDRESSFLOORNUMBER":"13",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28957.5329",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D51E49EA5998835F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"160140",
+            "ADDRESSSTREETNAME":"Marine Parade Central",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Curves - Marine Parade"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.829524333744004,
+               1.278156143956976
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Elements Pilates",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27082.9971",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31955.8878",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"39F348823D05A7E7",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"247918",
+            "ADDRESSSTREETNAME":"Tanglin Road",
+            "ADDRESSUNITNUMBER":"8",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"Elements Pilates"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.825078878264705,
+               1.305272200416315
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Evolve MMA - Far East Square",
+            "description":"Operating Hours:\n Monday-Friday: 6:30am to 10:30pm\n  Saturday-Sunday: 9:00am to 7:00pm \nTel: 65364525\/ 65364830",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29613.989",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29499.5288",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"2B065B4D81010FCA",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"49568",
+            "ADDRESSSTREETNAME":"China Street",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"26",
+            "Field_1":"Evolve MMA - Far East Square"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847820901709596,
+               1.283057726422341
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - Fusionopolis",
+            "description":"Facilities: Cardio equipment, weight machines, free weights, swimming pool, Group Exercise studio, Mind and Body studio.  \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.00pm\n     Saturday : 7.00am ~ 7.00pm\n    Sunday and Public Holidays : 8.00am ~ 6.00pm \nTel: 6438 4484",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"22884.3499",
+            "ADDRESSFLOORNUMBER":"23",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31269.5376",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CEA589363041FD56",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"138632",
+            "ADDRESSSTREETNAME":"Fusionopolis Way",
+            "ADDRESSUNITNUMBER":"11",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Fitness First - Fusionopolis"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.787352183115203,
+               1.29906468442754
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - Marina Bay Financial Centre",
+            "description":"Facilities: Multi-purpose studio, cycling studio, free weights, resistance machines, cardio machines    \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.00pm\n     Saturday : 8.00am ~ 5.00pm\n    Sunday and Public Holidays : Closed \nTel: 6536 2373",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30346.8077",
+            "ADDRESSFLOORNUMBER":"16",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29062.9894",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"5CC7C91B89519028",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"18982",
+            "ADDRESSSTREETNAME":"Marina Boulevard",
+            "ADDRESSUNITNUMBER":"3",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"12",
+            "Field_1":"Fitness First - Marina Bay Financial Centre"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.854405531417598,
+               1.279109771367409
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - Millenia Walk",
+            "description":"Facilities: Multi-purpose studio, cycling studio, free weights, resistance machines, cardio machines    \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.00pm\n     Saturday : 9.00am ~ 9.00pm\n    Sunday and Public Holidays : 10.00am ~ 8.00pm  \nTel: 6339 7555",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30896.4011",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30595.0395",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"F4DDE37F537AD715",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"39596",
+            "ADDRESSSTREETNAME":"Raffles Boulevard",
+            "ADDRESSUNITNUMBER":"38",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"9",
+            "Field_1":"Fitness First - Millenia Walk"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.859343974187794,
+               1.292965047737304
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - One George Street",
+            "description":"Facilities: Heated swimming pool, cardio equipment, strength equipment, free weights area, stretch area, Group Exercise studio  \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 11.00pm     Saturday : 7.00am ~ 7.00pm\n    Sunday and Public Holidays : 10.00am ~ 6.00pm  \nTel: 6538 7666",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29608.5361",
+            "ADDRESSFLOORNUMBER":"5",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29774.627",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"3BDFD9B0E01F133D",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"49145",
+            "ADDRESSSTREETNAME":"<Null>",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"Fitness First - One George Street"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847771918337699,
+               1.285545617319702
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - One Raffles Place",
+            "description":"Facilities: Group Exercise studio, free weights area, jacuzzi, swimming pool, cardiovascular and resistance  training equipment  \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.00pm\n     Saturday : 7.00am ~ 7.00pm\n    Sunday and Public Holidays : Closed  \nTel: 6534 4333",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29965.8315",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29641.3125",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D06CEF960BB10419",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48616",
+            "ADDRESSSTREETNAME":"Raffles Place",
+            "ADDRESSUNITNUMBER":"0",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Fitness First - One Raffles Place"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.850982351781298,
+               1.284339948423704
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Impact Mixed Martial Arts",
+            "description":"Operating Hours:\n Weekdays:  12.15pm - 9.45pm    Saturday:  9.30am - 5.30pm    Sunday:  11.00am - 5.30pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29864.4703",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28997.6546",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"A2A479FA606148A4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"68805",
+            "ADDRESSSTREETNAME":"Shenton Way",
+            "ADDRESSUNITNUMBER":"6",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"3",
+            "Field_1":"Impact Mixed Martial Arts"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.8500715436072,
+               1.278518937583962
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Sky Fitness - Serangoon Gardens",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30921.5944",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"38008.4903",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"51E0C317DBD72838",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"559022",
+            "ADDRESSSTREETNAME":"Bughley Drive Blk B",
+            "ADDRESSUNITNUMBER":"10",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"45",
+            "Field_1":"Sky Fitness - Serangoon Gardens"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.859571053740396,
+               1.360009663683913
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Genesis Gym - Mounbatten",
+            "description":"Operating Hours:\n Monday - Friday: 7.30am - 9.30pm\n    Saturday: 8.30am - 1.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"33336.6379",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32198.4264",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"8ECD88F1C9D9C8FC",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"398007",
+            "ADDRESSSTREETNAME":"<Null>",
+            "ADDRESSUNITNUMBER":"20",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"41306",
+            "Field_1":"Genesis Gym - Mounbatten"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.881270808536598,
+               1.307465187125844
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Gold's Gym - Bukit Merah",
+            "description":"Operating Hours:\n Monday - Friday: 7.30am - 9.00pm\n    Saturday: 7.30am - 3.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"26303.8723",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29388.698",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"C34C57B8FCD041D3",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"159837",
+            "ADDRESSSTREETNAME":"Bukit Merah Central",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"3500",
+            "Field_1":"Gold's Gym - Bukit Merah"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.818078216386397,
+               1.28205540618001
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Gold's Gym - IBP Jurong East",
+            "description":"Operating Hours:\n Monday - Friday: 7.30am - 9.00pm\n    Saturday: 7.30am - 3.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"18410.9875",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"34701.0161",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"0D1E850B2992263F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"609930",
+            "ADDRESSSTREETNAME":"International Business Park",
+            "ADDRESSUNITNUMBER":"5",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"2",
+            "Field_1":"Gold's Gym - IBP Jurong East"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.747155986924199,
+               1.330096670568287
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Green Yoga",
+            "description":"Operating Hours:\n Mon - Fri: 12pm to 10pm    Sat, Sun & PH: 9am to 7pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28197.5312",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37241.066",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"77541E8EC177DEE4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"574363",
+            "ADDRESSSTREETNAME":"A Upper Thomson Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"232",
+            "Field_1":"Green Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.835093523472096,
+               1.353069494478183
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"H.om Yoga",
+            "description":"Operating Hours:\n Monday & Friday: 9.30am - 10.00pm    Tuesday - Thursday: 7.00am - 10.30pm    Saturday & Sunday: 9.30am - 7.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29793.2807",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29848.4522",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"AFFC85770638F52B",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"49745",
+            "ADDRESSSTREETNAME":"Canton Street",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"3",
+            "Field_1":"H.om Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.849431927363099,
+               1.286213257407488
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Iyengar Yoga Centre Singapore - Goldhill Centre",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29065.137",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"33344.3195",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"3C9373D12BA7E236",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"308899",
+            "ADDRESSSTREETNAME":"Goldhill Plaza",
+            "ADDRESSUNITNUMBER":"31",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Iyengar Yoga Centre Singapore - Goldhill Centre"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.842889382966604,
+               1.31782868295363
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Iyengar Yoga Centre Singapore - Neil Road Centre",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28815.7624",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28972.0638",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"5EE4FB8BA1708A35",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"88875",
+            "ADDRESSSTREETNAME":"Neil Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"146B",
+            "Field_1":"Iyengar Yoga Centre Singapore - Neil Road Centre"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.840648509606496,
+               1.278287548682028
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Jagsport",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"31240.2976",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32495.4659",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D84656A0FF0465BC",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"208574",
+            "ADDRESSSTREETNAME":"King George's Ave",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"340B",
+            "Field_1":"Jagsport"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.862434227155902,
+               1.310151798100108
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Kapap Singapore",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28929.2954",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29166.5328",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"8241A65DAFFC7C4F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"89129",
+            "ADDRESSSTREETNAME":"Keong Siak Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"22",
+            "Field_1":"Kapap Singapore"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.841668651740704,
+               1.280046254107887
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Kate Porter Yoga",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"38981.017",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32483.4102",
+            "ADDRESSBUILDINGNAME":"Laguna Park",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"099AC91AF17E3FE1",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"449290",
+            "ADDRESSSTREETNAME":"Marine Parade Road",
+            "ADDRESSUNITNUMBER":"27",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"5000",
+            "Field_1":"Kate Porter Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.931988303014094,
+               1.310040987179101
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pure Fitness - Knightsbridge",
+            "description":"Facilities: Cycling and group fitness studios, cardio machines, resistance machines, free weights  \nOperating Hours:\n Monday - Saturday  6am - 12 midnight\n    Sunday & Public holidays  8am - 10pm \nTel: 6100 3813",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29990.9309",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29038.523",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"F5D54E7E85E3D05E",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"18960",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"3",
+            "Field_1":"Pure Fitness - Knightsbridge"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.851207842003305,
+               1.278888529345178
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Midview Body & Mind",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28026.1864",
+            "ADDRESSFLOORNUMBER":"8",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37848.1777",
+            "ADDRESSBUILDINGNAME":"Midview City",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"440C51653AE92172",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"573972",
+            "ADDRESSSTREETNAME":"Sin Ming Lane",
+            "ADDRESSUNITNUMBER":"138",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"28",
+            "Field_1":"Midview Body & Mind"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.833553881909694,
+               1.35855999715029
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Oasis Holistic",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29916.2801",
+            "ADDRESSFLOORNUMBER":"1",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31783.0195",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"1679DDC29E8498C7",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"180010",
+            "ADDRESSSTREETNAME":"Selegie Road",
+            "ADDRESSUNITNUMBER":"50",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"10",
+            "Field_1":"Oasis Holistic"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.850537243386995,
+               1.303708794898129
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"OhmSantih Yoga",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30900.9024",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31428.6884",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D08D3C89A2C6FE0B",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"189203",
+            "ADDRESSSTREETNAME":"Haji Lane",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"10A",
+            "Field_1":"OhmSantih Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.859384497354398,
+               1.300504273056781
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"True Fitness - Suntec City",
+            "description":"Operating Hours:\n Mon ~ Thurs: 6am ~ 11pm\n     Fri: 6am ~ 10pm \n    Sat: 6am ~ 9pm \n    Sun \/ Public Holiday: 8am ~ 8pm  \nTel: 6820 9000",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30673.6704",
+            "ADDRESSFLOORNUMBER":"7",
+            "FMEL_UPD_D":"12\/8\/2016 8:34:31 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30780.5511",
+            "ADDRESSBUILDINGNAME":"Suntec City Mall",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"854FA31A3AE75D68",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"38983",
+            "ADDRESSSTREETNAME":"Temasek Boulevard",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"3",
+            "Field_1":"True Fitness - Suntec City"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.857342660076995,
+               1.294642768222574
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Updog Studio",
+            "description":"Operating Hours:\n Monday - Thursday: 8:30am - 9:30pm\n    Friday: 8:30am - 8:00pm\n    Saturday - Sunday: 7:30am - 5:30pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"35380.4524",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"12\/8\/2016 8:34:31 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31034.6285",
+            "ADDRESSBUILDINGNAME":"Big Splash",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"F1209969F2835CA6",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"449874",
+            "ADDRESSSTREETNAME":"East Coast Parkway",
+            "ADDRESSUNITNUMBER":"05A",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"902 B",
+            "Field_1":"Updog Studio"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.899635172529898,
+               1.296939796271924
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Gold's Gym - Tanjong Pagar",
+            "description":"Operating Hours:\n Monday - Friday: 7.30am - 9.00pm\n    Saturday: 7.30am - 3.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29153.5365",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"12\/8\/2016 8:34:31 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28988.384",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"5DCBB969F19760DA",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"88507",
+            "ADDRESSSTREETNAME":"A Tanjong Pagar Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"86",
+            "Field_1":"Gold's Gym - Tanjong Pagar"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.843683536784397,
+               1.278435132343981
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Masters' Yoga Sadhan",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29152.4442",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"12\/8\/2016 8:34:31 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28984.1637",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D2D1FC4B571EA9BE",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"88509",
+            "ADDRESSSTREETNAME":"Tanjong Pagar Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"88A",
+            "Field_1":"Masters' Yoga Sadhan"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.843673722805804,
+               1.27839696547013
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness Factory -",
+            "description":"Operating Hours:\n Monday - Friday: 7.00am - 9.00pm\n    Saturday: 7.00am - 4.00pm\n    Sunday and Public Holiday: 8.00am - 3.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29761.3043",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"12\/8\/2016 8:34:31 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30099.2588",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"202E559F0023EC78",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"49870",
+            "ADDRESSSTREETNAME":"<Null>",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"41276",
+            "Field_1":"Fitness Factory -"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.849144620548799,
+               1.288481465968629
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Active Life Center",
+            "description":"P: +65-97615523 E: info@activered.sg",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27628.9841",
+            "ADDRESSFLOORNUMBER":"16",
+            "FMEL_UPD_D":"12\/8\/2016 8:34:31 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31981.7518",
+            "ADDRESSBUILDINGNAME":"Far East Shopping Centre",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"ECC6FB238AF634C4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238882",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"10",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"545",
+            "Field_1":"Active Life Center"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.829984827986706,
+               1.305506116707395
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - City Square Mall",
+            "description":"Operating Hours:\n Monday-Friday:  8.00 AM - 10.00 PM\n  Saturday: 9.00 AM - 9.30 PM\n  Sunday & Public Holiday: 9.00 AM - 9.00 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30578.4382",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32632.7594",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"7BD19C814E683FF7",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"208539",
+            "ADDRESSSTREETNAME":"Kitchener Road",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"180",
+            "Field_1":"Amore Fitness - City Square Mall"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.856487111603002,
+               1.311393494390137
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Heartland Mall",
+            "description":"Operating Hours:\n Monday - Friday: 9.00 AM - 10.00 PM\n    Saturday: 9:00 AM - 7:30 PM\n    Sunday & Public Holiday: 9.00 AM - 7:30 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"33760.4357",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37951.8095",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"501ACB4725447E04",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"530205",
+            "ADDRESSSTREETNAME":"Hougang Street 21",
+            "ADDRESSUNITNUMBER":"11",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"205",
+            "Field_1":"Amore Fitness - Heartland Mall"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.885079918847595,
+               1.359496648253979
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Jurong Point 2",
+            "description":"Operating Hours:\n Monday - Friday: 9.00 AM - 10.00 PM\n     Saturday: 9.00 AM - 9.30 PM\n    Sunday & Public Holiday: 9.00 AM - 9.00 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"13882.0898",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35777.4923",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"CB59096796BD4CB6",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"648886",
+            "ADDRESSSTREETNAME":"Jurong West Central 3",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"63",
+            "Field_1":"Amore Fitness - Jurong Point 2"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.706460886825894,
+               1.339830148058246
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Liang Court",
+            "description":"Operating Hours:\n Monday - Friday: 10.30 AM - 9.30 PM\n    Saturday: 10.30 AM - 9.00 PM\n    Sunday & Public Holiday: 10.30 AM - 9.00 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29254.0003",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30434.6651",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4441732872B3FC5F",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"179030",
+            "ADDRESSSTREETNAME":"River Valley Road",
+            "ADDRESSUNITNUMBER":"17",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"177",
+            "Field_1":"Amore Fitness - Liang Court"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.844586298874503,
+               1.291514786134579
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Tampines 1",
+            "description":"Operating Hours:\n Monday-Friday: 8.00 AM - 10.00 PM\n  Saturday: 9.00 AM - 9.30 PM\n  Sunday & Public Holiday: 9.00 AM - 9.00 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"40431.0426",
+            "ADDRESSFLOORNUMBER":"5",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37379.1363",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"90D4D9CD3BD92CEA",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"529536",
+            "ADDRESSSTREETNAME":"Tampines Central 1",
+            "ADDRESSUNITNUMBER":"18",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"10",
+            "Field_1":"Amore Fitness - Tampines 1"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.945019457969707,
+               1.354315564383087
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Thomson Plaza",
+            "description":"Operating Hours:\n Monday: 9.00 AM - 10.00 PM\n  Saturday: 9.00 AM - 9.00 PM\n  Sunday & Public Holiday: 9.00 AM - 7.30 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27724.0382",
+            "ADDRESSFLOORNUMBER":"3",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"37416.1386",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"BAAA4E1707BB3ABE",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"574408",
+            "ADDRESSSTREETNAME":"Upper Thomson Road",
+            "ADDRESSUNITNUMBER":"49",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"301",
+            "Field_1":"Amore Fitness - Thomson Plaza"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.830838883469994,
+               1.354652788110453
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Amore Fitness - Woodlands Civic Centre",
+            "description":"Operating Hours:\n Monday-Friday: 9.00 AM - 10.00 PM\n  Saturday: 9.00 AM - 7.30 PM\n  Sunday & Public Holiday: 9.00 AM - 6.00 PM",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"22803.1142",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"46309.1923",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"6E838EA7DB6D86F9",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"730900",
+            "ADDRESSSTREETNAME":"South Woodlands Drive",
+            "ADDRESSUNITNUMBER":"11",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"900",
+            "Field_1":"Amore Fitness - Woodlands Civic Centre"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.786619615680294,
+               1.435077893976053
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Ananda Marga Yoga Society of Singapore - MacPherson",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"33309.195",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"34912.4945",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"954EBECDBB1C33F2",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"368150",
+            "ADDRESSSTREETNAME":"A MacPherson Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"439",
+            "Field_1":"Ananda Marga Yoga Society of Singapore - MacPherson"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.881024688612897,
+               1.332010256026788
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Ananda Marga Yoga Society of Singapore - Parkway Centre",
+            "description":"Operating Hours:\n Mon ~ Fri : 9am ~ 10pm\n    Sat ~ Sun : 9am ~ 4pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"36088.3455",
+            "ADDRESSFLOORNUMBER":"7",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31581.7222",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E63CC7C7C3C8A2DF",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"449408",
+            "ADDRESSSTREETNAME":"Marine Parade Central",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Ananda Marga Yoga Society of Singapore - Parkway Centre"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.905996039696703,
+               1.301887338525604
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Slender Shapes - Upper Bukit Timah",
+            "description":"Operating Hours:\n Monday - Friday:  8.00am - 2.00pm  3.00pm - 9.00pm\n    Saturday:  9.00am - 4.00pm\n    Sunday & PH: Closed",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"21652.2407",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35900.0025",
+            "ADDRESSBUILDINGNAME":"Goh & Goh Building",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"395714429B806FF4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"588172",
+            "ADDRESSSTREETNAME":"Upper Bukit Timah Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"110M",
+            "Field_1":"Slender Shapes - Upper Bukit Timah"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.7762801806239,
+               1.340940724420644
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Basic Essence",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"25877.3613",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"33868.9473",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D1ABF0A06FAE584E",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"259760",
+            "ADDRESSSTREETNAME":"Bukit Timah Road",
+            "ADDRESSUNITNUMBER":"4",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"501",
+            "Field_1":"Basic Essence"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.814245545297595,
+               1.322573175939219
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Being In Yoga",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"23840.3276",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"35342.2829",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"FC46CA789110B05E",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"287988",
+            "ADDRESSSTREETNAME":"Turf Club Road",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"2",
+            "Field_1":"Being In Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.795941517598195,
+               1.335897288969405
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Bikram Yoga",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30164.5882",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30682.9664",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"97D5893661B44A77",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"179103",
+            "ADDRESSSTREETNAME":"North Bridge Road",
+            "ADDRESSUNITNUMBER":"14",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"252",
+            "Field_1":"Bikram Yoga"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.852768330589498,
+               1.293760286894617
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Brazilian Jiu Jitzu Singapore",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29749.4622",
+            "ADDRESSFLOORNUMBER":"6",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31514.6191",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"F6C17D8A5BEBF1B8",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"228149",
+            "ADDRESSSTREETNAME":"Sophia Road",
+            "ADDRESSUNITNUMBER":"19",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"Brazilian Jiu Jitzu Singapore"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.849038293209006,
+               1.301281486147523
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Breathe Pilates - East Coast",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"36192.6834",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32213.0138",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"B51077E952EEDD45",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"428915",
+            "ADDRESSSTREETNAME":"East Coast Road",
+            "ADDRESSUNITNUMBER":"5",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"217",
+            "Field_1":"Breathe Pilates - East Coast"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.906933727641103,
+               1.307596485237071
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Breathe Pilates - Novena",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29206.6255",
+            "ADDRESSFLOORNUMBER":"9",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"33662.3586",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"A2363DB0E9B8A3D2",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"307506",
+            "ADDRESSSTREETNAME":"Sinaran Drive",
+            "ADDRESSUNITNUMBER":"33",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"10",
+            "Field_1":"Breathe Pilates - Novena"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.844160741321502,
+               1.320704910902918
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - AMK Hub",
+            "description":"Facilities: Mind and Body studio, Group Exercise studio, cardio equipment (including treadmills, bikes, steppers and the revolutionary Technogym CardioWave?), weight machines and free weights.  \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.00pm\n     Saturday, Sunday and Public Holi",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29678.2938",
+            "ADDRESSFLOORNUMBER":"B1",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"39030.1094",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"750553E64689D983",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"569933",
+            "ADDRESSSTREETNAME":"Ang Mo Kio Ave 3",
+            "ADDRESSUNITNUMBER":"36",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"53",
+            "Field_1":"Fitness First - AMK Hub"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.848399225687103,
+               1.369248917342139
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilatique Pilates Studio",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29515.3344",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"5\/10\/2016 3:53:32 PM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29433.8796",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E12B723270D39FAE",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"69250",
+            "ADDRESSSTREETNAME":"Gemmil Lane",
+            "ADDRESSUNITNUMBER":"8",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"Pilatique Pilates Studio"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.846934447584303,
+               1.282464022997218
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Slender Shapes - Serangoon Gardens Way",
+            "description":"Operating Hours:\n Monday - Friday  8.00am - 2.00pm  4.00pm - 9.00pm\n    Saturday  9.00am - 4.00pm\n    Sunday & PH: Closed",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"31512.8927",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"38438.6517",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"72ED7C57972BE722",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"555981",
+            "ADDRESSSTREETNAME":"Serangoon Gardens Way",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"85A",
+            "Field_1":"Slender Shapes - Serangoon Gardens Way"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.864884313373494,
+               1.363899825419363
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Woodlands ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6362 9101",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"22100.5679",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"46289.0259",
+            "ADDRESSBUILDINGNAME":"Woodlands Stadium",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"E5E3FFD742FDA4E4",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"738597",
+            "ADDRESSSTREETNAME":"WoodlandsCentre",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"495",
+            "Field_1":"Woodlands ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.780306573728694,
+               1.434895377034352
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Yio Chu Kang ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday) \nTel: 6483 9370",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29385.4468",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"40470.1817",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4C197828BD636D1B",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"569770",
+            "ADDRESSSTREETNAME":"Ang Mo Kio Ave 9",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"200",
+            "Field_1":"Yio Chu Kang ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.845767858371602,
+               1.382272431163427
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"California Fitness - Velocity@Novena Square",
+            "description":"Facilities: - Group X Studio  - Indoor Cycling Studio  - Cardio Machines  - Resistance Machines  - Free Weights  - Xpress Zone  - Kick Fit Area  - Steam & Sauna  - Internet Kiosks  \nOperating Hours:\n Monday to Friday: 6:00 am - 12:00 midnight\n    Saturday: 6:00 am to 10:00 pm\n    Sunday and Public Holiday close",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29172.114",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"33580.8187",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"90466572C8109FB6",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"307683",
+            "ADDRESSSTREETNAME":"Velocity @ Novena",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"3",
+            "Field_1":"California Fitness - Velocity@Novena Square"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.843850634319395,
+               1.319967493315359
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Absolute Yoga - River Valley",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27290.2098",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"30600.8654",
+            "ADDRESSBUILDINGNAME":"Valley Point",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"ABBD171C5FB606F7",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"248371",
+            "ADDRESSSTREETNAME":"River Valley Rd",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"491",
+            "Field_1":"Absolute Yoga - River Valley"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.826940812301203,
+               1.293017861115588
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Yoga On Nassim",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"23876.2653",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"34803.1851",
+            "ADDRESSBUILDINGNAME":"Spa Boutique",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"FC71B3A9BE8CC69A",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"269758",
+            "ADDRESSSTREETNAME":"Nassim Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"6",
+            "Field_1":"Yoga On Nassim"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.796264512394899,
+               1.331021884573734
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"YogaDivas - Leonie Hill",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"27177.9979",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32233.8231",
+            "ADDRESSBUILDINGNAME":"Leonie Hill Condo",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"6A3697AFDE3C67E1",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"258373",
+            "ADDRESSSTREETNAME":"Leonie Hill Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+            "Field_1":"YogaDivas - Leonie Hill"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.825932498525304,
+               1.307785751965845
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pilates Bodyworks - Holland",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"23462.5592",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"5\/4\/2016 10:59:33 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"32388.261",
+            "ADDRESSBUILDINGNAME":"Buona Vista Community Club",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4631ECA28789B6FA",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"270036",
+            "ADDRESSSTREETNAME":"Holland Drive",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"36",
+            "Field_1":"Pilates Bodyworks - Holland"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.792547486780094,
+               1.309182111948196
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Pasir Ris ClubFITT Gym",
+            "description":"Facilities: Standard Gymnasium Equipment  \nOperating Hours:\n 7.00 AM to 10.00 PM (Mon\/Wed\/Fri)\n 8.30 AM to 10.00 PM (Tue\/Thur) \n 8.30 AM to 8.00 PM (Sat)\n (9.00 AM to 8.00 Pm (Sun), 9.00 AM to 5.00 PM (Public Holiday)",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"41188.0356",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"39605.3696",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"75B56EEB2293FAB1",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"519640",
+            "ADDRESSSTREETNAME":"Pasir Ris Central",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"120",
+            "Field_1":"Pasir Ris ClubFITT Gym"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.951822500420406,
+               1.374448455862469
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"YogaDivas - Phoenix Park",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"25911.9934",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31143.3681",
+            "ADDRESSBUILDINGNAME":"Phoenix Park",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"932A900ADA8D102D",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"247974",
+            "ADDRESSSTREETNAME":"Tanglin Road",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"308",
+            "Field_1":"YogaDivas - Phoenix Park"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.8145569165967,
+               1.297924001819548
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Zattva Yoga Studio",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28871.5833",
+            "ADDRESSFLOORNUMBER":"7",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31511.9401",
+            "ADDRESSBUILDINGNAME":"Orchard Plaza",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"79FB226A0AB7930E",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238841",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"9",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"150",
+            "Field_1":"Zattva Yoga Studio"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.841150152248005,
+               1.301257296128256
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - One Raffles Quay",
+            "description":"Facilities: Group Exercise studios  Kinesis studio, free-weight and strength equipment, cardio equipment  \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.00pm\n     Saturday : 8.00am ~ 5.00pm\n     Sunday and Public Holidays : 10.00am ~ 5.00pm  \nTel: 6327 5550",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"30043.1546",
+            "ADDRESSFLOORNUMBER":"8",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29260.3651",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D1821E116B43B866",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48583",
+            "ADDRESSSTREETNAME":"Raffles Quay",
+            "ADDRESSUNITNUMBER":"1",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Fitness First - One Raffles Quay"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.851677105820897,
+               1.280894789002765
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"The Gym Nation",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"20359.1207",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"5\/4\/2016 5:01:34 PM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"40394.4741",
+            "ADDRESSBUILDINGNAME":"Senja Cashew CC",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"D961379FBEED3A0A",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"679910",
+            "ADDRESSSTREETNAME":"Bukit Panjang Road",
+            "ADDRESSUNITNUMBER":"2",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"101",
+            "Field_1":"The Gym Nation"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.764659583271794,
+               1.381586793706407
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Viva Fit Singapore - Tanjong Pagar",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29009.9303",
+            "ADDRESSFLOORNUMBER":"2",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28674.4689",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"4429E461D112F2DF",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"82001",
+            "ADDRESSSTREETNAME":"Tanjong Pagar Plaza",
+            "ADDRESSUNITNUMBER":"24",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"1",
+            "Field_1":"Viva Fit Singapore - Tanjong Pagar"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.842393171370503,
+               1.275596198194251
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Fitness First - The Cathay",
+            "description":"Facilities: Cardio, strength and stretch areas and a Group Exercise studio  \nOperating Hours:\n Monday ~ Friday : 6.00am ~ 10.30pm     Saturday: 6.30am ~ 10.30pm    Sunday and Public Holidays : 8.00am ~ 10.00pm \nTel: 6732 4111",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29610.5168",
+            "ADDRESSFLOORNUMBER":"4",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31282.6611",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"A83A7EE1E338FE98",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"229233",
+            "ADDRESSSTREETNAME":"Handy Road",
+            "ADDRESSUNITNUMBER":"5",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"2",
+            "Field_1":"Fitness First - The Cathay"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.847789792827996,
+               1.299183747220413
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Focus Pilates - Orchard",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"28167.8673",
+            "ADDRESSFLOORNUMBER":"8",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"31809.284",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"48A1BC63BFFBB884",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"238862",
+            "ADDRESSSTREETNAME":"Orchard Road",
+            "ADDRESSUNITNUMBER":"3",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"302",
+            "Field_1":"Focus Pilates - Orchard"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.834826945698595,
+               1.303946380484622
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Focus Pilates - Raffles Place",
+            "description":"<Null>",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29935.7018",
+            "ADDRESSFLOORNUMBER":"12",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"29597.3414",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"146FD2E76AF1A98C",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"48979",
+            "ADDRESSSTREETNAME":"Malacca Street",
+            "ADDRESSUNITNUMBER":"0",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"20",
+            "Field_1":"Focus Pilates - Raffles Place"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.850711622747895,
+               1.283942291107349
+            ]
+         }
+      },
+      { 
+         "type":"Feature",
+         "properties":{ 
+            "Name":"Genesis Gym - CBD",
+            "description":"Operating Hours:\n Monday - Friday: 7.30am - 9.30pm\n    Saturday: 8.30am - 1.00pm",
+            "altitudeMode":"clampToGround",
+            "X_ADDR":"29194.4216",
+            "ADDRESSFLOORNUMBER":"<Null>",
+            "FMEL_UPD_D":"1\/27\/2016 9:58:40 AM",
+            "HYPERLINK":"<Null>",
+            "Y_ADDR":"28876.8671",
+            "ADDRESSBUILDINGNAME":"<Null>",
+            "PHOTOURL":"<Null>",
+            "LANDYADDRESSPOINT":"0",
+            "INC_CRC":"3184BE45EA24B962",
+            "SHAPE":"Point",
+            "ADDRESSPOSTALCODE":"79017",
+            "ADDRESSSTREETNAME":"Tras Street",
+            "ADDRESSUNITNUMBER":"<Null>",
+            "LANDXADDRESSPOINT":"0",
+            "ADDRESSBLOCKHOUSENUMBER":"78",
+            "Field_1":"Genesis Gym - CBD"
+         },
+         "geometry":{ 
+            "type":"Point",
+            "coordinates":[ 
+               103.844050900534398,
+               1.277426610172507
+            ]
+         }
+      }
+   ]
+}

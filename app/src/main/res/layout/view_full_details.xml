@@ -93,7 +93,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/Image_17"
+                app:srcCompat="@drawable/image_17"
                 android:layout_marginRight="15dp"
                 />
 
@@ -101,7 +101,7 @@
                 android:id="@+id/imageView6"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/Image_18"
+                app:srcCompat="@drawable/image_18"
                 android:layout_marginRight="15dp"
                 />
 
@@ -299,7 +299,7 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="13dp"
                         android:layout_marginLeft="18dp"
-                        app:srcCompat="@drawable/user_R">
+                        app:srcCompat="@drawable/user_r">
                     </ImageView>
 
                     <TextView
