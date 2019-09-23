@@ -52,9 +52,7 @@ import java.io.IOException;
 
 import static android.content.Context.LOCATION_SERVICE;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class MapFragment extends Fragment implements OnMapReadyCallback,
         LocationListener,
         GoogleApiClient.ConnectionCallbacks,
@@ -64,26 +62,29 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     private GoogleMap mMap;
     MapView mMapView;
     private View mView;
-    Location mLastLocation;
-    Marker mCurrLocationMarker;
-    LocationRequest mLocationRequest;
-    GoogleApiClient mGoogleApiClient;
-    LocationManager locationManager;
-    Context context;
-    public MapFragment(Context context){
+    private Location mLastLocation;
+    private Marker mCurrLocationMarker;
+    private LocationRequest mLocationRequest;
+    private GoogleApiClient mGoogleApiClient;
+    private LocationManager locationManager;
+    private Context context;
+    private ActivityCentreManager activitycentreManager;
+    private ListViewController listViewController;
+
+    public MapFragment(Context context,ActivityCentreManager activitycentreManager,ListViewController listViewController){
         this.context=context;
+        this.activitycentreManager = activitycentreManager;
+        this.listViewController = listViewController;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DataGovManager dataGovManager = new DataGovManager(getResources(), R.raw.datajson);
         locationManager = (LocationManager)getActivity().getSystemService(LOCATION_SERVICE);
-
-
     }
 
-
+    /*
     private void moveCameraToKml(KmlLayer kmlLayer) {
         //Retrieve the first container in the KML layer
         KmlContainer container = kmlLayer.getContainers().iterator().next();
@@ -103,6 +104,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         int height = getResources().getDisplayMetrics().heightPixels;
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), width, height, 1));
     }
+    */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -283,11 +286,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             LatLng loc = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
             mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
-
-            //mMap.addMarker(new MarkerOptions()
-            //        `.position(loc)
-            //        .title("My Position")
-            //        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             updateMarkers(mLastLocation);
         }
     }
@@ -303,35 +301,21 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     }
 
     public void updateMarkers(Location location){
-        for(int i = 0; i<DataGovManager.dataGovArrayList.size();i++){
-            DataGov dataGov = DataGovManager.dataGovArrayList.get(i);
-            Location loc1 = new Location("");
-            loc1.setLatitude(location.getLatitude());
-            loc1.setLongitude(location.getLongitude());
+        ActivityCentreManager.updateDistance(location);
+        listViewController.notifyDataSetChanged();
 
-            Location loc2 = new Location("");
-            loc2.setLatitude(dataGov.getCoordinates().latitude);
-            loc2.setLongitude(dataGov.getCoordinates().longitude);
-
-
-            float distanceInMeters = loc1.distanceTo(loc2);
-
-            if(distanceInMeters<5000f){
-                mMap.addMarker(new MarkerOptions()
-                        .position(dataGov.getCoordinates())
-                        .title(dataGov.getName())
-                        .snippet(dataGov.getDesc()));
-            }
-
+        for(ActivityCentre activitycentre : ActivityCentreManager.getNearestCentre()){
+            mMap.addMarker(new MarkerOptions()
+                    .position(activitycentre.getCoordinates())
+                    .title(activitycentre.getName())
+                    .snippet(activitycentre.getDesc()));
         }
 
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
-
             @Override
             public View getInfoWindow(Marker arg0) {
                 return null;
             }
-
             @Override
             public View getInfoContents(Marker marker) {
 

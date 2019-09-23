@@ -7,15 +7,22 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
     //For hamburger menu
@@ -34,10 +41,18 @@ public class MainActivity extends AppCompatActivity {
     private Boolean locationPermissionGranted = false;
     MapFragment mapFragment;
 
+    //For Listview
+    private ListView listview;
+    private ListViewController listViewController;
+
+    //Data
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityCentreManager activitycentreManager = new ActivityCentreManager(getResources(), R.raw.datajson);
 
         Log.i("MainActivity", "hello world");
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -58,16 +73,36 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        listViewController=new ListViewController(MainActivity.this,activitycentreManager);
 
         //create mapfragment
-        mapFragment = new MapFragment(getApplicationContext());
+        mapFragment = new MapFragment(getApplicationContext(),activitycentreManager,listViewController);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.mapframe, mapFragment);
         transaction.commit();
 
         //bottom_Sheet
-        linearLayout = findViewById(R.id.bottom_sheet);
-        bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
+        View bottomSheet = findViewById(R.id.bottom_sheet);
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                if (newState == BottomSheetBehavior.STATE_HIDDEN)
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            }
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+
+            }
+        });
+
+        RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
+        mRecyclerView.setAdapter(listViewController);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setHasFixedSize(true);
+        ViewCompat.setNestedScrollingEnabled(mRecyclerView,false);
     }
     @Override
     public void onRequestPermissionsResult(int requestCode,
