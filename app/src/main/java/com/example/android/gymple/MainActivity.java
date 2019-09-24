@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        listViewController=new ListViewController(MainActivity.this,activitycentreManager);
+            listViewController=new ListViewController(MainActivity.this,activitycentreManager);
 
         //create mapfragment
         mapFragment = new MapFragment(getApplicationContext(),activitycentreManager,listViewController);

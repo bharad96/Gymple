@@ -308,7 +308,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             mMap.addMarker(new MarkerOptions()
                     .position(activitycentre.getCoordinates())
                     .title(activitycentre.getName())
-                    .snippet(activitycentre.getDesc()));
+                    .snippet(activitycentre.getDesc()))
+                    .setTag(activitycentre.getCoordinates());
         }
 
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
@@ -343,11 +344,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             public void onInfoWindowClick(Marker marker) {
 
                 LatLng latLon = marker.getPosition();
+                String placeID = marker.getId();
+                String placeTitle = marker.getTitle();
+                String info = marker.getSnippet(); //idk what this gets tho
+
                 Intent myIntent = new Intent(context, FullDetail.class);
-                //myIntent.putExtra("key", value); //Optional parameters
+                myIntent.putExtra("latLon_values", latLon); //Optional parameters
+                myIntent.putExtra("place_ID", placeID);
+                myIntent.putExtra("place_Title", placeTitle);
+                myIntent.putExtra("place_info", info);
+
                 startActivity(myIntent);
-
-
             }
         });
 

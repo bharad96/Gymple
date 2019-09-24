@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <fragment
+        android:id="@+id/autocomplete_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+        android:layout_margin="10dp"
+        android:layout_weight="5"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/title_tab"
@@ -31,7 +38,7 @@
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/arrow_single"
+                app:srcCompat="@drawable/arrow_smaller"
                 android:layout_alignParentLeft="true" />
 
             <TextView
