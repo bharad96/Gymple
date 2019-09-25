@@ -1,9 +1,14 @@
 package com.example.android.gymple;
 
+import android.app.IntentService;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.toolbox.HttpResponse;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
@@ -11,24 +16,16 @@ import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
-import com.google.android.gms.common.api.PendingResult;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 
 import android.content.Intent;
+
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,9 +37,15 @@ public class FullDetail extends AppCompatActivity {
     private static final String TAG = FullDetail.class.getName();
     private GoogleApiClient mGoogleApiClient;
 
+    private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
+    private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
+    private static final String OUT_JSON = "/json";
+    private static final String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
 
     LatLng position;
     String place_ID, place_Title, place_info;
+
+    String operatingHoursFromGovData, telFromGovData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,49 +58,66 @@ public class FullDetail extends AppCompatActivity {
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
 
-        //toast message just to see what's the lat lng / placeID values
-        //String temp = position.toString();
-        //Toast.makeText(FullDetail.this, place_info, Toast.LENGTH_LONG).show();
 
         // Initialize Places.
-        Places.initialize(getApplicationContext(), "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4");
+            Places.initialize(getApplicationContext(), API_KEY);
 
         // Create a new Places client instance.
         PlacesClient placesClient = Places.createClient(this);
 
         //autoComplete();
         UpdateValues();
-
-
     }
 
     public void UpdateValues()
     {
-        TextView gymTitle = (TextView)findViewById(R.id.gym_title);
-        gymTitle.setText(place_Title);
+        UpdateGymTitle();
+        UpdateOperatingHours();
+    }
 
-        String operatingHoursFromGovData = place_info.substring(place_info.indexOf("Operating"), place_info.length());
-        Toast.makeText(FullDetail.this, operatingHoursFromGovData, Toast.LENGTH_LONG).show();
+    public void UpdateGymTitle()
+    {
+        TextView gymTitle = (TextView)findViewById(R.id.gym_title);
+        if(place_Title.length() > 25)
+        {
+            place_Title = place_Title.substring(0, 24);
+            place_Title = place_Title.concat("..");
+        }
+        gymTitle.setText(place_Title);
+    }
+
+    public void UpdateOperatingHours()
+    {
+        operatingHoursFromGovData = place_info.substring(place_info.indexOf("Operating"), place_info.length());
+
+        if(operatingHoursFromGovData.contains("Tel:"))
+        {
+            telFromGovData = place_info.substring(place_info.indexOf("Tel: "), place_info.indexOf("Tel: ") + 14);
+            operatingHoursFromGovData = operatingHoursFromGovData.replace(telFromGovData, "");
+
+            //Toast.makeText(FullDetail.this, operatingHoursFromGovData, Toast.LENGTH_LONG).show();
+        }
 
         TextView operatingHours = (TextView)findViewById(R.id.operating_Hours);
         operatingHours.setText(operatingHoursFromGovData);
     }
 
-    public void test()
-    {
-
-    }
-
     public void autoComplete() {
         // Set the fields to specify which types of place data to return.
-        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
+        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.OPENING_HOURS,
+                                                    Place.Field.PHOTO_METADATAS, Place.Field.RATING);
 
-        // Start the autocomplete intent.
+        /*// Start the autocomplete intent.
         Intent intent = new Autocomplete.IntentBuilder(
                 AutocompleteActivityMode.FULLSCREEN, fields)
                 .build(this);
 
-        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);*/
+
+        for(int i = 0; i<fields.size(); i++)
+        {
+            Log.d("fields list", fields.get(i).toString());
+        }
     }
 
     @Override
