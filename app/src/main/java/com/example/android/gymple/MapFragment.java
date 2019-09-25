@@ -38,13 +38,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.data.kml.KmlContainer;
 import com.google.maps.android.data.kml.KmlLayer;
-import com.google.maps.android.data.kml.KmlPlacemark;
-import com.google.maps.android.data.kml.KmlPolygon;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -117,7 +113,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mMapView = mView.findViewById(R.id.map);
+        mMapView = mView.findViewById(R.id.reviews);
         if(mMapView != null){
             mMapView.onCreate(null);
             mMapView.onResume();
@@ -353,6 +349,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                 myIntent.putExtra("place_ID", placeID);
                 myIntent.putExtra("place_Title", placeTitle);
                 myIntent.putExtra("place_info", info);
+
+                Log.d("place info:", marker.getSnippet());
 
                 startActivity(myIntent);
             }
