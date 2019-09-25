@@ -257,7 +257,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/MAP"
+                android:id="@+id/mapText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -265,12 +265,22 @@
                 android:text="MAP"
                 android:textSize="18dp" />
 
-            <com.google.android.gms.maps.MapView
+            <!--<com.google.android.gms.maps.MapView
                 android:id="@+id/mapView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp" />-->
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
 
             <TextView
                 android:id="@+id/REVIEWS"

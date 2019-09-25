@@ -13,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.toolbox.HttpResponse;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
@@ -34,7 +38,7 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.List;
 
-public class FullDetail extends AppCompatActivity {
+public class FullDetail extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     int AUTOCOMPLETE_REQUEST_CODE = 1; //idk just giving some random value, idek what it does lol help
@@ -62,29 +66,50 @@ public class FullDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_full_details);
 
-        //get activity centre's values and details
+        //region idk for what ah
+        // Initialize Places.
+        Places.initialize(getApplicationContext(), API_KEY);
+
+        // Create a new Places client instance.
+        PlacesClient placesClient = Places.createClient(this);
+        //endregion
+
+        //region Get activity centre's values and details, update values
         position = getIntent().getExtras().getParcelable("latLon_values");
         place_ID = getIntent().getExtras().getString("place_ID");
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
 
-
-        // Initialize Places.
-            Places.initialize(getApplicationContext(), API_KEY);
-
-        // Create a new Places client instance.
-        PlacesClient placesClient = Places.createClient(this);
-
         //autoComplete();
         UpdateValues();
+        //endregion
 
-        ////////////////////////////////
+        //region Calls to get address from lat/lon
         mResultReceiver = new AddressResultReceiver(null);
-        //getLocation();
-
         startIntentService();
+        //endregion
+
+        //region Interactive map in description page
+        // Get the SupportMapFragment and request notification
+        // when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        //endregion
     }
 
+    //region Set up interactive map
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        // Add a marker based on lat/lon
+        // and move the map's camera to the same location.
+        LatLng location = new LatLng(position.latitude, position.longitude);
+        googleMap.addMarker(new MarkerOptions().position(location)
+                .title("Marker based on location"));
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
+    }
+    //endregion
 
     //region Get address from lat/lon
     private void startIntentService() {
