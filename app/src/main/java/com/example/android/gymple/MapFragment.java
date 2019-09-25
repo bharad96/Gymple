@@ -345,6 +345,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                 String info = marker.getSnippet(); //idk what this gets tho
 
                 Intent myIntent = new Intent(context, FullDetail.class);
+                Intent myIntent2 = new Intent(context, FetchAddressIntentService.class);
                 myIntent.putExtra("latLon_values", latLon); //Optional parameters
                 myIntent.putExtra("place_ID", placeID);
                 myIntent.putExtra("place_Title", placeTitle);

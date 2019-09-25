@@ -1,6 +1,8 @@
 package com.example.android.gymple;
 
+import android.Manifest;
 import android.app.IntentService;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.toolbox.HttpResponse;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
@@ -22,6 +25,8 @@ import com.google.android.gms.maps.model.LatLng;
 
 import android.content.Intent;
 
+import android.os.Handler;
+import android.os.ResultReceiver;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,10 +47,15 @@ public class FullDetail extends AppCompatActivity {
     private static final String OUT_JSON = "/json";
     private static final String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
 
-    LatLng position;
-    String place_ID, place_Title, place_info;
+    //static = variables will exist for the entire run of program
+    //single copy can be shared across all classes in the package
+    public static LatLng position;
 
+    String place_ID, place_Title, place_info;
     String operatingHoursFromGovData, telFromGovData;
+
+    private AddressResultReceiver mResultReceiver;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +77,67 @@ public class FullDetail extends AppCompatActivity {
 
         //autoComplete();
         UpdateValues();
+
+        ////////////////////////////////
+        mResultReceiver = new AddressResultReceiver(null);
+        //getLocation();
+
+        startIntentService();
     }
 
+
+    //region Get address from lat/lon
+    private void startIntentService() {
+        Intent intent = new Intent(this, FetchAddressIntentService.class);
+        intent.putExtra(Constants.RECEIVER, mResultReceiver);
+        startService(intent);
+    }
+
+    private void displayAddressOutput(final String addressText){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //address.setText(addressText);
+                TextView gymAddress = (TextView)findViewById(R.id.gym_address);
+                gymAddress.setText(addressText);
+            }
+        });
+    }
+
+    class AddressResultReceiver extends ResultReceiver {
+        public AddressResultReceiver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        protected void onReceiveResult(int resultCode, Bundle resultData) {
+
+            if (resultData == null) {
+                return;
+            }
+
+            // Display the address string
+            // or an error message sent from the intent service.
+            String mAddressOutput = resultData.getString(Constants.RESULT_DATA_KEY);
+            if (mAddressOutput == null) {
+                mAddressOutput = "";
+            }
+            displayAddressOutput(mAddressOutput);
+        }
+    }
+
+    public double getLatitude()
+    {
+        return this.position.latitude;
+    }
+
+    public double getLongitude()
+    {
+        return this.position.longitude;
+    }
+    //endregion
+
+    //region Update values into UI
     public void UpdateValues()
     {
         UpdateGymTitle();
@@ -101,18 +170,19 @@ public class FullDetail extends AppCompatActivity {
         TextView operatingHours = (TextView)findViewById(R.id.operating_Hours);
         operatingHours.setText(operatingHoursFromGovData);
     }
+    //endregion
 
-    public void autoComplete() {
+    /*public void autoComplete() {
         // Set the fields to specify which types of place data to return.
         List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.OPENING_HOURS,
                                                     Place.Field.PHOTO_METADATAS, Place.Field.RATING);
 
-        /*// Start the autocomplete intent.
-        Intent intent = new Autocomplete.IntentBuilder(
-                AutocompleteActivityMode.FULLSCREEN, fields)
-                .build(this);
+        // Start the autocomplete intent.
+        //Intent intent = new Autocomplete.IntentBuilder(
+         //       AutocompleteActivityMode.FULLSCREEN, fields)
+          //      .build(this);
 
-        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);*/
+//        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
 
         for(int i = 0; i<fields.size(); i++)
         {
@@ -138,5 +208,5 @@ public class FullDetail extends AppCompatActivity {
                 // The user canceled the operation.
             }
         }
-    }
+    }*/
 }
