@@ -2,6 +2,7 @@
 package com.example.android.gymple;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -9,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class FragmentAdapter extends FragmentPagerAdapter {
 
     public FragmentAdapter(FragmentManager fm) {
+
         super(fm);
     }
 
@@ -24,6 +26,16 @@ public class FragmentAdapter extends FragmentPagerAdapter {
             return new DetailsFragment();
         } else {
             return new MomentsFragment();
+        }
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        if (position == 0) {
+            return "Description";
+        } else {
+            return "Moments";
         }
     }
 }
