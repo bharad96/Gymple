@@ -14,19 +14,21 @@ public class MomentUploadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moment_upload);
+
     }
 
     @Override
-    protected void onPostResume() {
-        super.onPostResume();
+    protected void onResume() {
+        super.onResume();
 
-        SessionManager sessionManager = new SessionManager(this);
-
-        if(sessionManager.isLoggedIn()) {
-            user = sessionManager.getUser();
-            Log.e("User",  "" + user.getEmailID());
-        } else {
-            startActivity(new Intent(MomentUploadActivity.this, LoginActivity.class));
-        }
+//        SessionManager sessionManager = new SessionManager(this);
+//
+//        if(sessionManager.isLoggedIn()) {
+//            user = sessionManager.getUser();
+//            Log.e("User",  "" + user.getEmailID());
+//        } else {
+//            startActivity(new Intent(MomentUploadActivity.this, LoginActivity.class));
+//        }
     }
+
 }
