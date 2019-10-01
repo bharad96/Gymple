@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -14,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -30,6 +34,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -59,8 +64,10 @@ public class MainActivity extends AppCompatActivity implements
 
     //Data
     ActivityCentreManager activitycentreManager;
-
     public static String query;
+
+    //fab
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +79,20 @@ public class MainActivity extends AppCompatActivity implements
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation);
         title = findViewById(R.id.textView);
+        button = findViewById(R.id.reset);
+        button.setVisibility(View.INVISIBLE);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            //On click function
+            public void onClick(View view) {
+                //Create the intent to start another activity
+                query=null;
+                listViewController.updateList(ActivityCentreManager.getNearestCentre());
+                mapFragment.onResume();
+                button.setVisibility(View.INVISIBLE);
+            }
+        });
+
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
@@ -129,7 +150,19 @@ public class MainActivity extends AppCompatActivity implements
 
 
     }
-
+    public Bitmap textAsBitmap(String text, float textSize, int textColor) {
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setTextSize(textSize);
+        paint.setColor(textColor);
+        paint.setTextAlign(Paint.Align.LEFT);
+        float baseline = -paint.ascent(); // ascent() is negative
+        int width = (int) (paint.measureText(text) + 0.5f); // round
+        int height = (int) (baseline + paint.descent() + 0.5f);
+        Bitmap image = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(image);
+        canvas.drawText(text, 0, baseline, paint);
+        return image;
+    }
 
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -142,6 +175,7 @@ public class MainActivity extends AppCompatActivity implements
         //search icon
         if(item.getItemId()== R.id.menu_search){
             startActivityForResult(new Intent(this,SearchActivity.class),999);
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -186,8 +220,7 @@ public class MainActivity extends AppCompatActivity implements
                 Log.e("searchresult",""+result+"s"+ActivityCentreManager.getFilteredList(result).size());
                 listViewController.updateList(ActivityCentreManager.getFilteredList(result));
                 listViewController.notifyDataSetChanged();
-
-
+                button.setVisibility(View.VISIBLE);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 //Write your code if there's no result

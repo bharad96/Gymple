@@ -100,7 +100,9 @@ public class ActivityCentreManager {
         for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
             //Location from Gov Data
             ActivityCentre activitycentre = ActivityCentreManager.activitycentreArrayList.get(i);
-            if(activitycentre.getName().contains(query)){
+            double distanceInMeters =activitycentre.getDistance();
+            if (distanceInMeters < 5000 && distanceInMeters !=0) {
+                if(activitycentre.getName().contains(query))
                 nearestCentreList.add(activitycentre);
             }
         }

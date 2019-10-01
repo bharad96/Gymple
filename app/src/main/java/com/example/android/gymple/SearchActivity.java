@@ -11,9 +11,18 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.app.NavUtils;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class SearchActivity extends AppCompatActivity {
     private Activity activity;
+    private RecyclerView recyclerView;
+    private RecyclerViewHorizontalListAdapter searchAdapter;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +35,20 @@ public class SearchActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+
+        //
+        GridLayoutManager manager = new GridLayoutManager(this, 3);
+        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return (3 - position % 3);
+            }
+        });
+        searchAdapter = new RecyclerViewHorizontalListAdapter(ActivityCentreManager.getNearestCentre(), getApplicationContext());
+        recyclerView = findViewById(R.id.searchRV);
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setAdapter(searchAdapter);
     }
 
 
