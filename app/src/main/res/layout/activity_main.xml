@@ -11,7 +11,13 @@
     >
 
 
-
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/hamburger_menu"
+        android:id="@+id/navigation"
+        />
 
 
 
@@ -97,13 +103,5 @@
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation"
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/hamburger_menu"
-        app:menu="@menu/activity_main_drawer"
-        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

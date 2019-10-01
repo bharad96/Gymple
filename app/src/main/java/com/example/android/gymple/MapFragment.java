@@ -13,7 +13,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -43,11 +42,9 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.data.kml.KmlLayer;
 
-import org.json.JSONArray;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static android.content.Context.LOCATION_SERVICE;
 
@@ -55,7 +52,7 @@ import static android.content.Context.LOCATION_SERVICE;
 public class MapFragment extends Fragment implements OnMapReadyCallback,
         LocationListener,
         GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener{
+        GoogleApiClient.OnConnectionFailedListener {
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private GoogleMap mMap;
@@ -69,43 +66,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     private Context context;
     private ActivityCentreManager activitycentreManager;
     private ListViewController listViewController;
-    private  JSONArray jsonArray;
-    public MapFragment(Context context,ActivityCentreManager activitycentreManager,ListViewController listViewController ){
+
+    public MapFragment(Context context,ActivityCentreManager activitycentreManager,ListViewController listViewController){
         this.context=context;
         this.activitycentreManager = activitycentreManager;
         this.listViewController = listViewController;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         locationManager = (LocationManager)getActivity().getSystemService(LOCATION_SERVICE);
-        boolean gps_enabled = false;
-        boolean network_enabled = false;
-        try {
-            gps_enabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        } catch(Exception ex) {}
-
-        try {
-            network_enabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        } catch(Exception ex) {}
-        if(!gps_enabled && !network_enabled) {
-            // notify user
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-
-            builder.setTitle("Location Service not turn on");
-            builder.setMessage("Please turn on location service");
-
-            builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-                }
-            });
-            builder.create();
-            builder.show();
-        }
-
     }
 
     /*
@@ -160,14 +132,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                 buildGoogleApiClient();
                 locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 50, this);
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 50, this);
-                mMap.setMyLocationEnabled(true);
-                mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-                if (mLastLocation != null) {
-                    LatLng loc = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,14));
-                    updateMarkers(mLastLocation);
-                }
 
+                mMap.setMyLocationEnabled(true);
+                try {
+                    KmlLayer layer = new KmlLayer(mMap, R.raw.data, context);
+                    //layer.addLayerToMap();
+                    //moveCameraToKml(layer);
+                } catch (XmlPullParserException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             } else {
                 //Request Location Permission
@@ -243,9 +218,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                         if (mGoogleApiClient == null) {
                             buildGoogleApiClient();
                         }
-
-                        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 50, this);
-                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 50, this);
                         mMap.setMyLocationEnabled(true);
                     }
 
@@ -280,7 +252,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         Log.e("onLocationChanged", "Changed" );
         updateMarkers(location);
         //move map camera
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,14));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
 
     }
@@ -302,7 +274,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
     @Override
     public void onConnected(Bundle bundle) {
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                mGoogleApiClient);
+        if (mLastLocation != null) {
 
+
+            LatLng loc = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+            updateMarkers(mLastLocation);
+        }
     }
 
     @Override
@@ -316,22 +297,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     }
 
     public void updateMarkers(Location location){
-        mMap.clear();
         ActivityCentreManager.updateDistance(location);
+        listViewController.notifyDataSetChanged();
 
-        ArrayList<ActivityCentre> activityCentreArrayList;
-        if(MainActivity.query==null){
-            listViewController.updateList(ActivityCentreManager.getNearestCentre());
-            activityCentreArrayList=ActivityCentreManager.getNearestCentre();
-            Log.e("testing","1");
-        }
-        else {
-            listViewController.updateList(ActivityCentreManager.getFilteredList(MainActivity.query));
-            activityCentreArrayList=ActivityCentreManager.getFilteredList(MainActivity.query);
-            Log.e("testing","2");
-
-        }
-        for(ActivityCentre activitycentre : activityCentreArrayList){
+        for(ActivityCentre activitycentre : ActivityCentreManager.getNearestCentre()){
             mMap.addMarker(new MarkerOptions()
                     .position(activitycentre.getCoordinates())
                     .title(activitycentre.getName())
@@ -389,36 +358,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         });
 
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 50, this);
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 50, this);
-            if(mMap!=null){
-                mMap.setMyLocationEnabled(true);
-                mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-                if (mLastLocation != null) {
-                    LatLng loc = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,14));
-                    updateMarkers(mLastLocation);
-                }
-            }
 
-        }
 
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        //Anything you wish to do
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        //Anything you wish to do
-    }
 }

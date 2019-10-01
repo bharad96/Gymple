@@ -9,16 +9,6 @@ public class ActivityCentre implements Comparable<ActivityCentre> {
     private LatLng coordinates;
     private String street_name;
     private double distance;
-    private String placeID;
-
-    public String getPlaceID() {
-        return placeID;
-    }
-
-    public void setPlaceID(String placeID) {
-        this.placeID = placeID;
-    }
-
 
     public double getDistance() {
         return distance;
@@ -67,7 +57,6 @@ public class ActivityCentre implements Comparable<ActivityCentre> {
         coordinates = new LatLng(Double.parseDouble(a[1]),Double.parseDouble(a[0]));
 
     }
-
 
     @Override
     public int compareTo(ActivityCentre activityCentre) {

@@ -66,12 +66,13 @@ public class ActivityCentreManager {
     //get nearest location based on current location
     public static ArrayList<ActivityCentre> getNearestCentre() {
         ArrayList<ActivityCentre> nearestCentreList = new ArrayList<ActivityCentre>();
+
         for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
             //Location from Gov Data
             ActivityCentre activitycentre = ActivityCentreManager.activitycentreArrayList.get(i);
             //Calculate distance
             double distanceInMeters =activitycentre.getDistance();
-            if (distanceInMeters < 5000 && distanceInMeters !=0) {
+            if (distanceInMeters < 5000) {
                 nearestCentreList.add(activitycentre);
             }
         }
@@ -91,20 +92,9 @@ public class ActivityCentreManager {
             loc2.setLongitude(activitycentre.getCoordinates().longitude);
             //Calculate distance
             double distanceInMeters = loc1.distanceTo(loc2);
-            activitycentre.setDistance(Math.round(distanceInMeters * 100.0) / 100.0);
+
+            ActivityCentreManager.activitycentreArrayList.get(i).setDistance(Math.round(distanceInMeters * 100.0) / 100.0);
 
         }
-    }
-    public static ArrayList<ActivityCentre> getFilteredList(String query){
-        ArrayList<ActivityCentre> nearestCentreList = new ArrayList<ActivityCentre>();
-        for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
-            //Location from Gov Data
-            ActivityCentre activitycentre = ActivityCentreManager.activitycentreArrayList.get(i);
-            if(activitycentre.getName().contains(query)){
-                nearestCentreList.add(activitycentre);
-            }
-        }
-        Collections.sort(nearestCentreList);
-        return nearestCentreList;
     }
 }
