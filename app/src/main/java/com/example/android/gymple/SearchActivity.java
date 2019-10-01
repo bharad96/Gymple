@@ -11,7 +11,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.app.NavUtils;
-import androidx.preference.PreferenceFragmentCompat;
 
 public class SearchActivity extends AppCompatActivity {
     private Activity activity;
