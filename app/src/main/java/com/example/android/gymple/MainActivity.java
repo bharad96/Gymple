@@ -1,13 +1,23 @@
 package com.example.android.gymple;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -22,14 +32,16 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
 
+
 import java.util.zip.Inflater;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener {
     //For hamburger menu
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
-
+    private TextView title;
 
     //private ViewPager viewPager;
     private LinearLayout linearLayout;
@@ -46,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
     private ListViewController listViewController;
 
     //Data
+    ActivityCentreManager activitycentreManager;
 
+    public static String query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
         Log.i("MainActivity", "hello world");
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation);
-        //viewPager = findViewById(R.id.container);
+        title = findViewById(R.id.textView);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) {
@@ -73,7 +89,11 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
-            listViewController=new ListViewController(MainActivity.this,activitycentreManager);
+        View bottomSheet = findViewById(R.id.bottom_sheet);
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+
+        listViewController=new ListViewController(this,null,title,bottomSheetBehavior);
+
 
         //create mapfragment
         mapFragment = new MapFragment(getApplicationContext(),activitycentreManager,listViewController);
@@ -82,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
 
         //bottom_Sheet
-        View bottomSheet = findViewById(R.id.bottom_sheet);
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
@@ -96,24 +114,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setAdapter(listViewController);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
         ViewCompat.setNestedScrollingEnabled(mRecyclerView,false);
+
+
+
+
+
+
+
+
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        if (requestCode == MapFragment.MY_PERMISSIONS_REQUEST_LOCATION){
-            mapFragment.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-        else {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-    }
+
 
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -125,8 +141,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //search icon
         if(item.getItemId()== R.id.menu_search){
-
-
+            startActivityForResult(new Intent(this,SearchActivity.class),999);
         }
 
         return super.onOptionsItemSelected(item);
@@ -151,4 +166,39 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        Log.e("Texting",""+menuItem.getItemId());
+        if (menuItem.getItemId() == R.id.login) {
+            Intent myIntent = new Intent(this, LoginActivity.class);
+            startActivity(myIntent);
+        }
+        return true;
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 999) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("query");
+                Log.e("searchresult",""+result+"s"+ActivityCentreManager.getFilteredList(result).size());
+                listViewController.updateList(ActivityCentreManager.getFilteredList(result));
+                listViewController.notifyDataSetChanged();
+
+
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }
+
+    public void setQuery(String query){
+        this.query=query;
+    }
+    public String getQuery(){
+        return this.query;
+    }
 }
