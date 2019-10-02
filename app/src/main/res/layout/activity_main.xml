@@ -11,27 +11,34 @@
     >
 
 
-    <LinearLayout
-        android:id="@+id/mapframe"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <LinearLayout
+            android:id="@+id/mapframe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="top|center_horizontal"
+            android:backgroundTint="@color/colorAccent"
             android:text="Reset Filter"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            app:cornerRadius="@android:dimen/thumbnail_width"
+            app:elevation="4dp" />
 
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/mapframe"
-        >
+    </FrameLayout>
 
-    </LinearLayout>
+
+
     <View
         android:id="@+id/shadow"
         android:layout_width="match_parent"

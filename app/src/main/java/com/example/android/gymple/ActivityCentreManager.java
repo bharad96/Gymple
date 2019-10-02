@@ -22,7 +22,7 @@ public class ActivityCentreManager {
     private String jsonString;
     public static ArrayList<ActivityCentre> activitycentreArrayList = new ArrayList<ActivityCentre>();
 
-    public ActivityCentreManager(Resources resources, int id){
+    public ActivityCentreManager(Resources resources, int id) {
         InputStream resourceReader = resources.openRawResource(id);
         Writer writer = new StringWriter();
         try {
@@ -58,8 +58,8 @@ public class ActivityCentreManager {
                 activitycentre.setStreet_name(a.getString("ADDRESSSTREETNAME"));
                 activitycentreArrayList.add(activitycentre);
             }
-        }catch (JSONException ex){
-            Log.e("JsonParser Example","unexpected JSON exception", ex);
+        } catch (JSONException ex) {
+            Log.e("JsonParser Example", "unexpected JSON exception", ex);
         }
     }
 
@@ -70,8 +70,8 @@ public class ActivityCentreManager {
             //Location from Gov Data
             ActivityCentre activitycentre = ActivityCentreManager.activitycentreArrayList.get(i);
             //Calculate distance
-            double distanceInMeters =activitycentre.getDistance();
-            if (distanceInMeters < 5000 && distanceInMeters !=0) {
+            double distanceInMeters = activitycentre.getDistance();
+            if (distanceInMeters < 5000 && distanceInMeters != 0) {
                 nearestCentreList.add(activitycentre);
             }
         }
@@ -95,16 +95,77 @@ public class ActivityCentreManager {
 
         }
     }
-    public static ArrayList<ActivityCentre> getFilteredList(String query){
+
+    public static ArrayList<ActivityCentre> getFilteredList(String query) {
         ArrayList<ActivityCentre> nearestCentreList = new ArrayList<ActivityCentre>();
         for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
             //Location from Gov Data
             ActivityCentre activitycentre = ActivityCentreManager.activitycentreArrayList.get(i);
-            if(activitycentre.getName().contains(query)){
-                nearestCentreList.add(activitycentre);
+            double distanceInMeters = activitycentre.getDistance();
+            if (distanceInMeters < 5000 && distanceInMeters != 0) {
+                if (activitycentre.getName().contains(query))
+                    nearestCentreList.add(activitycentre);
             }
         }
         Collections.sort(nearestCentreList);
         return nearestCentreList;
+    }
+
+    public static ArrayList<ActivityCentre> getFilterResult(ArrayList<String> filterResult, String name) {
+        ArrayList<ActivityCentre> filterAndSearchResult = new ArrayList<ActivityCentre>();
+        if(filterResult != null && name != null)
+        {
+            for (int i=0; i<activitycentreArrayList.size(); i++)
+            {
+                for (int j=0; j<filterResult.size(); j++)
+                {
+                    if (activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase())
+                            && activitycentreArrayList.get(i).getName().toLowerCase().contains(name.toLowerCase())) {
+                        double distanceInMeters = activitycentreArrayList.get(i).getDistance();
+                        if (distanceInMeters < 5000 && distanceInMeters != 0) {
+                            filterAndSearchResult.add(activitycentreArrayList.get(i));
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else if (filterResult == null && name != null)
+        {
+            for (int i=0; i<activitycentreArrayList.size(); i++)
+            {
+                if (activitycentreArrayList.get(i).getName().toLowerCase().contains(name.toLowerCase()))
+                {
+                    double distanceInMeters = activitycentreArrayList.get(i).getDistance();
+                    if (distanceInMeters < 5000 && distanceInMeters != 0)
+                    {
+                        filterAndSearchResult.add(activitycentreArrayList.get(i));
+                    }
+                }
+            }
+
+        }
+        else if (filterResult != null && name == null)
+        {
+            for (int i=0; i<activitycentreArrayList.size(); i++)
+            {
+                for (int j=0; j<filterResult.size(); j++)
+                {
+                    if (activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase()))
+                    {
+                        double distanceInMeters = activitycentreArrayList.get(i).getDistance();
+                        if (distanceInMeters < 5000 && distanceInMeters != 0) {
+                            filterAndSearchResult.add(activitycentreArrayList.get(i));
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            return getNearestCentre();
+        }
+        return filterAndSearchResult;
     }
 }

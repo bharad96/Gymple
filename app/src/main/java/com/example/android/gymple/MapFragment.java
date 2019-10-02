@@ -320,14 +320,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         ActivityCentreManager.updateDistance(location);
 
         ArrayList<ActivityCentre> activityCentreArrayList;
-        if(MainActivity.query==null){
+        if(MainActivity.query==null && MainActivity.filterArrayList == null){
             listViewController.updateList(ActivityCentreManager.getNearestCentre());
             activityCentreArrayList=ActivityCentreManager.getNearestCentre();
             Log.e("testing","1");
         }
-        else {
-            listViewController.updateList(ActivityCentreManager.getFilteredList(MainActivity.query));
-            activityCentreArrayList=ActivityCentreManager.getFilteredList(MainActivity.query);
+        else{
+            listViewController.updateList(ActivityCentreManager.getFilterResult(MainActivity.filterArrayList,MainActivity.query));
+            activityCentreArrayList=ActivityCentreManager.getFilterResult(MainActivity.filterArrayList,MainActivity.query);
             Log.e("testing","2");
 
         }
@@ -398,6 +398,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 50, this);
             if(mMap!=null){
                 mMap.setMyLocationEnabled(true);
+                buildGoogleApiClient();
                 mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
                 if (mLastLocation != null) {
                     LatLng loc = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
