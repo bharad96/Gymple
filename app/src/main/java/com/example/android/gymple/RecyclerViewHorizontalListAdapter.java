@@ -2,9 +2,11 @@ package com.example.android.gymple;
 
 import android.content.Context;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatCheckBox;
@@ -13,12 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class RecyclerViewHorizontalListAdapter extends RecyclerView.Adapter<RecyclerViewHorizontalListAdapter.ViewHolder> {
-
-    private ArrayList<ActivityCentre> activityCentreArrayList;
+    private SparseBooleanArray selectedItems = new SparseBooleanArray();
+    private ArrayList<String> filterVal;
     Context context;
 
-    public RecyclerViewHorizontalListAdapter(ArrayList<ActivityCentre> activityCentreArrayList, Context context){
-        this.activityCentreArrayList= activityCentreArrayList;
+    public RecyclerViewHorizontalListAdapter(ArrayList<String> filterVal , Context context){
+        this.filterVal= filterVal;
         this.context = context;
     }
 
@@ -31,24 +33,43 @@ public class RecyclerViewHorizontalListAdapter extends RecyclerView.Adapter<Recy
 
     @Override
     public void onBindViewHolder(RecyclerViewHorizontalListAdapter.ViewHolder holder, int position) {
-        String a = activityCentreArrayList.get(position).getName();
-        Log.e("test",""+a);
+        String a = filterVal.get(position);
         final ViewHolder vh = (ViewHolder) holder;
-        vh.checkBox.setText(a);
+        vh.textview.setText(a);
     }
 
     @Override
     public int getItemCount() {
-        Log.e("test",""+activityCentreArrayList.size());
-        return activityCentreArrayList.size();
+         return filterVal.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        AppCompatCheckBox checkBox;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        TextView textview;
 
         public ViewHolder(View view) {
             super(view);
-            checkBox = view.findViewById(R.id.checkBox);
+            view.setOnClickListener(this);
+            textview = view.findViewById(R.id.searchTextview);
+        }
+        @Override
+        public void onClick(View view) {
+            if (selectedItems.get(getAdapterPosition(), false)) {
+                selectedItems.delete(getAdapterPosition());
+                view.setSelected(false);
+            }
+            else {
+                selectedItems.put(getAdapterPosition(), true);
+                view.setSelected(true);
+            }
         }
     }
+    public SparseBooleanArray getSelectedItems() {
+        return selectedItems;
+    }
+
+    public void setSelectedItems(SparseBooleanArray selectedItems) {
+        this.selectedItems = selectedItems;
+    }
+
+
 }

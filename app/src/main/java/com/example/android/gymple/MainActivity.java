@@ -38,6 +38,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 
+import java.util.ArrayList;
 import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity implements
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements
     //Data
     ActivityCentreManager activitycentreManager;
     public static String query;
+    public static ArrayList<String> filterArrayList;
 
     //fab
     Button button;
@@ -216,14 +218,17 @@ public class MainActivity extends AppCompatActivity implements
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 999) {
             if (resultCode == Activity.RESULT_OK) {
-                String result = data.getStringExtra("query");
-                Log.e("searchresult",""+result+"s"+ActivityCentreManager.getFilteredList(result).size());
-                listViewController.updateList(ActivityCentreManager.getFilteredList(result));
+
+                listViewController.updateList(ActivityCentreManager.getFilterResult(filterArrayList, query));
                 listViewController.notifyDataSetChanged();
+
+
+                //reset filter
                 button.setVisibility(View.VISIBLE);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 //Write your code if there's no result
+
             }
         }
     }
