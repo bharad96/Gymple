@@ -1,43 +1,29 @@
 package com.example.android.gymple;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
 
-import static com.example.android.gymple.ActivityCentreManager.getNearestCentre;
-import static java.lang.Math.round;
-
 
 public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private Activity activity;
+    private AppCompatActivity activity;
     private ArrayList<ActivityCentre> activityCentreArrayList;
     private TextView textView;
     private BottomSheetBehavior bottomSheetBehavior;
 
 
-    public ListViewController(Activity activity, ArrayList<ActivityCentre> activityCentreArrayList, TextView textView, BottomSheetBehavior bottomSheetBehavior){
+    public ListViewController(AppCompatActivity activity, ArrayList<ActivityCentre> activityCentreArrayList, TextView textView, BottomSheetBehavior bottomSheetBehavior){
         this.activity=activity;
         this.activityCentreArrayList=activityCentreArrayList;
         this.textView=textView;

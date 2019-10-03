@@ -1,6 +1,5 @@
 package com.example.android.gymple;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,10 +12,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.app.NavUtils;
-import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -25,7 +22,7 @@ import static com.example.android.gymple.MainActivity.filterArrayList;
 import static com.example.android.gymple.MainActivity.query;
 
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
-    private Activity activity;
+    private AppCompatActivity activity;
     private RecyclerView recyclerView;
     private RecyclerViewHorizontalListAdapter searchAdapter;
     private ArrayList<String> filterVal;
@@ -68,7 +65,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_menu, menu);
         MenuItem item = menu.findItem(R.id.app_bar_search);
-        searchView = (SearchView) item.getActionView();
+        searchView = (SearchView) MenuItemCompat.getActionView(item);
         searchView.setIconified(false);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -121,7 +118,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         Intent returnIntent = new Intent();
-        setResult(Activity.RESULT_OK,returnIntent);
+        setResult(AppCompatActivity.RESULT_OK,returnIntent);
         finish();
     }
 }

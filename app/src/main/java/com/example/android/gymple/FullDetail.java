@@ -10,7 +10,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpResponse;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,34 +38,35 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class FullDetail extends AppCompatActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    int AUTOCOMPLETE_REQUEST_CODE = 1; //idk just giving some random value, idek what it does lol help
-
-    private static final String TAG = FullDetail.class.getName();
-    private GoogleApiClient mGoogleApiClient;
-
-    private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
-    private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
-    private static final String OUT_JSON = "/json";
-    private static final String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
+    private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
+    private String pid = "ChIJCTok6ekR2jERnFfFyIKukCo";
 
     //static = variables will exist for the entire run of program
     //single copy can be shared across all classes in the package
     public static LatLng position;
 
-    String place_ID, place_Title, place_info;
+    String place_ID, place_Name, place_info;
     String operatingHoursFromGovData, telFromGovData;
 
     private AddressResultReceiver mResultReceiver;
+    private RequestQueue mRequestQueue;
 
+    //Declare XML components
+    Button reviewButt;
+    TextView address, mName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +84,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         //region Get activity centre's values and details, update values
         position = getIntent().getExtras().getParcelable("latLon_values");
         place_ID = getIntent().getExtras().getString("place_ID");
-        place_Title = getIntent().getExtras().getString("place_Title");
+        place_Name = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
 
         //autoComplete();
@@ -96,6 +103,53 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         //endregion
+
+        //region Set onclick button event to link to reviews page
+        reviewButt.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent i=new Intent(getApplicationContext(),ReviewActivity.class);
+                i.putExtra("place_name", place_Name);
+                startActivity(i);
+
+            }
+        });
+        //endregion
+
+        mRequestQueue = Volley.newRequestQueue(this);
+        parseJSON();
+    }
+
+    private void parseJSON() {
+
+        String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + pid + "&key=" + getResources().getString(R.string.API_KEY);
+        //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJCTok6ekR2jERnFfFyIKukCo&key=AIzaSyAZYb1aJxvG2HaptGtfhKiN4LZlqMpDmq4" ;
+        Log.d("urlme", url);
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject jsonObject = response.getJSONObject("result");
+
+                    mName.setText(jsonObject.getString("name"));
+                    address.setText(jsonObject.getString("formatted_address"));
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        mRequestQueue.add(request);
     }
 
     //region Set up interactive map
@@ -172,12 +226,12 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     public void UpdateGymTitle()
     {
         TextView gymTitle = (TextView)findViewById(R.id.gym_title);
-        if(place_Title.length() > 25)
+        if(place_Name.length() > 25)
         {
-            place_Title = place_Title.substring(0, 24);
-            place_Title = place_Title.concat("..");
+            place_Name = place_Name.substring(0, 24);
+            place_Name = place_Name.concat("..");
         }
-        gymTitle.setText(place_Title);
+        gymTitle.setText(place_Name);
     }
 
     public void UpdateOperatingHours()
