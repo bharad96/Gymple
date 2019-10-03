@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="14dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<pw.adithya.hawkere.utils.SquareImageView
+            android:id="@+id/imageview_photo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location_marker"
+            android:scaleType="center"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@android:color/transparent">
+            <!--android:layout_alignBottom="@id/imageview_photo2"
+            android:background="@android:color/transparent"-->
+
+            <ImageView
+                android:id="@+id/imageview_profile_pic"
+                android:layout_width="36dp"
+                android:layout_height="36dp" />
+            <TextView
+                android:id="@+id/textview_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:text="John Doe"/>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

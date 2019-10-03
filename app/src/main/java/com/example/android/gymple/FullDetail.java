@@ -10,6 +10,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,8 +30,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
-import com.google.android.libraries.places.widget.Autocomplete;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
@@ -48,7 +48,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class FullDetail extends AppCompatActivity implements OnMapReadyCallback {
@@ -68,6 +70,8 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     TextView address, mName;
 
     String temp_address, facilities;
+
+    public static ArrayList<Photo> photos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +131,13 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         mName = (TextView) findViewById(R.id.gym_title);
 
         GetFacilities();
+
+        Collections.sort(photos);
+
+        PhotosAdapter photosAdapter = new PhotosAdapter(photos, FullDetail.this);
+        RecyclerView photosRecyclerView = findViewById(R.id.recyclerview_photos);
+        photosRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        photosRecyclerView.setAdapter(photosAdapter);
 
         //region Set onclick button event to link to reviews page
         revButt.setOnClickListener(new View.OnClickListener() {
