@@ -49,6 +49,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="ReviewActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4" />

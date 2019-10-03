@@ -9,8 +9,15 @@ import android.location.Location;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpResponse;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,39 +39,58 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class FullDetail extends AppCompatActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    int AUTOCOMPLETE_REQUEST_CODE = 1; //idk just giving some random value, idek what it does lol help
+    private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
+    private String pid= "ChIJCTok6ekR2jERnFfFyIKukCo";
 
-    private static final String TAG = FullDetail.class.getName();
-    private GoogleApiClient mGoogleApiClient;
-
-    private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
-    private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
-    private static final String OUT_JSON = "/json";
-    private static final String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
-
-    //static = variables will exist for the entire run of program
-    //single copy can be shared across all classes in the package
     public static LatLng position;
 
     String place_ID, place_Title, place_info;
-    String operatingHoursFromGovData, telFromGovData;
 
+    private RequestQueue mRequestQueue;
     private AddressResultReceiver mResultReceiver;
 
+    //Declare XML components
+    Button revButt;
+    TextView address, mName;
+
+    String temp_address, facilities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_full_details);
+
+        //region OnClick Back Button
+        ImageButton backButton = (ImageButton)findViewById(R.id.back_button);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        //endregion
+
+        //region Set Toolbar Title
+        //Toolbar toolbar = findViewById(R.id.title_tab);
+        //toolbar.setTitle(place_Title);
+        //getSupportActionBar().hide();
+        //setSupportActionBar(toolbar);
+        //endregion
 
         //region idk for what ah
         // Initialize Places.
@@ -80,8 +106,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
 
-        //autoComplete();
-        UpdateValues();
+        //UpdateValues();
         //endregion
 
         //region Calls to get address from lat/lon
@@ -96,6 +121,66 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         //endregion
+
+        revButt = (Button) findViewById(R.id.revbut);
+        address = (TextView) findViewById(R.id.gym_address);
+        mName = (TextView) findViewById(R.id.gym_title);
+
+        GetFacilities();
+
+        //region Set onclick button event to link to reviews page
+        revButt.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent i = new Intent(getApplicationContext(), ReviewActivity.class);
+                i.putExtra("place_name", place_Title);
+                startActivity(i);
+            }
+        });
+        //endregion
+
+        mRequestQueue = Volley.newRequestQueue(this);
+        parseJSON();
+    }
+
+    private void parseJSON() {
+
+        String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + pid + "&key=" + API_KEY;
+        //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJCTok6ekR2jERnFfFyIKukCo&key=AIzaSyAZYb1aJxvG2HaptGtfhKiN4LZlqMpDmq4" ;
+        Log.d("urlme", url);
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject jsonObject = response.getJSONObject("result");
+
+                    //region address and title
+                    temp_address = jsonObject.get("formatted_address").toString();
+
+                    String temp_address1 = temp_address.substring(0, temp_address.indexOf(", Singapore")+2);
+                    String temp_address2 = temp_address.substring(temp_address.indexOf(", Singapore")+2);
+
+                    temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
+
+                    mName.setText(jsonObject.getString("name"));
+                    address.setText(temp_address);
+                    //endregion
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        mRequestQueue.add(request);
     }
 
     //region Set up interactive map
@@ -162,76 +247,20 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     }
     //endregion
 
-    //region Update values into UI
-    public void UpdateValues()
+    //region Get Facilities
+    public void GetFacilities()
     {
-        UpdateGymTitle();
-        UpdateOperatingHours();
-    }
-
-    public void UpdateGymTitle()
-    {
-        TextView gymTitle = (TextView)findViewById(R.id.gym_title);
-        if(place_Title.length() > 25)
+        if(place_info.contains("Facilities:") || place_info.contains("facilities:"))
         {
-            place_Title = place_Title.substring(0, 24);
-            place_Title = place_Title.concat("..");
+            facilities =  place_info.substring(12, place_info.indexOf("Operating")-1);
         }
-        gymTitle.setText(place_Title);
-    }
-
-    public void UpdateOperatingHours()
-    {
-        operatingHoursFromGovData = place_info.substring(place_info.indexOf("Operating"), place_info.length());
-
-        if(operatingHoursFromGovData.contains("Tel:"))
+        else
         {
-            telFromGovData = place_info.substring(place_info.indexOf("Tel: "), place_info.indexOf("Tel: ") + 14);
-            operatingHoursFromGovData = operatingHoursFromGovData.replace(telFromGovData, "");
-
-            //Toast.makeText(FullDetail.this, operatingHoursFromGovData, Toast.LENGTH_LONG).show();
+            facilities = "Facilities provided are not specified.";
         }
 
-        TextView operatingHours = (TextView)findViewById(R.id.operating_Hours);
-        operatingHours.setText(operatingHoursFromGovData);
+        TextView facility = (TextView) findViewById(R.id.facilities);
+        facility.setText(facilities);
     }
     //endregion
-
-    /*public void autoComplete() {
-        // Set the fields to specify which types of place data to return.
-        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.OPENING_HOURS,
-                                                    Place.Field.PHOTO_METADATAS, Place.Field.RATING);
-
-        // Start the autocomplete intent.
-        //Intent intent = new Autocomplete.IntentBuilder(
-         //       AutocompleteActivityMode.FULLSCREEN, fields)
-          //      .build(this);
-
-//        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
-
-        for(int i = 0; i<fields.size(); i++)
-        {
-            Log.d("fields list", fields.get(i).toString());
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        //idk why need the line below but the function called for it
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                Place place = Autocomplete.getPlaceFromIntent(data);
-                Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
-            } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
-                // TODO: Handle the error.
-                Status status = Autocomplete.getStatusFromIntent(data);
-                Log.i(TAG, status.getStatusMessage());
-            } else if (resultCode == RESULT_CANCELED) {
-                // The user canceled the operation.
-            }
-        }
-    }*/
 }

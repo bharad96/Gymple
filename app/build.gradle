@@ -31,6 +31,7 @@ dependencies {
     implementation 'com.google.maps.android:android-maps-utils:0.5'
     implementation 'com.google.android.libraries.places:places:1.0.0'
     implementation 'com.google.android.gms:play-services-auth:12.0.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Add the Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics:17.2.0'

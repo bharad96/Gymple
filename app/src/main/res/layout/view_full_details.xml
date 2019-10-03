@@ -20,10 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <ImageButton
-                android:id="@+id/back_arrow"
+                android:id="@+id/back_button"
                 android:layout_width="41dp"
                 android:layout_height="41dp"
                 android:adjustViewBounds="false"
@@ -123,7 +123,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="INFO"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:paddingBottom="5dp"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/info_table"
@@ -191,13 +192,14 @@
                             app:srcCompat="@drawable/gymple_logo" />
 
                         <TextView
+                            android:id="@+id/facilities"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="25dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="1"
-                            android:text="Standard Gymnasium Equipment"
+                            android:text="equipment holder"
                             android:textSize="10dp" />
                     </TableRow>
 
@@ -223,24 +225,27 @@
                             android:layout_marginLeft="25dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="1"
-                            android:text="Jurong West St 93, Singapore 648965"
+                            android:text="location text holder"
                             android:textSize="10dp" />
                     </TableRow>
 
-                    <TableRow
+                    <LinearLayout
+                        android:id="@+id/linearlayout_opening_hours_trigger"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="horizontal"
                         android:paddingTop="4dp"
-                        android:paddingBottom="6dp">
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="3dp">
 
                         <ImageView
                             android:id="@+id/imageView10"
                             android:layout_width="17dp"
                             android:layout_height="17dp"
                             android:layout_marginLeft="15dp"
-                            app:srcCompat="@drawable/clock" />
+                            app:srcCompat="@drawable/clock"/>
 
-                        <TextView
+                        <!--<TextView
                             android:id="@+id/operating_Hours"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -249,8 +254,45 @@
                             android:layout_marginRight="15dp"
                             android:layout_weight="1"
                             android:text="7:00AM - 10:00PM   •   "
-                            android:textSize="10dp" />
-                    </TableRow>
+                            android:textSize="10dp" />-->
+
+                        <TextView
+                            android:id="@+id/textview_hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:text="10:00am - 10:00pm"
+                            android:textSize="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" · "
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="2dp"/>
+
+                        <TextView
+                            android:id="@+id/textview_open_close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="OPEN NOW"
+                            android:textColor="#33ff33"
+                            android:textSize="10dp"
+                            android:layout_marginTop="2dp"/>
+
+                        <ImageButton
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_gravity="center_vertical"
+                            android:padding="0dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_keyboard_arrow_down_white_48dp"/>
+
+                    </LinearLayout>
                 </TableLayout>
 
 
@@ -265,13 +307,6 @@
                 android:text="MAP"
                 android:textSize="18dp" />
 
-            <!--<com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />-->
-
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/map"
@@ -280,6 +315,7 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
 
             <TextView
@@ -291,71 +327,14 @@
                 android:text="REVIEWS"
                 android:textSize="18dp" />
 
-            <LinearLayout
-                android:id="@+id/reviews"
+            <Button
+                android:id="@+id/revbut"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    app:cardBackgroundColor="#D3D3D2"
-                    app:cardCornerRadius="8dp">
-
-                    <TableLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TableRow>
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginLeft="18dp"
-                                android:layout_marginTop="13dp"
-                                app:srcCompat="@drawable/user_r"></ImageView>
-
-                            <TextView
-                                android:id="@+id/Name1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="28dp"
-                                android:layout_marginTop="16dp"
-                                android:text="Rick Rhead \n★★★★★"
-                                android:textSize="16.5dp"
-                                android:textStyle="bold" />
-                        </TableRow>
-
-                        <!--<TableRow
-                            android:gravity="center_horizontal">
-                            <ImageView
-                                android:id="@+id/imageView11"
-                                android:layout_width="350dp"
-                                android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/line2" />
-                        </TableRow>-->
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="25dp"
-                                android:layout_marginRight="15dp"
-                                android:layout_weight="1"
-                                android:text="Big facility, typical of Sports Council. I go there once per week for boot camp exercise class. Instructor is fun. Has handicap accessible and parking, simple food for sale, big gym, and swimming pools."
-                                android:textSize="10dp" />
-                        </TableRow>
-
-                    </TableLayout>
-
-
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="11dp"
+                android:text="VIEW REVIEWS"/>
 
         </LinearLayout>
     </ScrollView>
