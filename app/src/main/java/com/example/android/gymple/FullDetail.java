@@ -56,7 +56,12 @@ import java.util.List;
 public class FullDetail extends AppCompatActivity implements OnMapReadyCallback {
 
     private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
-    private String pid= "ChIJCTok6ekR2jERnFfFyIKukCo";
+    private String pid= "ChIJmRnrx-wP2jERBnqNTg-3Tv0";
+
+    //listOfGymInfo.add(1, "ChIJEwW7gpoP2jER4o0mrMTZddM"); //jurong east clubfitt / activesg
+    //listOfGymInfo.add(2, "ChIJWaHnCyAQ2jERPzL-9jFkzWA"); //jurong west clubfitt / activesg
+    //listOfGymInfo.add(3, "ChIJmRnrx-wP2jERBnqNTg-3Tv0"); //amore fitness jurong point 2
+
 
     public static LatLng position;
 
@@ -67,7 +72,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
     //Declare XML components
     Button revButt;
-    TextView address, mName;
+    TextView address, mName, gymInfo;
 
     String temp_address, facilities;
 
@@ -129,15 +134,17 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         revButt = (Button) findViewById(R.id.revbut);
         address = (TextView) findViewById(R.id.gym_address);
         mName = (TextView) findViewById(R.id.gym_title);
+        gymInfo = (TextView) findViewById(R.id.gym_info);
 
         GetFacilities();
+        HardcodedGymInfoForDemo();
 
-        Collections.sort(photos);
+        /*Collections.sort(photos);
 
         PhotosAdapter photosAdapter = new PhotosAdapter(photos, FullDetail.this);
         RecyclerView photosRecyclerView = findViewById(R.id.recyclerview_photos);
         photosRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        photosRecyclerView.setAdapter(photosAdapter);
+        photosRecyclerView.setAdapter(photosAdapter);*/
 
         //region Set onclick button event to link to reviews page
         revButt.setOnClickListener(new View.OnClickListener() {
@@ -192,6 +199,27 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         });
 
         mRequestQueue.add(request);
+    }
+
+    public void HardcodedGymInfoForDemo()
+    {
+        switch(pid)
+        {
+            case "ChIJmRnrx-wP2jERBnqNTg-3Tv0": //amore fitness
+                gymInfo.setText("Amore Fitness is the leading fitness gym in Singapore providing unique state-of-the-art gym equipment specially designed for women. With imported cardiovascular and strength training equipment from Technogym (Italy) and Precor (USA), ladies have a wide selection when planning their workouts.\n\n" +
+                        "The functional training zone is also equipped with fitness accessories such as: Agility ladder, battle rope, kettlebell, swiss ball, TRX® Suspension Trainer, OMNIA⁸, QUEENAX.\n\n" +
+                        "Amore Fitness is the first gym in Asia to feature the Selection Pro series with Unity Mini which displays exercise demonstrations as a follow guide. Newbies just starting their fitness journey will have little to worry about using the various functions of these new equipment. Our friendly floor trainers will also gladly provide assistance when needed.");
+                break;
+            case "ChIJEwW7gpoP2jER4o0mrMTZddM": //jurong east clubfitt / activesg
+                gymInfo.setText("Jurong East ActiveSG Gym, formerly known as Jurong East ClubFITT Gym, is a public gym operated by Sport Singapore.\n\nBeing the first one-stop integrated centre, Jurong East Sport Centre, formerly known as Jurong East Sport and Recreation Centre, marks a milestone in Sport Singapore’s facilities development when it opened in 2000. It was the first pool to offer a lazy river, wave pool and fun slides to the masses at an affordable rate.\n\nWith its other facilities like air-conditioned sports hall, stadium, fitness gym, Jurong East Sport Centre prides itself as a preferred venue for community events, tournaments and a leisure day out for all.");
+                break;
+            case "ChIJWaHnCyAQ2jERPzL-9jFkzWA": //jurong west clubfitt / activesg
+                gymInfo.setText("Jurong West ActiveSG Gym, formerly known as Jurong West ClubFITT Gym, is a public gym operated by Sport Singapore. As the 3rd integrated facility with pool features, Jurong West Sport Centre, formerly known as Jurong West Sport and Recreation Centre, has raised the benchmark for all swimming pools in 2006. \n\n" +
+                        "With close proximity to the Pioneer MRT station, it has been able to position itself to be a sport and leisure venue. More than just being a choice venue for sports activities, Jurong West Sport Centre offers a range of food and beverage outlets with ample sheltered parking lots. It is the largest integrated sports centre in Singapore.");
+                break;
+
+            default: gymInfo.setText("No information provided.");
+        }
     }
 
     //region Set up interactive map
