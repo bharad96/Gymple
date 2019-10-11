@@ -72,7 +72,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
     public static LatLng position;
 
-    String place_ID, place_Title, place_info;
+    String place_Title, place_info, placeName;
 
     private RequestQueue mRequestQueue;
     private AddressResultReceiver mResultReceiver;
@@ -122,7 +122,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
         //region Get activity centre's values and details, update values
         position = getIntent().getExtras().getParcelable("latLon_values");
-        place_ID = getIntent().getExtras().getString("place_ID");
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
 
@@ -147,6 +146,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         mName = (TextView) findViewById(R.id.gym_title);
         gymInfo = (TextView) findViewById(R.id.gym_info);
 
+        //region Operating hours, setting variables
         LinearLayout arrowImageView = findViewById(R.id.linearlayout_opening_hours_trigger);
         final LinearLayout openingHoursLL = findViewById(R.id.linearlayout_opening_hours);
 
@@ -168,6 +168,8 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         textViews[4] = fridayTextView;
         textViews[5] = saturdayTextView;
         textViews[6] = sundayTextView;
+
+        //endregion
 
         GetFacilities();
         HardcodedGymInfoForDemo();
@@ -228,6 +230,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
 
                     mName.setText(jsonObject.getString("name"));
+                    placeName = jsonObject.getString("name");
                     address.setText(temp_address);
                     //endregion
 
@@ -268,7 +271,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
     public void GetOperatingHours()
     {
-        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + mName + "&inputtype=textquery&fields=place_id";
+        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + placeName + "&inputtype=textquery&fields=place_id";
         final RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext());
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
