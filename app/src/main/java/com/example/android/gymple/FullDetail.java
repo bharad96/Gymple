@@ -3,6 +3,7 @@ package com.example.android.gymple;
 import android.Manifest;
 import android.app.IntentService;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -19,7 +20,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpResponse;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.android.gymple.PlaceDetails.PlaceDetails;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,6 +36,7 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.gson.Gson;
 
 import android.content.Intent;
 
@@ -42,9 +46,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -54,6 +60,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class FullDetail extends AppCompatActivity implements OnMapReadyCallback {
+    public static Details detail;
 
     private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
     private String pid= "ChIJmRnrx-wP2jERBnqNTg-3Tv0";
@@ -73,10 +80,14 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     //Declare XML components
     Button revButt;
     TextView address, mName, gymInfo;
-
     String temp_address, facilities;
 
     public static ArrayList<Photo> photos;
+
+
+    TextView[] textViews;
+    TextView hoursTextView, openCloseTextView, mondayTextView, tuesdayTextView, wednesdayTextView, thursdayTextView, fridayTextView, saturdayTextView, sundayTextView, ratingTextView, reviewsCountTextView, nameTextView, durationTextView, reviewTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,8 +147,40 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         mName = (TextView) findViewById(R.id.gym_title);
         gymInfo = (TextView) findViewById(R.id.gym_info);
 
+        LinearLayout arrowImageView = findViewById(R.id.linearlayout_opening_hours_trigger);
+        final LinearLayout openingHoursLL = findViewById(R.id.linearlayout_opening_hours);
+
+        mondayTextView = findViewById(R.id.textview_monday_timing);
+        tuesdayTextView = findViewById(R.id.textview_tuesday_timing);
+        wednesdayTextView = findViewById(R.id.textview_wednesday_timing);
+        thursdayTextView = findViewById(R.id.textview_thursday_timing);
+        fridayTextView = findViewById(R.id.textview_friday_timing);
+        saturdayTextView = findViewById(R.id.textview_saturday_timing);
+        sundayTextView = findViewById(R.id.textview_sunday_timing);
+        openCloseTextView = findViewById(R.id.textview_open_close);
+        hoursTextView = findViewById(R.id.textview_hours);
+
+        textViews = new TextView[7];
+        textViews[0] = mondayTextView;
+        textViews[1] = tuesdayTextView;
+        textViews[2] = wednesdayTextView;
+        textViews[3] = thursdayTextView;
+        textViews[4] = fridayTextView;
+        textViews[5] = saturdayTextView;
+        textViews[6] = sundayTextView;
+
         GetFacilities();
         HardcodedGymInfoForDemo();
+
+        arrowImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (openingHoursLL.getVisibility() == View.VISIBLE)
+                    openingHoursLL.setVisibility(View.GONE);
+                else
+                    openingHoursLL.setVisibility(View.VISIBLE);
+            }
+        });
 
         /*Collections.sort(photos);
 
@@ -220,6 +263,83 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
             default: gymInfo.setText("No information provided.");
         }
+    }
+
+    public void getOperatingHours()
+    {
+        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + detail.getName() + "&inputtype=textquery&fields=place_id";
+        final RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    String placeID = "";
+
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray candidates = jsonObject.getJSONArray("candidates");
+
+                    if (candidates.length() > 0)
+                    {
+                        placeID = candidates.getJSONObject(0).getString("place_id").toString();
+                    }
+
+                    if (!placeID.equals(""))
+                    {
+                        String url = "https://maps.googleapis.com/maps/api/place/details/json?key=" + API_KEY + "&placeid=" + pid + "&fields=opening_hours";
+                        final ArrayList<String> openingHours = new ArrayList<>();
+
+                        final StringRequest stringRequest2 = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                Gson gson = new Gson();
+                                PlaceDetails placeDetails = gson.fromJson(response, PlaceDetails.class);
+
+                                openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
+
+                                for (int i=0; i < openingHours.size(); i++)
+                                {
+                                    String[] splitString = openingHours.get(i).split(" ", 2);
+
+                                    textViews[i].setText(splitString[1]);
+
+                                    if (i == 0)
+                                        hoursTextView.setText(splitString[1]);
+                                }
+
+                                if (placeDetails.getResult().getOpeningHours().getOpenNow())
+                                {
+                                    openCloseTextView.setTextColor(Color.GREEN);
+                                    openCloseTextView.setText("OPEN NOW");
+                                }
+                                else
+                                {
+                                    openCloseTextView.setTextColor(Color.RED);
+                                    openCloseTextView.setText("CLOSED");
+                                }
+
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e("Volley", "An error occured");
+                            }
+                        });
+
+                        mRequestQueue.add(stringRequest2);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Volley2", "An error occured");
+            }
+        });
+
+        mRequestQueue.add(stringRequest);
     }
 
     //region Set up interactive map

@@ -48,12 +48,12 @@
                 android:id="@+id/share_button"
                 android:layout_width="41dp"
                 android:layout_height="41dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="7dp"
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/share_icon"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"/>
+                app:srcCompat="@drawable/share_icon" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -246,17 +246,6 @@
                             android:layout_marginLeft="15dp"
                             app:srcCompat="@drawable/clock"/>
 
-                        <!--<TextView
-                            android:id="@+id/operating_Hours"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="1"
-                            android:text="7:00AM - 10:00PM   •   "
-                            android:textSize="10dp" />-->
-
                         <TextView
                             android:id="@+id/textview_hours"
                             android:layout_width="wrap_content"
@@ -286,6 +275,7 @@
                             android:layout_marginTop="2dp"/>
 
                         <ImageButton
+                            android:id="@"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
                             android:layout_gravity="center_vertical"
@@ -293,6 +283,140 @@
                             android:scaleType="fitCenter"
                             android:src="@drawable/ic_keyboard_arrow_down_white_48dp"/>
 
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearlayout_opening_hours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="24dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/textview_monday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monday"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textview_monday_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00am - 10:00pm"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textview_tuesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Tuesday"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textview_tuesday_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00am - 10:00pm"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textview_wednesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Wednesday"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textview_wednesday_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00am - 10:00pm"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textview_thursday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Thursday"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textview_thursday_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00am - 10:00pm"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textview_friday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Friday"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textview_friday_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00am - 10:00pm"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textview_saturday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Saturday"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textview_saturday_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00am - 10:00pm"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textview_sunday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Sunday"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textview_sunday_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:00am - 10:00pm"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </TableLayout>
 

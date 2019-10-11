@@ -5,6 +5,7 @@ public class Details {
     private String acName;
     private String maddr;
     private boolean mOpenow;
+    private String name;
 
     public String getMaddr() {
         return maddr;
@@ -30,7 +31,13 @@ public class Details {
         this.acName = acName;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public boolean ismOpenow() {
         return mOpenow;
