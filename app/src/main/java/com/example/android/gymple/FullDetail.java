@@ -86,7 +86,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
 
     TextView[] textViews;
-    TextView hoursTextView, openCloseTextView, mondayTextView, tuesdayTextView, wednesdayTextView, thursdayTextView, fridayTextView, saturdayTextView, sundayTextView, ratingTextView, reviewsCountTextView, nameTextView, durationTextView, reviewTextView;
+    TextView hoursTextView, openCloseTextView, mondayTextView, tuesdayTextView, wednesdayTextView, thursdayTextView, fridayTextView, saturdayTextView, sundayTextView;
 
 
     @Override
@@ -171,6 +171,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
         GetFacilities();
         HardcodedGymInfoForDemo();
+        GetOperatingHours();
 
         arrowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -265,9 +266,9 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         }
     }
 
-    public void getOperatingHours()
+    public void GetOperatingHours()
     {
-        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + detail.getName() + "&inputtype=textquery&fields=place_id";
+        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + mName + "&inputtype=textquery&fields=place_id";
         final RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext());
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
