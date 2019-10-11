@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         // Configure sign-in to request the user's USER_ID, email address, and basic
         // profile. USER_ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("615815590459-gbkdfkqoobbomd0jbjel4tspd6a4025c.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 
@@ -71,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
+//            firebaseAuthWithGoogle(account);
             User user = new User();
             user.setUserID(account.getId());
             user.setFirstName(account.getGivenName());

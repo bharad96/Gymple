@@ -13,4 +13,7 @@
     <color name="intro_title_color">#000000</color>
     <color name="intro_description_color">#656565</color>
 
+
+    <color name="white">#FFFFFF</color>
+    <color name="grey500">#9e9e9e</color>
 </resources>

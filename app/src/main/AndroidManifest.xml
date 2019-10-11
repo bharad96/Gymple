@@ -18,6 +18,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <activity android:name=".ViewFullDetails">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +35,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MomentUploadActivity" />
+        <activity android:name=".SelectPhotoActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".ViewFullDetails">
 
-        </activity>
         <activity android:name=".FullDetail" />
         <activity
             android:name=".SearchActivity"
