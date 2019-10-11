@@ -79,6 +79,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
     //Declare XML components
     Button revButt;
+    ImageButton shareButton;
     TextView address, mName, gymInfo;
     String temp_address, facilities;
 
@@ -103,13 +104,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                 finish();
             }
         });
-        //endregion
-
-        //region Set Toolbar Title
-        //Toolbar toolbar = findViewById(R.id.title_tab);
-        //toolbar.setTitle(place_Title);
-        //getSupportActionBar().hide();
-        //setSupportActionBar(toolbar);
         //endregion
 
         //region idk for what ah
@@ -145,6 +139,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         address = (TextView) findViewById(R.id.gym_address);
         mName = (TextView) findViewById(R.id.gym_title);
         gymInfo = (TextView) findViewById(R.id.gym_info);
+        shareButton = (ImageButton) findViewById(R.id.share_button);
 
         //region Operating hours, setting variables
         LinearLayout arrowImageView = findViewById(R.id.linearlayout_opening_hours_trigger);
@@ -199,10 +194,18 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getApplicationContext(), ReviewActivity.class);
-                i.putExtra("place_name", place_Title);
+                i.putExtra("place_name", placeName);
+                i.putExtra("pid", pid);
                 startActivity(i);
             }
         });
+        //endregion
+
+        //region Set onclick button to pop-up share
+        /*shareButton.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+
+        });*/
         //endregion
 
         mRequestQueue = Volley.newRequestQueue(this);
@@ -230,6 +233,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
 
                     mName.setText(jsonObject.getString("name"));
+                    mName.setTextColor(Color.parseColor("#484848"));
                     placeName = jsonObject.getString("name");
                     address.setText(temp_address);
                     //endregion

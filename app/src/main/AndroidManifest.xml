@@ -22,7 +22,6 @@
         <activity android:name=".ViewFullDetails">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -37,6 +36,7 @@
         <activity android:name=".MomentUploadActivity" />
         <activity android:name=".SelectPhotoActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".ReviewActivity" />
 
         <activity android:name=".FullDetail" />
         <activity
@@ -57,9 +57,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="ReviewActivity"
+        <!--activity android:name="ReviewActivity"
             android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+        </activity-->
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

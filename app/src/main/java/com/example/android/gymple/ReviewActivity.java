@@ -35,8 +35,8 @@ public class ReviewActivity extends AppCompatActivity {
     private ReviewsAdapter mExampleAdapter;
     private ArrayList<Reviews> mExampleList;
     private RequestQueue mRequestQueue;
-    private String pid= "ChIJCTok6ekR2jERnFfFyIKukCo";
     private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
+    private String pid;
     private String acName;
 
 
@@ -46,8 +46,25 @@ public class ReviewActivity extends AppCompatActivity {
         setContentView(R.layout.review_activity);
 
         Intent intent = getIntent();
-        String acname = intent.getStringExtra("place_name");
-        getSupportActionBar().setTitle("Reviews @ " + acname);
+        acName = intent.getStringExtra("place_name");
+        pid = intent.getStringExtra("pid");
+        Log.d("place name = ", acName);
+
+        //region Set Toolbar Title
+        Toolbar toolbar = findViewById(R.id.title_tab);
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().hide();
+
+        //endregion
+
+        if(getSupportActionBar() != null)
+        {
+            getSupportActionBar().setTitle("Reviews @ " + acName);
+        }
+        else
+        {
+            Log.d("getsupportactionbar = " , "null");
+        }
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);

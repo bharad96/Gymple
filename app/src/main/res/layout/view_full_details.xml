@@ -49,11 +49,11 @@
                 android:layout_width="41dp"
                 android:layout_height="41dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="7dp"
+                android:layout_marginRight="0dp"
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/share_icon" />
+                app:srcCompat="@drawable/share_icon_black" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
