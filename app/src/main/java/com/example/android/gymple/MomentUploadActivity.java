@@ -66,7 +66,7 @@ public class MomentUploadActivity extends AppCompatActivity {
                         @Override
                         public void onAction(@NonNull ArrayList<AlbumFile> result) {
                             // ToDo add a proper placeID
-                            SelectPhotoActivity.placeID = "Test Change Later";
+                            SelectPhotoActivity.placeID = "Change Later";
 //                            SelectPhotoActivity.placeID = detail.getPlaceID();
                             SelectPhotoActivity.photoUrl = result.get(0).getPath();
                             startActivity(new Intent(MomentUploadActivity.this, SelectPhotoActivity.class));
