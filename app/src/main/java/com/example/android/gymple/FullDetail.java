@@ -43,6 +43,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -54,8 +55,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
@@ -89,6 +92,12 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     TextView[] textViews;
     TextView hoursTextView, openCloseTextView, mondayTextView, tuesdayTextView, wednesdayTextView, thursdayTextView, fridayTextView, saturdayTextView, sundayTextView;
 
+    PlaceDetails placeDetails;
+    String temp_address_no_format;
+    String share_opening_hours;
+    String[] opHours;
+
+    final ArrayList<String> openingHours = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,11 +144,13 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         mapFragment.getMapAsync(this);
         //endregion
 
+        //region Get IDs
         revButt = (Button) findViewById(R.id.revbut);
         address = (TextView) findViewById(R.id.gym_address);
         mName = (TextView) findViewById(R.id.gym_title);
         gymInfo = (TextView) findViewById(R.id.gym_info);
         shareButton = (ImageButton) findViewById(R.id.share_button);
+        //endregion
 
         //region Operating hours, setting variables
         LinearLayout arrowImageView = findViewById(R.id.linearlayout_opening_hours_trigger);
@@ -170,6 +181,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         HardcodedGymInfoForDemo();
         GetOperatingHours();
 
+        //region Toggle click to expand / hide daily operating hours
         arrowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,6 +191,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     openingHoursLL.setVisibility(View.VISIBLE);
             }
         });
+        //endregion
 
         /*Collections.sort(photos);
 
@@ -202,10 +215,24 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         //endregion
 
         //region Set onclick button to pop-up share
-        /*shareButton.setOnClickListener(new ImageButton.OnClickListener() {
+        shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "GYMPLE");
 
-        });*/
+                String message = "\n" + placeName +"\n\n" +
+                                    "Facilities: " + facilities + "\n" +
+                                    "Address: " + temp_address_no_format + "\n\n" +
+                                    "Opening hours: \n" +
+                                     opHours[0] + opHours[1] + opHours[2] + opHours[3] + opHours[4] + opHours[5] + opHours[6] + "\n\n";
+
+                i.putExtra(Intent.EXTRA_TEXT, message);
+                startActivity(Intent.createChooser(i, "Share this via"));
+            }
+        });
         //endregion
 
         mRequestQueue = Volley.newRequestQueue(this);
@@ -225,10 +252,10 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     JSONObject jsonObject = response.getJSONObject("result");
 
                     //region address and title
-                    temp_address = jsonObject.get("formatted_address").toString();
+                    temp_address_no_format = jsonObject.get("formatted_address").toString();
 
-                    String temp_address1 = temp_address.substring(0, temp_address.indexOf(", Singapore")+2);
-                    String temp_address2 = temp_address.substring(temp_address.indexOf(", Singapore")+2);
+                    String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
+                    String temp_address2 = temp_address_no_format.substring(temp_address_no_format.indexOf(", Singapore")+2);
 
                     temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
 
@@ -295,15 +322,29 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     if (!placeID.equals(""))
                     {
                         String url = "https://maps.googleapis.com/maps/api/place/details/json?key=" + API_KEY + "&placeid=" + pid + "&fields=opening_hours";
-                        final ArrayList<String> openingHours = new ArrayList<>();
 
                         final StringRequest stringRequest2 = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
                                 Gson gson = new Gson();
-                                PlaceDetails placeDetails = gson.fromJson(response, PlaceDetails.class);
+                                placeDetails = gson.fromJson(response, PlaceDetails.class);
 
                                 openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
+
+                                //region For Sharing Info
+                                share_opening_hours = openingHours.toString();
+                                share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length()-1);
+
+                                opHours = share_opening_hours.split(", ");
+                                //endregion
+
+                                Calendar calendar = Calendar.getInstance();
+                                int day = calendar.get(Calendar.DAY_OF_WEEK); //1 to 7, sun/mon/tue/wed/thu/fri/sat
+
+                                for(int j = 0; j<opHours.length; j++)
+                                {
+                                    opHours[j] = opHours[j] + "\n";
+                                }
 
                                 for (int i=0; i < openingHours.size(); i++)
                                 {
@@ -311,8 +352,21 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
                                     textViews[i].setText(splitString[1]);
 
-                                    if (i == 0)
+                                    if(i+2 == day)
+                                    {
                                         hoursTextView.setText(splitString[1]);
+                                        String temp = i + ", " + day;
+                                        Log.d("i, day", temp);
+                                    }
+                                    else if(i==6) //sat in arraylist
+                                    {
+                                        if(day==1) //sat in days
+                                        {
+                                            hoursTextView.setText(splitString[1]);
+                                            String temp = i + ", " + day;
+                                            Log.d("i, day", temp);
+                                        }
+                                    }
                                 }
 
                                 if (placeDetails.getResult().getOpeningHours().getOpenNow())
