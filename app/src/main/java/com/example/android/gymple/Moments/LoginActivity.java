@@ -1,4 +1,4 @@
-package com.example.android.gymple;
+package com.example.android.gymple.Moments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,8 @@ import android.view.View.OnClickListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.common.api.GoogleApi;
+import com.example.android.gymple.Moments.SessionManager;
+import com.example.android.gymple.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;

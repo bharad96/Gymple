@@ -1,4 +1,4 @@
-package com.example.android.gymple;
+package com.example.android.gymple.Moments;
 
 public class User {
     private String userID;

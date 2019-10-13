@@ -1,7 +1,9 @@
-package com.example.android.gymple;
+package com.example.android.gymple.Moments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.android.gymple.Moments.User;
 
 
 public class SessionManager {

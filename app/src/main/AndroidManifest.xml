@@ -33,9 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MomentUploadActivity" />
-        <activity android:name=".SelectPhotoActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".Moments.MomentUploadActivity" />
+        <activity android:name=".Moments.SelectPhotoActivity" />
+        <activity android:name=".Moments.LoginActivity" />
         <activity android:name=".ReviewActivity" />
 
         <activity android:name=".FullDetail" />
