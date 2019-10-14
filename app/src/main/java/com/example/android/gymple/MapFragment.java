@@ -336,7 +336,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                     .position(activitycentre.getCoordinates())
                     .title(activitycentre.getName())
                     .snippet(activitycentre.getDesc()))
-                    .setTag(activitycentre.getCoordinates());
+                    .setTag(activitycentre.getPostalcode());
+
         }
 
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
@@ -371,14 +372,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             public void onInfoWindowClick(Marker marker) {
 
                 LatLng latLon = marker.getPosition();
-                String placeID = marker.getId();
+                String postalCode = marker.getTag().toString();
                 String placeTitle = marker.getTitle();
                 String info = marker.getSnippet(); //idk what this gets tho
+
 
                 Intent myIntent = new Intent(context, FullDetail.class);
                 Intent myIntent2 = new Intent(context, FetchAddressIntentService.class);
                 myIntent.putExtra("latLon_values", latLon); //Optional parameters
-                myIntent.putExtra("place_ID", placeID);
+                myIntent.putExtra("postal_Code", postalCode);
                 myIntent.putExtra("place_Title", placeTitle);
                 myIntent.putExtra("place_info", info);
 

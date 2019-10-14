@@ -8,7 +8,20 @@ public class Photo implements Comparable<Photo> {
     private String authorName;
     private long timestamp;
     private String authorPic;
+    private String mImageUrl;
 
+    public Photo(String imageurl)
+    {
+        mImageUrl = imageurl;
+    }
+
+    public String getmImageUrl() {
+        return mImageUrl;
+    }
+
+    public void setmImageUrl(String mImageUrl) {
+        this.mImageUrl = mImageUrl;
+    }
     public String getUserID() {
         return userID;
     }

@@ -5,6 +5,12 @@ import android.content.res.Resources;
 import android.location.Location;
 import android.util.Log;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.gms.maps.model.LatLng;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,6 +61,7 @@ public class ActivityCentreManager {
                 ActivityCentre activitycentre = new ActivityCentre(b.getString("coordinates"));
                 activitycentre.setName(a.getString("Name"));
                 activitycentre.setDesc(a.getString("description"));
+                activitycentre.setPostalcode(a.getString("ADDRESSPOSTALCODE"));
                 activitycentre.setStreet_name(a.getString("ADDRESSSTREETNAME"));
                 activitycentreArrayList.add(activitycentre);
             }

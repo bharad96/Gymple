@@ -88,6 +88,7 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
             myIntent.putExtra("place_ID", "");
             myIntent.putExtra("place_Title", ac.getName());
             myIntent.putExtra("place_info", ac.getDesc());
+            myIntent.putExtra("postal_code", ac.getPostalcode());
             activity.startActivity(myIntent);
 
         }

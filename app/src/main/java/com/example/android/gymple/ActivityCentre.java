@@ -9,6 +9,11 @@ public class ActivityCentre implements Comparable<ActivityCentre> {
     private LatLng coordinates;
     private String street_name;
     private double distance;
+    private String postalcode;
+
+    public String getPostalcode() {return postalcode;}
+
+    public void setPostalcode(String postalcode) {this.postalcode = postalcode;}
 
     public double getDistance() {
         return distance;
@@ -49,6 +54,7 @@ public class ActivityCentre implements Comparable<ActivityCentre> {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
     public ActivityCentre() {
 
     }

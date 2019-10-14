@@ -33,6 +33,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
+import com.example.android.gymple.Photo;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
@@ -75,7 +76,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
     public static LatLng position;
 
-    String place_Title, place_info, placeName;
+    String place_Title, place_info, placeName, postal_Code;
 
     private RequestQueue mRequestQueue;
     private AddressResultReceiver mResultReceiver;
@@ -86,7 +87,9 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     TextView address, mName, gymInfo;
     String temp_address, facilities;
 
-    public static ArrayList<Photo> photos;
+    private ArrayList<Photo> mPhotoList;
+    private RecyclerView pRecyclerView;
+    private PhotosAdapter pExampleAdapter;
 
 
     TextView[] textViews;
@@ -127,6 +130,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         position = getIntent().getExtras().getParcelable("latLon_values");
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
+        postal_Code = getIntent().getExtras().getString("postal_Code");
 
         //UpdateValues();
         //endregion
@@ -235,11 +239,61 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         });
         //endregion
 
+        pRecyclerView = findViewById(R.id.recycler_view_photos);
+        pRecyclerView.setHasFixedSize(true);
+        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(FullDetail.this, LinearLayoutManager.HORIZONTAL, false);
+        pRecyclerView.setLayoutManager(horizontalLayoutManagaer);
+
+        mPhotoList = new ArrayList<>();
+
         mRequestQueue = Volley.newRequestQueue(this);
-        parseJSON();
+
+        getPlaceID();
     }
 
-    private void parseJSON() {
+    private void getPlaceID() {
+
+        //Splitting String
+        String[] unameD1 = placeName.split(" ");
+        String aggString = "";
+
+        int arlength = unameD1.length;
+        for (int i = 0; i < arlength; i++) {
+            aggString = aggString + "%20" + unameD1[i];
+        }
+
+        //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + pid + "&key=" + getResources().getString(R.string.API_KEY);
+        //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJCTok6ekR2jERnFfFyIKukCo&key=AIzaSyAZYb1aJxvG2HaptGtfhKiN4LZlqMpDmq4" ;
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postal_Code + aggString + "&key=AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
+        Log.d("url2", url);
+
+        JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray jsonArray = response.getJSONArray("results");
+                    JSONObject first = (JSONObject) jsonArray.get(0);
+                    Log.d("mpid", first.toString());
+                    String plid = first.getString("place_id");
+                    Log.d("getstring", plid.toString());
+                    parseJSON(plid);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        //Log.d("getstring3", plID);
+        mRequestQueue.add(req);
+    }
+
+    private void parseJSON(String place) {
 
         String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + pid + "&key=" + API_KEY;
         //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJCTok6ekR2jERnFfFyIKukCo&key=AIzaSyAZYb1aJxvG2HaptGtfhKiN4LZlqMpDmq4" ;
@@ -252,6 +306,8 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     JSONObject jsonObject = response.getJSONObject("result");
 
                     //region address and title
+                    mName.setText(jsonObject.getString("name"));
+                    mName.setTextColor(Color.parseColor("#484848"));
                     temp_address_no_format = jsonObject.get("formatted_address").toString();
 
                     String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
@@ -259,10 +315,29 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
                     temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
 
-                    mName.setText(jsonObject.getString("name"));
-                    mName.setTextColor(Color.parseColor("#484848"));
+
                     placeName = jsonObject.getString("name");
                     address.setText(temp_address);
+                    //endregion
+
+                    //region Getting PHOTO array elements
+                    JSONArray jsonArray = jsonObject.getJSONArray("photos");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject object = jsonArray.getJSONObject(i);
+
+                        String height = object.getString("height");
+                        String photoref = object.getString("photo_reference");
+                        String upref = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=" + photoref + "&key=" + getResources().getString(R.string.API_KEY);
+
+                        mPhotoList.add(new Photo(upref));
+
+
+                        //Photos API reference
+                        //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=YOUR_API_KEY
+                    }
+
+                    pExampleAdapter = new PhotosAdapter(FullDetail.this, mPhotoList);
+                    pRecyclerView.setAdapter(pExampleAdapter);
                     //endregion
 
                 } catch (JSONException e) {
