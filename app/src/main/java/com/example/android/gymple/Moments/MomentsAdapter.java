@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.android.gymple.R;
 
 import java.util.ArrayList;
@@ -56,7 +58,13 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.MomentsV
         // - replace the contents of the view with that element
         holder.userDescription.setText(momentsArr.get(position).getUserMomentDescription());
         holder.userName.setText(momentsArr.get(position).getUserName());
-        holder.userPhoto.setImageResource(R.drawable.image_18);
+//        holder.userPhoto.setImageResource();
+
+        Glide.with(context)
+                .load(momentsArr.get(position).getUserPhoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerInside()
+                .into(holder.userPhoto);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

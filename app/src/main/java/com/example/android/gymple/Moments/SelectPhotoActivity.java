@@ -175,9 +175,9 @@ public class SelectPhotoActivity extends AppCompatActivity {
                 .onResult(new Action<ArrayList<AlbumFile>>() {
                     @Override
                     public void onAction(@NonNull ArrayList<AlbumFile> result) {
-                        SelectPhotoActivity.photoUrl = result.get(0).getPath();
+//                        SelectPhotoActivity.photoUrl = result.get(0).getPath()
 
-                        startActivity(new Intent(SelectPhotoActivity.this, SelectPhotoActivity.class));
+//                        startActivity(new Intent(SelectPhotoActivity.this, ));
                     }
                 })
                 .onCancel(new Action<String>() {

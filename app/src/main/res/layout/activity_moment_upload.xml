@@ -14,7 +14,7 @@
         android:text="Input Description" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/userInputEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.25"
@@ -23,19 +23,19 @@
         android:inputType="textPersonName" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_weight="0.75"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/uploadPhoto"
+        android:id="@+id/userImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Photo" />
+        android:layout_weight="0.75" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/selectPhotoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Photo" />
+
+    <Button
+        android:id="@+id/uploadMomentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Upload" />

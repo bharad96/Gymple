@@ -2,6 +2,7 @@ package com.example.android.gymple.Moments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.gymple.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -34,26 +40,8 @@ public class MomentsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        return super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.moment_recycler_view, container, false);
-        momentsArr = new ArrayList<Moment>();
-        // Create temp array of moments
-        momentsArr.add(new Moment("User 1", "First Workout", "test"));
-        momentsArr.add(new Moment("User 1", "Second Workout", "test"));
-        momentsArr.add(new Moment("User 2", "First Workout", "test"));
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-//        recyclerView.setHasFixedSize(true);
-
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
-        // use a linear layout manager
-//        layoutManager = new LinearLayoutManager(getActivity());
-//        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        // specify an adapter (see also next example)
-        momentAdapter = new MomentsAdapter(momentsArr, getActivity());
-        recyclerView.setAdapter(momentAdapter);
 
         FloatingActionButton fab = rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +62,47 @@ public class MomentsFragment extends Fragment {
         super.onResume();
 
         //TODO keep recycler view here so that newly submitted moments show up
+        momentsArr = new ArrayList<Moment>();
 
+        // Access a Cloud Firestore instance from your Activity
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("Moments")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("Moments Fragment", document.getId() + " => " + document.getData());
+                                Log.d("Moments Fragment", document.get("userName").toString());
+                                Log.d("Moments Fragment", document.get("userMomentDescription").toString());
+
+
+                                momentsArr.add(new Moment(document.get("userName").toString(), document.get("userMomentDescription").toString(), document.get("userPhoto").toString()));
+
+                            }
+                            momentAdapter.notifyDataSetChanged();
+                        } else {
+                            Log.w("Moments Fragment", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+//        recyclerView.setHasFixedSize(true);
+
+
+
+        // use a linear layout manager
+//        layoutManager = new LinearLayoutManager(getActivity());
+//        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
+        momentAdapter = new MomentsAdapter(momentsArr, getActivity());
+        recyclerView.setAdapter(momentAdapter);
     }
 }

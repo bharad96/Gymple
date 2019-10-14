@@ -19,8 +19,9 @@
 
         <ImageView
             android:id="@+id/imageview_user_photo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             app:srcCompat="@drawable/image_18" />
 
         <LinearLayout

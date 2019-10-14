@@ -34,7 +34,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Moments.MomentUploadActivity" />
-        <activity android:name=".Moments.SelectPhotoActivity" />
+        <activity android:name=".Moments.SelectPhotoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Moments.LoginActivity" />
         <activity android:name=".ReviewActivity" />
 
