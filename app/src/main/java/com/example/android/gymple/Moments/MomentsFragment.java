@@ -61,7 +61,7 @@ public class MomentsFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        //TODO keep recycler view here so that newly submitted moments show up
+        //keep recycler view here so that newly submitted moments show up
         momentsArr = new ArrayList<Moment>();
 
         // Access a Cloud Firestore instance from your Activity

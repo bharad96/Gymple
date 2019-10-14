@@ -179,6 +179,7 @@ public class MomentUploadActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        // TODO add a progressDialog
                         Log.d("Moment Upload Activity", "DocumentSnapshot added with ID: " + documentReference.getId());
                         Toasty.success(MomentUploadActivity.this, "Moment uploaded successfully!").show();
                         finish();
