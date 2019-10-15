@@ -67,7 +67,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     public static Details detail;
 
     private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
-    private String pid =  "ChIJmRnrx-wP2jERBnqNTg-3Tv0";;
+    private String pid = null;
 
     //listOfGymInfo.add(1, "ChIJEwW7gpoP2jER4o0mrMTZddM"); //jurong east clubfitt / activesg
     //listOfGymInfo.add(2, "ChIJWaHnCyAQ2jERPzL-9jFkzWA"); //jurong west clubfitt / activesg
@@ -128,9 +128,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
         postal_Code = getIntent().getExtras().getString("postal_code");
-
-        Log.d("placetitle ", place_Title);
-        Log.d("postalcode", postal_Code);
         //endregion
 
         //region Calls to get address from lat/lon
@@ -154,6 +151,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         shareButton = (ImageButton) findViewById(R.id.share_button);
         //endregion
 
+        mRequestQueue = Volley.newRequestQueue(this);
         getPlaceID(place_Title, postal_Code);
 
         //region Operating hours, setting variables
@@ -181,9 +179,8 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
         //endregion
 
-        GetFacilities();
-        HardcodedGymInfoForDemo();
-        GetOperatingHours();
+        GetFacilities(place_info);
+        GetOperatingHours(placeName);
 
         //region Toggle click to expand / hide daily operating hours
         arrowImageView.setOnClickListener(new View.OnClickListener() {
@@ -196,13 +193,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
             }
         });
         //endregion
-
-        /*Collections.sort(photos);
-
-        PhotosAdapter photosAdapter = new PhotosAdapter(photos, FullDetail.this);
-        RecyclerView photosRecyclerView = findViewById(R.id.recyclerview_photos);
-        photosRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        photosRecyclerView.setAdapter(photosAdapter);*/
 
         //region Set onclick button event to link to reviews page
         revButt.setOnClickListener(new View.OnClickListener() {
@@ -254,8 +244,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
         //Splitting String
         String[] unameD1 = placetitle.split(" ");
-        Log.d("placetitle ", placetitle);
-        Log.d("postalcode", postalCode);
         String aggString = "";
 
         int arlength = unameD1.length;
@@ -273,12 +261,15 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     JSONArray jsonArray = response.getJSONArray("results");
                     JSONObject first = (JSONObject) jsonArray.get(0);
                     Log.d("mpid", first.toString());
-                    pid = first.getString("place_id");
-                    Log.d("getstring", pid.toString());
-                    parseJSON(pid);
+                    String plid = first.getString("place_id");
+                    Log.d("getstring", plid);
+                    parseJSON(plid);
+
+                    HardcodedGymInfoForDemo(plid);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Log.d("error", "error");
                 }
             }
         }, new Response.ErrorListener() {
@@ -288,14 +279,12 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
             }
         });
 
-        //Log.d("getstring3", plID);
         mRequestQueue.add(req);
     }
 
     private void parseJSON(String placeID) {
 
         String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeID + "&key=" + API_KEY;
-        //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJCTok6ekR2jERnFfFyIKukCo&key=AIzaSyAZYb1aJxvG2HaptGtfhKiN4LZlqMpDmq4" ;
         Log.d("urlme", url);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -353,31 +342,36 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         mRequestQueue.add(request);
     }
 
-    public void HardcodedGymInfoForDemo()
+    public void HardcodedGymInfoForDemo(String placeID)
     {
-        switch(pid)
-        {
-            case "ChIJmRnrx-wP2jERBnqNTg-3Tv0": //amore fitness
-                gymInfo.setText("Amore Fitness is the leading fitness gym in Singapore providing unique state-of-the-art gym equipment specially designed for women. With imported cardiovascular and strength training equipment from Technogym (Italy) and Precor (USA), ladies have a wide selection when planning their workouts.\n\n" +
-                        "The functional training zone is also equipped with fitness accessories such as: Agility ladder, battle rope, kettlebell, swiss ball, TRX® Suspension Trainer, OMNIA⁸, QUEENAX.\n\n" +
-                        "Amore Fitness is the first gym in Asia to feature the Selection Pro series with Unity Mini which displays exercise demonstrations as a follow guide. Newbies just starting their fitness journey will have little to worry about using the various functions of these new equipment. Our friendly floor trainers will also gladly provide assistance when needed.");
-                break;
-            case "ChIJEwW7gpoP2jER4o0mrMTZddM": //jurong east clubfitt / activesg
-                gymInfo.setText("Jurong East ActiveSG Gym, formerly known as Jurong East ClubFITT Gym, is a public gym operated by Sport Singapore.\n\nBeing the first one-stop integrated centre, Jurong East Sport Centre, formerly known as Jurong East Sport and Recreation Centre, marks a milestone in Sport Singapore’s facilities development when it opened in 2000. It was the first pool to offer a lazy river, wave pool and fun slides to the masses at an affordable rate.\n\nWith its other facilities like air-conditioned sports hall, stadium, fitness gym, Jurong East Sport Centre prides itself as a preferred venue for community events, tournaments and a leisure day out for all.");
-                break;
-            case "ChIJWaHnCyAQ2jERPzL-9jFkzWA": //jurong west clubfitt / activesg
-                gymInfo.setText("Jurong West ActiveSG Gym, formerly known as Jurong West ClubFITT Gym, is a public gym operated by Sport Singapore. As the 3rd integrated facility with pool features, Jurong West Sport Centre, formerly known as Jurong West Sport and Recreation Centre, has raised the benchmark for all swimming pools in 2006. \n\n" +
-                        "With close proximity to the Pioneer MRT station, it has been able to position itself to be a sport and leisure venue. More than just being a choice venue for sports activities, Jurong West Sport Centre offers a range of food and beverage outlets with ample sheltered parking lots. It is the largest integrated sports centre in Singapore.");
-                break;
+        if(placeID != null) {
+            switch (placeID) {
+                case "ChIJmRnrx-wP2jERBnqNTg-3Tv0": //amore fitness
+                    gymInfo.setText("Amore Fitness is the leading fitness gym in Singapore providing unique state-of-the-art gym equipment specially designed for women. With imported cardiovascular and strength training equipment from Technogym (Italy) and Precor (USA), ladies have a wide selection when planning their workouts.\n\n" +
+                            "The functional training zone is also equipped with fitness accessories such as: Agility ladder, battle rope, kettlebell, swiss ball, TRX® Suspension Trainer, OMNIA⁸, QUEENAX.\n\n" +
+                            "Amore Fitness is the first gym in Asia to feature the Selection Pro series with Unity Mini which displays exercise demonstrations as a follow guide. Newbies just starting their fitness journey will have little to worry about using the various functions of these new equipment. Our friendly floor trainers will also gladly provide assistance when needed.");
+                    break;
+                case "ChIJWaHnCyAQ2jERPzL-9jFkzWA": //jurong east clubfitt / activesg
+                    gymInfo.setText("Jurong East ActiveSG Gym, formerly known as Jurong East ClubFITT Gym, is a public gym operated by Sport Singapore.\n\nBeing the first one-stop integrated centre, Jurong East Sport Centre, formerly known as Jurong East Sport and Recreation Centre, marks a milestone in Sport Singapore’s facilities development when it opened in 2000. It was the first pool to offer a lazy river, wave pool and fun slides to the masses at an affordable rate.\n\nWith its other facilities like air-conditioned sports hall, stadium, fitness gym, Jurong East Sport Centre prides itself as a preferred venue for community events, tournaments and a leisure day out for all.");
+                    break;
+                case "ChIJEwW7gpoP2jER4o0mrMTZddM": //jurong west clubfitt / activesg
+                    gymInfo.setText("Jurong West ActiveSG Gym, formerly known as Jurong West ClubFITT Gym, is a public gym operated by Sport Singapore. As the 3rd integrated facility with pool features, Jurong West Sport Centre, formerly known as Jurong West Sport and Recreation Centre, has raised the benchmark for all swimming pools in 2006. \n\n" +
+                            "With close proximity to the Pioneer MRT station, it has been able to position itself to be a sport and leisure venue. More than just being a choice venue for sports activities, Jurong West Sport Centre offers a range of food and beverage outlets with ample sheltered parking lots. It is the largest integrated sports centre in Singapore.");
+                    break;
 
-            default: gymInfo.setText("No information provided.");
+                default:
+                    gymInfo.setText("No information provided.");
+                    break;
+            }
         }
+        else
+            gymInfo.setText("Null placeID.");
     }
 
     //region Opening hours
-    public void GetOperatingHours()
+    public void GetOperatingHours(String place_name)
     {
-        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + placeName + "&inputtype=textquery&fields=place_id";
+        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + place_name + "&inputtype=textquery&fields=place_id";
         final RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext());
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -396,7 +390,9 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
                     if (!placeID.equals(""))
                     {
-                        String url = "https://maps.googleapis.com/maps/api/place/details/json?key=" + API_KEY + "&placeid=" + pid + "&fields=opening_hours";
+                        String url = "https://maps.googleapis.com/maps/api/place/details/json?key=" + API_KEY + "&placeid=" + placeID + "&fields=opening_hours";
+                        Log.d("url", url);
+                        pid = placeID;
 
                         final StringRequest stringRequest2 = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                             @Override
@@ -404,8 +400,13 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                                 Gson gson = new Gson();
                                 placeDetails = gson.fromJson(response, PlaceDetails.class);
 
-                                openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
-
+                                if(openingHours == null)
+                                {
+                                    Log.d("OpeningHours", "is null");
+                                }
+                                else {
+                                    openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
+                                }
                                 //region For Sharing Info
                                 share_opening_hours = openingHours.toString();
                                 share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length()-1);
@@ -459,7 +460,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Log.e("Volley", "An error occured");
+                                Log.e("Volley", "An error occurred");
                             }
                         });
 
@@ -472,7 +473,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("Volley2", "An error occured");
+                Log.e("Volley2", "An error occurred");
             }
         });
 
@@ -545,11 +546,11 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     //endregion
 
     //region Get Facilities
-    public void GetFacilities()
+    public void GetFacilities(String placeInfo)
     {
-        if(place_info.contains("Facilities:") || place_info.contains("facilities:"))
+        if(placeInfo.contains("Facilities:") || placeInfo.contains("facilities:"))
         {
-            facilities =  place_info.substring(12, place_info.indexOf("Operating")-1);
+            facilities =  placeInfo.substring(12, placeInfo.indexOf("Operating")-1);
         }
         else
         {
