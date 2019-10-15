@@ -1,74 +1,54 @@
 package com.example.android.gymple;
 
-
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
-
 import java.util.ArrayList;
 
 import com.example.android.gymple.R;
 import com.example.android.gymple.Photo;
+import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
 
-public class PhotosAdapter extends  RecyclerView.Adapter<PhotosAdapter.PhotosViewHolder>{
-    private ArrayList<Photo> images;
-    Context context;
+public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ExampleViewHolder>{
+    private Context mContext;
+    private ArrayList<Photo> mPhotoList;
 
-    public PhotosAdapter(ArrayList<Photo> images, Context context){
-        this.images = images;
-        this.context = context;
+
+    public PhotosAdapter(Context context, ArrayList<Photo> exampleList) {
+        mContext = context;
+        mPhotoList = exampleList;
     }
 
     @Override
-    public PhotosViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.photo_recycler_view,parent,false);
-        return new PhotosViewHolder(view);
+    public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(mContext).inflate(R.layout.detail_photos_item, parent, false);
+        return new ExampleViewHolder(v);
     }
 
-    @Override
-    public void onBindViewHolder(PhotosViewHolder holder, final int position) {
-        Glide.with(context)
-                .load(images.get(position).getUrl())
-                //.centerCrop()
-                .apply(RequestOptions.bitmapTransform(new RoundedCorners(14)))
-                .apply(new RequestOptions().centerCrop()
-                .placeholder(R.drawable.profile_guest))
-                .into(holder.photoImageView);
+    public void onBindViewHolder(ExampleViewHolder holder, int position) {
+        Photo currentItem = mPhotoList.get(position);
 
-        Glide.with(context)
-                .load(images.get(position).getAuthorPic())
-                //.centerCrop()
-                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                .apply(new RequestOptions().centerCrop()
-                .placeholder(R.drawable.profile_guest))
-                .into(holder.profileImageView);
+        String imageUrl = currentItem.getmImageUrl();
 
-        holder.nameTextView.setText(images.get(position).getAuthorName());
+        Picasso.get().load(imageUrl).fit().centerInside().into(holder.mImageView);
     }
 
     @Override
     public int getItemCount() {
-        return images.size();
+        return mPhotoList.size();
     }
 
-    public class PhotosViewHolder extends RecyclerView.ViewHolder{
-        ImageView profileImageView, photoImageView;
-        TextView nameTextView;
+    public class ExampleViewHolder extends RecyclerView.ViewHolder {
+        public ImageView mImageView;
 
-        public PhotosViewHolder(View itemView) {
+        public ExampleViewHolder(View itemView) {
             super(itemView);
-            profileImageView = itemView.findViewById(R.id.imageview_profile_pic);
-            //photoImageView = itemView.findViewById(R.id.imageview_photo2);
-            nameTextView = itemView.findViewById(R.id.textview_name);
+            mImageView = itemView.findViewById(R.id.detail_photo_view);
+
         }
     }
 }

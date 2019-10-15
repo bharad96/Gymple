@@ -33,7 +33,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
-import com.example.android.gymple.Photo;
+import com.example.android.gymple.PhotosAdapter;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
@@ -67,7 +67,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     public static Details detail;
 
     private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
-    private String pid= "ChIJmRnrx-wP2jERBnqNTg-3Tv0";
+    private String pid =  "ChIJmRnrx-wP2jERBnqNTg-3Tv0";;
 
     //listOfGymInfo.add(1, "ChIJEwW7gpoP2jER4o0mrMTZddM"); //jurong east clubfitt / activesg
     //listOfGymInfo.add(2, "ChIJWaHnCyAQ2jERPzL-9jFkzWA"); //jurong west clubfitt / activesg
@@ -121,18 +121,16 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         //region idk for what ah
         // Initialize Places.
         Places.initialize(getApplicationContext(), API_KEY);
-
-        // Create a new Places client instance.
-        PlacesClient placesClient = Places.createClient(this);
         //endregion
 
         //region Get activity centre's values and details, update values
         position = getIntent().getExtras().getParcelable("latLon_values");
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
-        postal_Code = getIntent().getExtras().getString("postal_Code");
+        postal_Code = getIntent().getExtras().getString("postal_code");
 
-        //UpdateValues();
+        Log.d("placetitle ", place_Title);
+        Log.d("postalcode", postal_Code);
         //endregion
 
         //region Calls to get address from lat/lon
@@ -155,6 +153,8 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         gymInfo = (TextView) findViewById(R.id.gym_info);
         shareButton = (ImageButton) findViewById(R.id.share_button);
         //endregion
+
+        getPlaceID(place_Title, postal_Code);
 
         //region Operating hours, setting variables
         LinearLayout arrowImageView = findViewById(R.id.linearlayout_opening_hours_trigger);
@@ -248,13 +248,14 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
         mRequestQueue = Volley.newRequestQueue(this);
 
-        getPlaceID();
     }
 
-    private void getPlaceID() {
+    private void getPlaceID(String placetitle, String postalCode) {
 
         //Splitting String
-        String[] unameD1 = placeName.split(" ");
+        String[] unameD1 = placetitle.split(" ");
+        Log.d("placetitle ", placetitle);
+        Log.d("postalcode", postalCode);
         String aggString = "";
 
         int arlength = unameD1.length;
@@ -262,9 +263,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
             aggString = aggString + "%20" + unameD1[i];
         }
 
-        //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + pid + "&key=" + getResources().getString(R.string.API_KEY);
-        //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJCTok6ekR2jERnFfFyIKukCo&key=AIzaSyAZYb1aJxvG2HaptGtfhKiN4LZlqMpDmq4" ;
-        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postal_Code + aggString + "&key=AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postalCode + aggString + "&key=AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
         Log.d("url2", url);
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -274,9 +273,9 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     JSONArray jsonArray = response.getJSONArray("results");
                     JSONObject first = (JSONObject) jsonArray.get(0);
                     Log.d("mpid", first.toString());
-                    String plid = first.getString("place_id");
-                    Log.d("getstring", plid.toString());
-                    parseJSON(plid);
+                    pid = first.getString("place_id");
+                    Log.d("getstring", pid.toString());
+                    parseJSON(pid);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -293,9 +292,9 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         mRequestQueue.add(req);
     }
 
-    private void parseJSON(String place) {
+    private void parseJSON(String placeID) {
 
-        String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + pid + "&key=" + API_KEY;
+        String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeID + "&key=" + API_KEY;
         //String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJCTok6ekR2jERnFfFyIKukCo&key=AIzaSyAZYb1aJxvG2HaptGtfhKiN4LZlqMpDmq4" ;
         Log.d("urlme", url);
 
@@ -307,17 +306,17 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
                     //region address and title
                     mName.setText(jsonObject.getString("name"));
-                    mName.setTextColor(Color.parseColor("#484848"));
+                    //mName.setTextColor(Color.parseColor("#484848"));
                     temp_address_no_format = jsonObject.get("formatted_address").toString();
 
-                    String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
-                    String temp_address2 = temp_address_no_format.substring(temp_address_no_format.indexOf(", Singapore")+2);
+                    //String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
+                    //String temp_address2 = temp_address_no_format.substring(temp_address_no_format.indexOf(", Singapore")+2);
 
-                    temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
+                   // temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
 
 
                     placeName = jsonObject.getString("name");
-                    address.setText(temp_address);
+                    address.setText(temp_address_no_format);
                     //endregion
 
                     //region Getting PHOTO array elements
@@ -327,7 +326,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
                         String height = object.getString("height");
                         String photoref = object.getString("photo_reference");
-                        String upref = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=" + photoref + "&key=" + getResources().getString(R.string.API_KEY);
+                        String upref = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=" + photoref + "&key=" + API_KEY;
 
                         mPhotoList.add(new Photo(upref));
 
@@ -375,6 +374,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         }
     }
 
+    //region Opening hours
     public void GetOperatingHours()
     {
         String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + placeName + "&inputtype=textquery&fields=place_id";
@@ -478,6 +478,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
         mRequestQueue.add(stringRequest);
     }
+    //endregion
 
     //region Set up interactive map
     @Override
