@@ -82,7 +82,7 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
         @Override
         public void onClick(View view) {
             ActivityCentre ac = activityCentreArrayList.get(getAdapterPosition());
-            Intent myIntent = new Intent(activity.getApplicationContext(), FullDetail.class);
+            Intent myIntent = new Intent(activity.getApplicationContext(), FragmentAdapter.class);
             Intent myIntent2 = new Intent(activity.getApplicationContext(), FetchAddressIntentService.class);
             myIntent.putExtra("latLon_values", ac.getCoordinates()); //Optional parameters
             myIntent.putExtra("place_ID", "");
