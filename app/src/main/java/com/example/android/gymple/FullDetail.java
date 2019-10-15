@@ -536,12 +536,14 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
     public double getLatitude()
     {
-        return this.position.latitude;
+        //return this.position.latitude;
+        return 0;
     }
 
     public double getLongitude()
     {
-        return this.position.longitude;
+       // return this.position.longitude;
+        return 0;
     }
     //endregion
 

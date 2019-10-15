@@ -68,28 +68,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/desc_moment_tabs"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                app:tabIndicatorColor="#81D3D3D2"
-                app:tabIndicatorHeight="35dp"
-                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-                app:tabTextColor="#484848">
-
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/description_tab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Description" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/moments_tab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Moments" />
-
-            </com.google.android.material.tabs.TabLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_below="@+id/app_bar_layout"
