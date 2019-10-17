@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
+import android.widget.RelativeLayout;
 
 import com.example.android.gymple.Reviews;
 import com.squareup.picasso.Picasso;
@@ -36,27 +37,35 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
 
     @Override
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
+
         Reviews currentItem = mExampleList.get(position);
 
-        String imageUrl = currentItem.getImageUrl();
-        //String creatorName = currentItem.getCreator();
-        //int likeCount = currentItem.getLikeCount();
-        String creatorName = currentItem.getAname();
-        String comm = currentItem.getText();
-        String rate = currentItem.getRating();
-        String time = currentItem.getrTime();
-        String acname = currentItem.getcName();
+        if(getItemCount() > 0) {
+            String imageUrl = currentItem.getImageUrl();
+            //String creatorName = currentItem.getCreator();
+            //int likeCount = currentItem.getLikeCount();
+            String creatorName = currentItem.getAname();
+            String comm = currentItem.getText();
+            String rate = currentItem.getRating();
+            String time = currentItem.getrTime();
+            String acname = currentItem.getcName();
 
 
-        holder.mTextViewCreator.setText(creatorName);
-        //holder.mTextViewCreator.setVisibility(View.GONE);
-        holder.commentView.setText(comm);
-        holder.rateme.setRating(Integer.parseInt(rate));
-        //holder.mRate.setText("Rating: " + rate);
-        holder.mTime.setText(time);
+            holder.mTextViewCreator.setText(creatorName);
+            //holder.mTextViewCreator.setVisibility(View.GONE);
+            holder.commentView.setText(comm);
+            holder.rateme.setRating(Integer.parseInt(rate));
+            //holder.mRate.setText("Rating: " + rate);
+            holder.mTime.setText(time);
 
-        //holder.mTextViewLikes.setText("Likes: " + likeCount);
-        Picasso.get().load(imageUrl).fit().centerInside().into(holder.mImageView);
+            //holder.mTextViewLikes.setText("Likes: " + likeCount);
+            Picasso.get().load(imageUrl).fit().centerInside().into(holder.mImageView);
+        }
+        else
+        {
+            holder.mRel.setVisibility(View.GONE);
+            holder.mNorev.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -66,10 +75,12 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
-        public TextView mTextViewCreator, commentView, mRate, mTime;
+        public TextView mTextViewCreator, commentView, mRate, mTime, mNorev;
         public TextView mTextViewLikes;
         public RatingBar rateme;
         public Toolbar mBar;
+        public RelativeLayout mRel;
+
 
 
         public ExampleViewHolder(View itemView) {
@@ -80,6 +91,8 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
             rateme = itemView.findViewById(R.id.ratingbar);
             //mRate = itemView.findViewById(R.id.ratingbar);
             mTime = itemView.findViewById(R.id.reltime);
+            mRel = itemView.findViewById(R.id.revLay);
+            mNorev = itemView.findViewById(R.id.norevs);
             //mBar = itemView.findViewById(R.id.toolbar);
 
             //mTextViewLikes = itemView.findViewById(R.id.text_view_likes);

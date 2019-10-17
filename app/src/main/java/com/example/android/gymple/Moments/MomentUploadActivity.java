@@ -109,7 +109,7 @@ public class MomentUploadActivity extends AppCompatActivity {
                         @Override
                         public void onAction(@NonNull ArrayList<AlbumFile> result) {
                             // ToDo add a proper placeID
-                            placeID = DetailsFragment.getPlaceName();
+                            //placeID = DetailsFragment.getPlaceName();
                             photoPath = result.get(0).getPath();
                         }
                     })
