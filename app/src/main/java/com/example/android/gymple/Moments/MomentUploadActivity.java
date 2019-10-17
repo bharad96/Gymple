@@ -44,10 +44,11 @@ public class MomentUploadActivity extends AppCompatActivity {
 
     private SessionManager sessionManager;
     private User user;
-    private String photoPath, placeID;
+    private String photoPath;
     private ProgressDialog progressDialog;
     private ImageView photoImageView;
     EditText momentDescription;
+    private String placeName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,7 @@ public class MomentUploadActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        placeName = DetailsFragment.place_Title;
         sessionManager = new SessionManager(this);
 
         if(sessionManager.isLoggedIn()) {
@@ -129,7 +131,7 @@ public class MomentUploadActivity extends AppCompatActivity {
     private void uploadPhoto() {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
-        final StorageReference ref = storageRef.child(placeID + "_" + System.currentTimeMillis() + ".jpg");
+        final StorageReference ref = storageRef.child(placeName + "_" + System.currentTimeMillis() + ".jpg");
         UploadTask uploadTask = ref.putFile(Uri.fromFile(new File(photoPath)));
 
         uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -175,7 +177,7 @@ public class MomentUploadActivity extends AppCompatActivity {
         moment.put("userMomentDescription", momentDescription.getText().toString());
 
 // Add a new document with a generated ID
-        db.collection("Moments")
+        db.collection("Moments\\" + placeName)
                 .add(moment)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

@@ -85,8 +85,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
 
     public static LatLng position;
 
-    String place_Title, place_info, postal_Code;
-    String placeName;
+    String place_info, postal_Code, placeName;
+    public static String place_Title;
 
     private RequestQueue mRequestQueue;
     private DetailsFragment.AddressResultReceiver mResultReceiver;

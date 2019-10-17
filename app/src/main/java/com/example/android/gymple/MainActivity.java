@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
         ActivityCentreManager activitycentreManager = new ActivityCentreManager(getResources(), R.raw.datajson);
 
-        Log.i("MainActivity", "hello world");
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation);
         title = findViewById(R.id.textView);

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android.gymple.DetailsFragment;
 import com.example.android.gymple.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,6 +31,7 @@ public class MomentsFragment extends Fragment {
     private RecyclerView.Adapter momentAdapter;
     private RecyclerView.LayoutManager layoutManager;
     public static ArrayList<Moment> momentsArr;
+    public String placeName;
 
     public MomentsFragment () {
         // Required empty public constructor
@@ -61,13 +63,14 @@ public class MomentsFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
+        placeName = DetailsFragment.place_Title;
         //keep recycler view here so that newly submitted moments show up
         momentsArr = new ArrayList<Moment>();
 
         // Access a Cloud Firestore instance from your Activity
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        db.collection("Moments")
+        Log.e("Moments Fragment", "Place Name: " + placeName);
+        db.collection("Moments\\" + placeName)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
