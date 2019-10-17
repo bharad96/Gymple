@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.android.gymple.DetailsFragment;
 import com.example.android.gymple.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -108,7 +109,7 @@ public class MomentUploadActivity extends AppCompatActivity {
                         @Override
                         public void onAction(@NonNull ArrayList<AlbumFile> result) {
                             // ToDo add a proper placeID
-                            placeID = "Bukit Batok East CC";
+                            placeID = DetailsFragment.getPlaceName();
                             photoPath = result.get(0).getPath();
                         }
                     })
@@ -124,7 +125,7 @@ public class MomentUploadActivity extends AppCompatActivity {
             startActivity(new Intent(MomentUploadActivity.this, LoginActivity.class));
         }
     }
-
+    // TODO add a progressDialog
     private void uploadPhoto() {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();

@@ -85,7 +85,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
 
     public static LatLng position;
 
-    String place_Title, place_info, placeName, postal_Code;
+    String place_Title, place_info, postal_Code;
+    static String placeName;
 
     private RequestQueue mRequestQueue;
     private DetailsFragment.AddressResultReceiver mResultReceiver;
@@ -110,6 +111,10 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
     String[] opHours;
 
     final ArrayList<String> openingHours = new ArrayList<>();
+
+    public static String getPlaceName() {
+        return placeName;
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
