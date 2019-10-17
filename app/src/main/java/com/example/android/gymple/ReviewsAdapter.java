@@ -49,6 +49,7 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
 
 
         holder.mTextViewCreator.setText(creatorName);
+        //holder.mTextViewCreator.setVisibility(View.GONE);
         holder.commentView.setText(comm);
         holder.rateme.setRating(Integer.parseInt(rate));
         //holder.mRate.setText("Rating: " + rate);

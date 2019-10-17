@@ -212,7 +212,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity().getApplicationContext(), ReviewActivity.class);
                 i.putExtra("place_name", placeName);
-                i.putExtra("pid", pid);
+                i.putExtra("postal", postal_Code);
                 startActivity(i);
             }
         });
@@ -267,7 +267,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
 
 
     }
-
 
 
     private void getPlaceID(String placetitle, String postalCode) {

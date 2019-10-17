@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
-    app:cardBackgroundColor="#D3D3D2">
+    app:cardElevation="10dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
                         android:text="Creator Name"
-                        android:textColor="#484848"
+                        android:textColor="#000000"
                         android:textSize="17dp" />
 
                     <TableLayout

@@ -62,7 +62,7 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.MomentsV
 
         Glide.with(context)
                 .load(momentsArr.get(position).getUserPhoto())
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerInside()
                 .into(holder.userPhoto);
     }

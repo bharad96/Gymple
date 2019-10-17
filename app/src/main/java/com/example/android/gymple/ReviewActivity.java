@@ -36,7 +36,7 @@ public class ReviewActivity extends AppCompatActivity {
     private ArrayList<Reviews> mExampleList;
     private RequestQueue mRequestQueue;
     private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
-    private String pid;
+    private String pos;
     private String acName;
 
 
@@ -47,7 +47,7 @@ public class ReviewActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         acName = intent.getStringExtra("place_name");
-        pid = intent.getStringExtra("pid");
+        pos = intent.getStringExtra("postal");
         Log.d("place name = ", acName);
 
         //region Set Toolbar Title
@@ -73,12 +73,12 @@ public class ReviewActivity extends AppCompatActivity {
         mExampleList = new ArrayList<>();
 
         mRequestQueue = Volley.newRequestQueue(this);
-        parseJSON();
+        getPlaceID(acName, pos);
     }
 
-    private void parseJSON() {
+    private void parseJSON(String place) {
         //String url = "https://pixabay.com/api/?key=5303976-fd6581ad4ac165d1b75cc15b3&q=kitten&image_type=photo&pretty=true";
-        String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + pid + "&key=" + API_KEY;
+        String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + place + "&key=" + API_KEY;
         Log.d("urlme", url);
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -90,6 +90,7 @@ public class ReviewActivity extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray("reviews");
 
                     for (int i = 0; i < jsonArray.length(); i++) {
+
                         JSONObject object = jsonArray.getJSONObject(i);
 
                         String creatorName = object.getString("author_name");
@@ -127,5 +128,46 @@ public class ReviewActivity extends AppCompatActivity {
         mRequestQueue.add(request);
     }
 
+    private void getPlaceID(String placetitle, String postalCode) {
 
+        //Splitting String
+        String[] unameD1 = placetitle.split(" ");
+        String aggString = "";
+
+        int arlength = unameD1.length;
+        for (int i = 0; i < arlength; i++) {
+            aggString = aggString + "%20" + unameD1[i];
+        }
+
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postalCode + aggString + "&key=AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
+        Log.d("url2", url);
+
+        JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray jsonArray = response.getJSONArray("results");
+                    if (jsonArray.length() > 0) {
+                        JSONObject first = (JSONObject) jsonArray.get(0);
+                        Log.d("mpid", first.toString());
+                        String plid = first.getString("place_id");
+                        Log.d("getstring", plid);
+                        parseJSON(plid);
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d("error", "error");
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        mRequestQueue.add(req);
+    }
 }
