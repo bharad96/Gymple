@@ -173,6 +173,7 @@ public class ActivityCentreManager {
         {
             return getNearestCentre();
         }
+        Collections.sort(filterAndSearchResult);
         return filterAndSearchResult;
     }
 }
