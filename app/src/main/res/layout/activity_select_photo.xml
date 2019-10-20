@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/secondaryColor"
         android:layout_margin="4dp"
         android:padding="24dp"
         android:text="Retake"

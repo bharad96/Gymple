@@ -67,12 +67,18 @@ public class MomentUploadActivity extends AppCompatActivity {
         uploadMoment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.show();
                 uploadPhoto();
             }
         });
 
         photoImageView = findViewById(R.id.userImage);
         momentDescription = findViewById(R.id.userInputEditText);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage("Uploading...");
+        progressDialog.setCancelable(false);
 
     }
 
@@ -182,7 +188,7 @@ public class MomentUploadActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        // TODO add a progressDialog
+                        progressDialog.hide();
                         Log.d("Moment Upload Activity", "DocumentSnapshot added with ID: " + documentReference.getId());
                         Toasty.success(MomentUploadActivity.this, "Moment uploaded successfully!").show();
                         finish();
@@ -192,6 +198,7 @@ public class MomentUploadActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w("Moment Upload Activity", "Error adding document", e);
+                        progressDialog.hide();
                     }
                 });
     }

@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center_horizontal"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/secondaryColor"
             android:text="Reset Filter"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             app:cornerRadius="@android:dimen/thumbnail_width"

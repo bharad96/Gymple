@@ -9,7 +9,7 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    android:background="@color/colorPrimary"
+    android:background="@color/primaryColor"
     tools:context=".Moments.LoginActivity">
 
     <com.google.android.gms.common.SignInButton
