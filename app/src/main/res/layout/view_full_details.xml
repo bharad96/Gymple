@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
-                android:text="Jurong West ClubFITT Gym"
+                android:text="Loading activity centre.."
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#484848"
@@ -116,12 +116,13 @@
                             android:id="@+id/gym_info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginRight="15dp"
                             android:layout_marginBottom="8dp"
                             android:layout_weight="1"
-                            android:text="Jurong East ActiveSG Gym, formerly known as Jurong East ClubFITT Gym, is a public gym operated by Sport Singapore.\n\nBeing the first one-stop integrated centre, Jurong East Sport Centre, formerly known as Jurong East Sport and Recreation Centre, marks a milestone in Sport Singapore’s facilities development when it opened in 2000. It was the first pool to offer a lazy river, wave pool and fun slides to the masses at an affordable rate.\n\nWith its other facilities like air-conditioned sports hall, stadium, fitness gym, Jurong East Sport Centre prides itself as a preferred venue for community events, tournaments and a leisure day out for all."
+                            android:text="Loading activity centre information.."
                             android:textSize="10dp" />
                     </TableRow>
 
@@ -160,7 +161,7 @@
                             android:layout_marginLeft="25dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="1"
-                            android:text="equipment holder"
+                            android:text="Loading equipment.."
                             android:textSize="10dp" />
                     </TableRow>
 
@@ -186,7 +187,7 @@
                             android:layout_marginLeft="25dp"
                             android:layout_marginRight="15dp"
                             android:layout_weight="1"
-                            android:text="location text holder"
+                            android:text="Loading location.."
                             android:textSize="10dp" />
                     </TableRow>
 
@@ -211,7 +212,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="25dp"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Loading operating hours.."
                             android:textSize="10dp"
                             android:layout_gravity="center_vertical"
                             android:layout_centerVertical="true"/>

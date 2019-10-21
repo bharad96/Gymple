@@ -78,11 +78,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
     private String API_KEY = "AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
     private String pid = null;
 
-    //listOfGymInfo.add(1, "ChIJEwW7gpoP2jER4o0mrMTZddM"); //jurong east clubfitt / activesg
-    //listOfGymInfo.add(2, "ChIJWaHnCyAQ2jERPzL-9jFkzWA"); //jurong west clubfitt / activesg
-    //listOfGymInfo.add(3, "ChIJmRnrx-wP2jERBnqNTg-3Tv0"); //amore fitness jurong point 2
-
-
     public static LatLng position;
 
     String place_info, postal_Code, placeName;
