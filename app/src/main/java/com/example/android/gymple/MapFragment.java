@@ -99,7 +99,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
             builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    Intent i = new Intent();
+                    //i.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    i.setAction(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(i);
+                    //context.startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS));
                 }
             });
             builder.create();
