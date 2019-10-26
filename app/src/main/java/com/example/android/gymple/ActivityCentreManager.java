@@ -5,12 +5,6 @@ import android.content.res.Resources;
 import android.location.Location;
 import android.util.Log;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.android.gms.maps.model.LatLng;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,14 +16,27 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * The ActivityCentreManager class is a controller class that manages the ActivityCentre class
+ * @author  Desmond Yeo
+ * @version 1.0, 23 Oct 2019
+ *
+ */
 public class ActivityCentreManager {
-    Context context;
+
+    private Context context;
     private String jsonString;
     public static ArrayList<ActivityCentre> activitycentreArrayList = new ArrayList<ActivityCentre>();
 
-    public ActivityCentreManager(Resources resources, int id) {
-        InputStream resourceReader = resources.openRawResource(id);
+    /**
+     * Constructor for class ActivityCentreManager
+     * <p>The constructor will load the json file from the resource file and set the data for each
+     * ActivityCentre object
+     * <p/>
+     * @param resources The resource file that the application contain
+     */
+    public ActivityCentreManager(Resources resources) {
+        InputStream resourceReader = resources.openRawResource(R.raw.datajson);
         Writer writer = new StringWriter();
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(resourceReader, "UTF-8"));
@@ -69,7 +76,11 @@ public class ActivityCentreManager {
             Log.e("JsonParser Example", "unexpected JSON exception", ex);
         }
     }
-
+    /**
+     * This method will calculate the distance the user is for each of the activity centre
+     * and return an ArrayList of ActivityCentre that is within 5km from the user
+     * @return ArrayList<ActivityCentre> An ArrayList of ActivityCentre that is within 5km from the user
+     */
     //get nearest location based on current location
     public static ArrayList<ActivityCentre> getNearestCentre() {
         ArrayList<ActivityCentre> nearestCentreList = new ArrayList<ActivityCentre>();
@@ -86,6 +97,11 @@ public class ActivityCentreManager {
         return nearestCentreList;
     }
 
+    /**
+     * This method will update the activity centre's distance when the user location changed
+     * @param location The current location of the user
+     *
+     */
     public static void updateDistance(Location location) {
         Location loc1 = new Location("");
         loc1.setLatitude(location.getLatitude());
@@ -118,6 +134,12 @@ public class ActivityCentreManager {
         return nearestCentreList;
     }
 
+    /**
+     * This method return an ArrayList of activity centre based on user search result
+     * @param filterResult The activity type of of an activity centre. eg. Gym, Yoga, Swimming pool
+     * @param name The name of an activity centre
+     * @return An ArrayList of activity centre which has been filtered based on user search result
+     */
     public static ArrayList<ActivityCentre> getFilterResult(ArrayList<String> filterResult, String name) {
         ArrayList<ActivityCentre> filterAndSearchResult = new ArrayList<ActivityCentre>();
         if(filterResult != null && name != null)

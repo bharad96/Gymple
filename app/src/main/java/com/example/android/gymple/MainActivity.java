@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements
         StrictMode.setThreadPolicy(policy);
 
         setContentView(R.layout.activity_main);
-        ActivityCentreManager activitycentreManager = new ActivityCentreManager(getResources(), R.raw.datajson);
+        ActivityCentreManager activitycentreManager = new ActivityCentreManager(getResources());
         sessionManager = new SessionManager(this);
 
         drawerLayout = findViewById(R.id.drawer_layout);

@@ -130,7 +130,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
         //endregion
 
         //region Get activity centre's values and details, update values
-        //position = getActivity().getIntent().getExtras().getParcelable("latLon_values");
+        position = getActivity().getIntent().getExtras().getParcelable("latLon_values");
         place_Title = getActivity().getIntent().getExtras().getString("place_Title");
         place_info = getActivity().getIntent().getExtras().getString("place_info");
         Log.d("placeinfo", place_info);
