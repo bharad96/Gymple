@@ -85,6 +85,7 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
             Intent myIntent = new Intent(activity.getApplicationContext(), ViewFullDetails.class);
             Intent myIntent2 = new Intent(activity.getApplicationContext(), FetchAddressIntentService.class);
             myIntent.putExtra("latLon_values", ac.getCoordinates()); //Optional parameters
+
             myIntent.putExtra("place_ID", "");
             myIntent.putExtra("place_Title", ac.getName());
             myIntent.putExtra("place_info", ac.getDesc());
