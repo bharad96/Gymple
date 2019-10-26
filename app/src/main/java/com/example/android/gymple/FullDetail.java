@@ -8,8 +8,6 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
-import android.app.Activity;
-import android.app.ActionBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -68,10 +66,16 @@ import java.util.List;
 public class FullDetail extends AppCompatActivity implements OnMapReadyCallback {
     public static Details detail;
 
-    private static String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
+    private String API_KEY = "AIzaSyBqeCRKy7LyjO2DjDsndB08EmQRgS-GKR4";
     private String pid = null;
 
+    //listOfGymInfo.add(1, "ChIJEwW7gpoP2jER4o0mrMTZddM"); //jurong east clubfitt / activesg
+    //listOfGymInfo.add(2, "ChIJWaHnCyAQ2jERPzL-9jFkzWA"); //jurong west clubfitt / activesg
+    //listOfGymInfo.add(3, "ChIJmRnrx-wP2jERBnqNTg-3Tv0"); //amore fitness jurong point 2
+
+
     public static LatLng position;
+
     String place_Title, place_info, placeName, postal_Code;
 
     private RequestQueue mRequestQueue;
@@ -82,11 +86,11 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     ImageButton shareButton;
     TextView address, mName, gymInfo;
     String temp_address, facilities;
-    Toolbar mActionBarToolbar;
 
     private ArrayList<Photo> mPhotoList;
     private RecyclerView pRecyclerView;
     private PhotosAdapter pExampleAdapter;
+
 
     TextView[] textViews;
     TextView hoursTextView, openCloseTextView, mondayTextView, tuesdayTextView, wednesdayTextView, thursdayTextView, fridayTextView, saturdayTextView, sundayTextView;
@@ -97,7 +101,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     String[] opHours;
 
     final ArrayList<String> openingHours = new ArrayList<>();
-    ArrayList<String> openingHours2 = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +109,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
 
         //region OnClick Back Button
         ImageButton backButton = (ImageButton)findViewById(R.id.back_button);
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,23 +118,16 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         });
         //endregion
 
+        //region idk for what ah
+        // Initialize Places.
+        Places.initialize(getApplicationContext(), API_KEY);
+        //endregion
+
         //region Get activity centre's values and details, update values
         position = getIntent().getExtras().getParcelable("latLon_values");
         place_Title = getIntent().getExtras().getString("place_Title");
         place_info = getIntent().getExtras().getString("place_info");
         postal_Code = getIntent().getExtras().getString("postal_code");
-        //endregion
-
-        //region Changing action bar title and button
-        mActionBarToolbar = (Toolbar) findViewById(R.id.title_tab);
-        setSupportActionBar(mActionBarToolbar);
-        mActionBarToolbar.setTitle(place_Title);
-
-        //getActionBar().setHomeButtonEnabled(true);
-        //endregion
-
-        //region Initialize Places.
-        Places.initialize(getApplicationContext(), API_KEY);
         //endregion
 
         //region Calls to get address from lat/lon
@@ -153,9 +150,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         gymInfo = (TextView) findViewById(R.id.gym_info);
         shareButton = (ImageButton) findViewById(R.id.share_button);
         //endregion
-
-        //set name of place based on KML data
-        UpdateGymTitle(place_Title);
 
         mRequestQueue = Volley.newRequestQueue(this);
         getPlaceID(place_Title, postal_Code);
@@ -182,10 +176,11 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         textViews[4] = fridayTextView;
         textViews[5] = saturdayTextView;
         textViews[6] = sundayTextView;
+
         //endregion
 
         GetFacilities(place_info);
-        //GetOperatingHours(place_Title);
+        GetOperatingHours(placeName);
 
         //region Toggle click to expand / hide daily operating hours
         arrowImageView.setOnClickListener(new View.OnClickListener() {
@@ -206,7 +201,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getApplicationContext(), ReviewActivity.class);
-                i.putExtra("place_name", place_Title);
+                i.putExtra("place_name", placeName);
                 i.putExtra("pid", pid);
                 startActivity(i);
             }
@@ -234,29 +229,18 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         });
         //endregion
 
-        //region Volley google photos
         pRecyclerView = findViewById(R.id.recycler_view_photos);
         pRecyclerView.setHasFixedSize(true);
         LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(FullDetail.this, LinearLayoutManager.HORIZONTAL, false);
         pRecyclerView.setLayoutManager(horizontalLayoutManagaer);
 
         mPhotoList = new ArrayList<>();
-        mRequestQueue = Volley.newRequestQueue(this);
-        //endregion
-    }
 
-    private void UpdateGymTitle(String placeTitle) {
-        if (placeTitle.length() > 25) {
-            placeTitle = placeTitle.substring(0, 24);
-            placeTitle = placeTitle.concat("..");
-        }
-        mName.setText(placeTitle);
+        mRequestQueue = Volley.newRequestQueue(this);
+
     }
 
     private void getPlaceID(String placetitle, String postalCode) {
-        //Clean string
-        placetitle = placetitle.replaceAll(" ", "");
-        placetitle = placetitle.replaceAll("-", "");
 
         //Splitting String
         String[] unameD1 = placetitle.split(" ");
@@ -267,8 +251,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
             aggString = aggString + "%20" + unameD1[i];
         }
 
-        //placeID is correct
-        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postalCode + aggString + "&key=" + API_KEY;
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postalCode + aggString + "&key=AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
         Log.d("url2", url);
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -310,20 +293,18 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                 try {
                     JSONObject jsonObject = response.getJSONObject("result");
 
-                    //region Format a, GetOperatingHours, Set Address
-                    //region Address formatting
-                    //mName.setText(jsonObject.getString("name"));
+                    //region address and title
+                    mName.setText(jsonObject.getString("name"));
+                    //mName.setTextColor(Color.parseColor("#484848"));
                     temp_address_no_format = jsonObject.get("formatted_address").toString();
 
-                    String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
-                    String temp_address2 = temp_address_no_format.substring(temp_address_no_format.indexOf(", Singapore")+2);
+                    //String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
+                    //String temp_address2 = temp_address_no_format.substring(temp_address_no_format.indexOf(", Singapore")+2);
 
-                    temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
-                    //endregion
+                   // temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
+
 
                     placeName = jsonObject.getString("name");
-                    GetOperatingHours(placeName);
-
                     address.setText(temp_address_no_format);
                     //endregion
 
@@ -337,6 +318,8 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                         String upref = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=" + photoref + "&key=" + API_KEY;
 
                         mPhotoList.add(new Photo(upref));
+
+
                         //Photos API reference
                         //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=YOUR_API_KEY
                     }
@@ -359,7 +342,8 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         mRequestQueue.add(request);
     }
 
-    public void HardcodedGymInfoForDemo(String placeID) {
+    public void HardcodedGymInfoForDemo(String placeID)
+    {
         if(placeID != null) {
             switch (placeID) {
                 case "ChIJmRnrx-wP2jERBnqNTg-3Tv0": //amore fitness
@@ -385,16 +369,9 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
     }
 
     //region Opening hours
-    public void GetOperatingHours(String placeTitle)
+    public void GetOperatingHours(String place_name)
     {
-        placeTitle = placeTitle.replaceAll(" ", "%20");
-        placeTitle = placeTitle.replaceAll("'", "%27");
-        Log.d("placetitle", placeTitle);
-        Log.d("placetitle2", placeName);
-
-        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + placeTitle + "&inputtype=textquery&fields=place_id";
-        Log.d("urlop", url);
-
+        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + place_name + "&inputtype=textquery&fields=place_id";
         final RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext());
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -414,7 +391,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                     if (!placeID.equals(""))
                     {
                         String url = "https://maps.googleapis.com/maps/api/place/details/json?key=" + API_KEY + "&placeid=" + placeID + "&fields=opening_hours";
-                        Log.d("urlop2", url);
+                        Log.d("url", url);
                         pid = placeID;
 
                         final StringRequest stringRequest2 = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -423,75 +400,62 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
                                 Gson gson = new Gson();
                                 placeDetails = gson.fromJson(response, PlaceDetails.class);
 
-                                if(placeDetails.getResult().getOpeningHours() != null)
+                                if(openingHours == null)
                                 {
+                                    Log.d("OpeningHours", "is null");
+                                }
+                                else {
                                     openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
+                                }
+                                //region For Sharing Info
+                                share_opening_hours = openingHours.toString();
+                                share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length()-1);
 
-                                    //region For Sharing Info
-                                    share_opening_hours = openingHours.toString();
-                                    share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length()-1);
+                                opHours = share_opening_hours.split(", ");
+                                //endregion
 
-                                    opHours = share_opening_hours.split(", ");
-                                    //endregion
+                                Calendar calendar = Calendar.getInstance();
+                                int day = calendar.get(Calendar.DAY_OF_WEEK); //1 to 7, sun/mon/tue/wed/thu/fri/sat
 
-                                    //region Choosing the right day
-                                    Calendar calendar = Calendar.getInstance();
-                                    int day = calendar.get(Calendar.DAY_OF_WEEK); //1 to 7, sun/mon/tue/wed/thu/fri/sat
+                                for(int j = 0; j<opHours.length; j++)
+                                {
+                                    opHours[j] = opHours[j] + "\n";
+                                }
 
-                                    for(int j = 0; j<opHours.length; j++)
+                                for (int i=0; i < openingHours.size(); i++)
+                                {
+                                    String[] splitString = openingHours.get(i).split(" ", 2);
+
+                                    textViews[i].setText(splitString[1]);
+
+                                    if(i+2 == day)
                                     {
-                                        opHours[j] = opHours[j] + "\n";
+                                        hoursTextView.setText(splitString[1]);
+                                        String temp = i + ", " + day;
+                                        Log.d("i, day", temp);
                                     }
-
-                                    for (int i=0; i < openingHours.size(); i++)
+                                    else if(i==6) //sat in arraylist
                                     {
-                                        String[] splitString = openingHours.get(i).split(" ", 2);
-
-                                        textViews[i].setText(splitString[1]);
-
-                                        if(i+2 == day)
+                                        if(day==1) //sat in days
                                         {
                                             hoursTextView.setText(splitString[1]);
                                             String temp = i + ", " + day;
                                             Log.d("i, day", temp);
                                         }
-                                        else if(i==6) //sat in arraylist
-                                        {
-                                            if(day==1) //sat in days
-                                            {
-                                                hoursTextView.setText(splitString[1]);
-                                                String temp = i + ", " + day;
-                                                Log.d("i, day", temp);
-                                            }
-                                        }
                                     }
+                                }
 
-                                    if (placeDetails.getResult().getOpeningHours().getOpenNow()) {
-                                        openCloseTextView.setTextColor(Color.GREEN);
-                                        openCloseTextView.setText("OPEN NOW");
-                                    } else {
-                                        openCloseTextView.setTextColor(Color.RED);
-                                        openCloseTextView.setText("CLOSED");
-                                    }
-                                    //endregion
+                                if (placeDetails.getResult().getOpeningHours().getOpenNow())
+                                {
+                                    openCloseTextView.setTextColor(Color.GREEN);
+                                    openCloseTextView.setText("OPEN NOW");
                                 }
                                 else
                                 {
-                                    opHours = new String[7];
-                                    opHours[0] = "Operating hours not available \n";
-
-                                    for(int j = 0; j<6; j++)
-                                    {
-                                        opHours[j] = "";
-                                    }
-
-                                    for (int i = 0; i < 7; i++) {
-                                        textViews[i].setText("Operating hours not available");
-                                    }
-
-                                    hoursTextView.setText("Operating hours not available");
-                                    openCloseTextView.setText("");
+                                    openCloseTextView.setTextColor(Color.RED);
+                                    openCloseTextView.setText("CLOSED");
                                 }
+
                             }
                         }, new Response.ErrorListener() {
                             @Override
