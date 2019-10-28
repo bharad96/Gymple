@@ -48,6 +48,8 @@ import android.os.Handler;
 import android.os.ResultReceiver;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -86,7 +88,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
     //region Declare XML components
     Button revButt;
-    ImageButton shareButton;
+    ImageButton shareButton, actionbarShareButton;
     TextView address, mName, gymInfo;
     Toolbar toolbar;
     //endregion
@@ -104,12 +106,14 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     String[] opHours;
     final ArrayList<String> openingHours = new ArrayList<>();
 
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = (View) inflater.inflate(R.layout.view_full_details,
                 container, false);
 
-        //getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+        setHasOptionsMenu(true);
 
         //region OnClick Back Button
         ImageButton backButton = (ImageButton) view.findViewById(R.id.back_button);
@@ -154,6 +158,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         mName = (TextView) view.findViewById(R.id.gym_title);
         gymInfo = (TextView) view.findViewById(R.id.gym_info);
         shareButton = (ImageButton) view.findViewById(R.id.share_button);
+        actionbarShareButton = (ImageButton) view.findViewById(R.id.actionbar_share_button);
         //endregion
 
         mRequestQueue = Volley.newRequestQueue(getActivity());
@@ -245,6 +250,34 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         return view ;
     }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle
+        // If it returns true, then it has handled
+        // the nav drawer indicator touch event
+
+        if(item.getItemId()== R.id.actionbar_share_button)
+        {
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("text/plain");
+            i.putExtra(Intent.EXTRA_SUBJECT, "GYMPLE");
+
+            String message = "\n" + placeName +"\n\n" +
+                    "Facilities: " + facilities + "\n" +
+                    "Address: " + temp_address_no_format + "\n\n" +
+                    "Opening hours: \n" +
+                    opHours[0] + opHours[1] + opHours[2] + opHours[3] + opHours[4] + opHours[5] + opHours[6] + "\n\n";
+
+            i.putExtra(Intent.EXTRA_TEXT, message);
+            startActivity(Intent.createChooser(i, "Share this via"));
+        }
+        else if(item.getItemId() == R.id.actionbar_back_button)
+        {
+            getActivity().finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     public void onViewCreated(View view, Bundle savedInstanceState) {
         // you can add listener of elements here
           /*Button mButton = (Button) view.findViewById(R.id.button);
@@ -275,6 +308,11 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         GetFacilities(place_info);
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.full_desc_actionbar, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 
     private void getPlaceID(String placetitle, String postalCode)
     {
