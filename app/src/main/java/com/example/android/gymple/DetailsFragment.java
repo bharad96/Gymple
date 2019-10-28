@@ -88,9 +88,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
     //region Declare XML components
     Button revButt;
-    ImageButton shareButton, actionbarShareButton;
-    TextView address, mName, gymInfo;
-    Toolbar toolbar;
+    TextView address, gymInfo;
     //endregion
 
     private ArrayList<Photo> mPhotoList;
@@ -106,8 +104,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     String[] opHours;
     final ArrayList<String> openingHours = new ArrayList<>();
 
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = (View) inflater.inflate(R.layout.view_full_details,
@@ -115,16 +111,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
         setHasOptionsMenu(true);
 
-        //region OnClick Back Button
-        ImageButton backButton = (ImageButton) view.findViewById(R.id.back_button);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-            }
-        });
-        //endregion
 
         //region idk for what ah
         // Initialize Places.
@@ -155,10 +141,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         //region findViewByID-s from XML
         revButt = (Button) view.findViewById(R.id.revbut);
         address = (TextView) view.findViewById(R.id.gym_address);
-        mName = (TextView) view.findViewById(R.id.gym_title);
         gymInfo = (TextView) view.findViewById(R.id.gym_info);
-        shareButton = (ImageButton) view.findViewById(R.id.share_button);
-        actionbarShareButton = (ImageButton) view.findViewById(R.id.actionbar_share_button);
         //endregion
 
         mRequestQueue = Volley.newRequestQueue(getActivity());
@@ -215,27 +198,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         });
         //endregion
 
-        //region Set onclick button to pop-up share
-        shareButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, "GYMPLE");
-
-                String message = "\n" + placeName +"\n\n" +
-                        "Facilities: " + facilities + "\n" +
-                        "Address: " + temp_address_no_format + "\n\n" +
-                        "Opening hours: \n" +
-                        opHours[0] + opHours[1] + opHours[2] + opHours[3] + opHours[4] + opHours[5] + opHours[6] + "\n\n";
-
-                i.putExtra(Intent.EXTRA_TEXT, message);
-                startActivity(Intent.createChooser(i, "Share this via"));
-            }
-        });
-        //endregion
-
         //region Volley google photos
         pRecyclerView = view.findViewById(R.id.recycler_view_photos);
         pRecyclerView.setHasFixedSize(true);
@@ -261,7 +223,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, "GYMPLE");
 
-            String message = "\n" + placeName +"\n\n" +
+            String message = "\n" + place_Title +"\n\n" +
                     "Facilities: " + facilities + "\n" +
                     "Address: " + temp_address_no_format + "\n\n" +
                     "Opening hours: \n" +
@@ -270,7 +232,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
             i.putExtra(Intent.EXTRA_TEXT, message);
             startActivity(Intent.createChooser(i, "Share this via"));
         }
-        else if(item.getItemId() == R.id.actionbar_back_button)
+        else if(item.getItemId() == android.R.id.home /*|| item.getItemId() == R.id.actionbar_back_button*/)
         {
             getActivity().finish();
         }
@@ -284,16 +246,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
             mButton.setOnClickListener(this); */
     }
 
-    private void UpdateGymTitle(String placeTitle)
-    {
-        if (placeTitle.length() > 25) {
-            placeTitle = placeTitle.substring(0, 24);
-            placeTitle = placeTitle.concat("..");
-        }
-
-        mName.setText(placeTitle);
-    }
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {   super.onActivityCreated(savedInstanceState);
@@ -301,11 +253,10 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         getActivity().setTitle(place_Title);
 
         //Onclick back button
-        //((AppCompatActivity)getActivity()).getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow_smaller);
-        //((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true); //shows back button
 
         //set name of place based on KML data
-        UpdateGymTitle(place_Title);
         GetFacilities(place_info);
     }
 
