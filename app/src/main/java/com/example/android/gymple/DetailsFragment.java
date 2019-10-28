@@ -270,10 +270,10 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
             i.putExtra(Intent.EXTRA_TEXT, message);
             startActivity(Intent.createChooser(i, "Share this via"));
         }
-        /*else if(item.getItemId() == R.id.actionbar_back_button)
+        else if(item.getItemId() == R.id.actionbar_back_button)
         {
             getActivity().finish();
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -286,9 +286,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
     private void UpdateGymTitle(String placeTitle)
     {
-        String placetitleqwerty = placeTitle + "";
-        Log.d("placetitleqwerty", placetitleqwerty);
-
         if (placeTitle.length() > 25) {
             placeTitle = placeTitle.substring(0, 24);
             placeTitle = placeTitle.concat("..");
@@ -302,6 +299,10 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     {   super.onActivityCreated(savedInstanceState);
 
         getActivity().setTitle(place_Title);
+
+        //Onclick back button
+        //((AppCompatActivity)getActivity()).getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow_smaller);
+        //((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //set name of place based on KML data
         UpdateGymTitle(place_Title);

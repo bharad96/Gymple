@@ -5,8 +5,15 @@
     tools:context=".MainActivity">
 
     <item
-        android:id="@+id/actionbar_share_button"
-        android:title="Search"
-        android:icon="@drawable/share_icon"
+        android:id="@+id/actionbar_back_button"
+        android:title="Back"
+        android:icon="@drawable/arrow_smaller"
         app:showAsAction="collapseActionView|ifRoom"/>
+
+    <item
+        android:id="@+id/actionbar_share_button"
+        android:title="Share"
+        android:icon="@drawable/share_icon"
+        app:showAsAction="collapseActionView|always"/>
+
 </menu>
