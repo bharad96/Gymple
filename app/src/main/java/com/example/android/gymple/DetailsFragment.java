@@ -270,10 +270,10 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
             i.putExtra(Intent.EXTRA_TEXT, message);
             startActivity(Intent.createChooser(i, "Share this via"));
         }
-        else if(item.getItemId() == R.id.actionbar_back_button)
+        /*else if(item.getItemId() == R.id.actionbar_back_button)
         {
             getActivity().finish();
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
