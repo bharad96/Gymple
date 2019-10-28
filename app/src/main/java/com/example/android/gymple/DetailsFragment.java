@@ -75,7 +75,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
 
     public static Details detail;
 
-    private String API_KEY = "AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
+    private static String API_KEY = "AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
     private String pid = null;
 
     public static LatLng position;
@@ -106,7 +106,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
     String[] opHours;
 
     final ArrayList<String> openingHours = new ArrayList<>();
-
+    ArrayList<String> openingHours2 = new ArrayList<>();
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -186,9 +186,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
 
         //endregion
 
-        //GetFacilities(place_info);
-        GetOperatingHours(placeName);
-
         //region Toggle click to expand / hide daily operating hours
         arrowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,7 +205,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getActivity().getApplicationContext(), ReviewActivity.class);
-                i.putExtra("place_name", placeName);
+                i.putExtra("place_name", place_Title);
                 i.putExtra("postal", postal_Code);
                 startActivity(i);
             }
@@ -236,6 +233,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
         });
         //endregion
 
+        //region Volley google photos
         pRecyclerView = view.findViewById(R.id.recycler_view_photos);
         pRecyclerView.setHasFixedSize(true);
         LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
@@ -244,7 +242,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
         mPhotoList = new ArrayList<>();
 
         mRequestQueue = Volley.newRequestQueue(getActivity());
-
+        //endregion
 
         return view ;
     }
@@ -253,7 +251,19 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
         // you can add listener of elements here
           /*Button mButton = (Button) view.findViewById(R.id.button);
             mButton.setOnClickListener(this); */
+    }
 
+    private void UpdateGymTitle(String placeTitle)
+    {
+        String placetitleqwerty = placeTitle + "";
+        Log.d("placetitleqwerty", placetitleqwerty);
+
+        if (placeTitle.length() > 25) {
+            placeTitle = placeTitle.substring(0, 24);
+            placeTitle = placeTitle.concat("..");
+        }
+
+        mName.setText(placeTitle);
     }
 
     @Override
@@ -262,11 +272,17 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
 
         GetFacilities(place_info);
 
-
+        //set name of place based on KML data
+        UpdateGymTitle(place_Title);
     }
 
 
-    private void getPlaceID(String placetitle, String postalCode) {
+    private void getPlaceID(String placetitle, String postalCode)
+    {
+
+        //Clean string
+        placetitle = placetitle.replaceAll(" ", "");
+        placetitle = placetitle.replaceAll("-", "");
 
         //Splitting String
         String[] unameD1 = placetitle.split(" ");
@@ -277,7 +293,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
             aggString = aggString + "%20" + unameD1[i];
         }
 
-        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postalCode + aggString + "&key=AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?&address=" + postalCode + aggString + "&key=" + API_KEY;
         Log.d("url2", url);
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -321,18 +337,21 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
                 try {
                     JSONObject jsonObject = response.getJSONObject("result");
 
-                    //region address and title
-                    mName.setText(jsonObject.getString("name"));
-                    //mName.setTextColor(Color.parseColor("#484848"));
+                    //region Format address, GetOperatingHours, Set Address
+                    //region Address formatting
+                    //mName.setText(jsonObject.getString("name"));
+
                     temp_address_no_format = jsonObject.get("formatted_address").toString();
 
-                    //String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
-                    //String temp_address2 = temp_address_no_format.substring(temp_address_no_format.indexOf(", Singapore")+2);
+                    String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
+                    String temp_address2 = temp_address_no_format.substring(temp_address_no_format.indexOf(", Singapore")+2);
 
-                    // temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
-
+                    temp_address = temp_address1 + System.getProperty("line.separator") + temp_address2;
+                    //endregion
 
                     placeName = jsonObject.getString("name");
+                    GetOperatingHours(placeName);
+
                     address.setText(temp_address_no_format);
                     //endregion
 
@@ -346,7 +365,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
                         String upref = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=" + photoref + "&key=" + API_KEY;
 
                         mPhotoList.add(new Photo(upref));
-
 
                         //Photos API reference
                         //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=YOUR_API_KEY
@@ -397,9 +415,15 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
     }
 
     //region Opening hours
-    public void GetOperatingHours(String place_name)
-    {
-        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + place_name + "&inputtype=textquery&fields=place_id";
+    public void GetOperatingHours(String placeTitle)
+    {placeTitle = placeTitle.replaceAll(" ", "%20");
+        placeTitle = placeTitle.replaceAll("'", "%27");
+        Log.d("placetitle", placeTitle);
+        Log.d("placetitle2", placeName);
+
+        String url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=" + API_KEY + "&input=" + placeTitle + "&inputtype=textquery&fields=place_id";
+        Log.d("urlop", url);
+
         final RequestQueue mRequestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -419,7 +443,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
                     if (!placeID.equals(""))
                     {
                         String url = "https://maps.googleapis.com/maps/api/place/details/json?key=" + API_KEY + "&placeid=" + placeID + "&fields=opening_hours";
-                        Log.d("url", url);
+                        Log.d("urlop2", url);
                         pid = placeID;
 
                         final StringRequest stringRequest2 = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -428,62 +452,76 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
                                 Gson gson = new Gson();
                                 placeDetails = gson.fromJson(response, PlaceDetails.class);
 
-                                if(openingHours == null)
+                                if(placeDetails.getResult().getOpeningHours() != null)
                                 {
-                                    Log.d("OpeningHours", "is null");
-                                }
-                                else {
                                     openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
-                                }
-                                //region For Sharing Info
-                                share_opening_hours = openingHours.toString();
-                                share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length()-1);
 
-                                opHours = share_opening_hours.split(", ");
-                                //endregion
+                                    //region For Sharing Info
+                                    share_opening_hours = openingHours.toString();
+                                    share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length()-1);
 
-                                Calendar calendar = Calendar.getInstance();
-                                int day = calendar.get(Calendar.DAY_OF_WEEK); //1 to 7, sun/mon/tue/wed/thu/fri/sat
+                                    opHours = share_opening_hours.split(", ");
+                                    //endregion
 
-                                for(int j = 0; j<opHours.length; j++)
-                                {
-                                    opHours[j] = opHours[j] + "\n";
-                                }
+                                    Calendar calendar = Calendar.getInstance();
+                                    int day = calendar.get(Calendar.DAY_OF_WEEK); //1 to 7, sun/mon/tue/wed/thu/fri/sat
 
-                                for (int i=0; i < openingHours.size(); i++)
-                                {
-                                    String[] splitString = openingHours.get(i).split(" ", 2);
-
-                                    textViews[i].setText(splitString[1]);
-
-                                    if(i+2 == day)
+                                    for(int j = 0; j<opHours.length; j++)
                                     {
-                                        hoursTextView.setText(splitString[1]);
-                                        String temp = i + ", " + day;
-                                        Log.d("i, day", temp);
+                                        opHours[j] = opHours[j] + "\n";
                                     }
-                                    else if(i==6) //sat in arraylist
+
+                                    for (int i=0; i < openingHours.size(); i++)
                                     {
-                                        if(day==1) //sat in days
+                                        String[] splitString = openingHours.get(i).split(" ", 2);
+
+                                        textViews[i].setText(splitString[1]);
+
+                                        if(i+2 == day)
                                         {
                                             hoursTextView.setText(splitString[1]);
                                             String temp = i + ", " + day;
                                             Log.d("i, day", temp);
                                         }
+                                        else if(i==6) //sat in arraylist
+                                        {
+                                            if(day==1) //sat in days
+                                            {
+                                                hoursTextView.setText(splitString[1]);
+                                                String temp = i + ", " + day;
+                                                Log.d("i, day", temp);
+                                            }
+                                        }
                                     }
-                                }
 
-                                if (placeDetails.getResult().getOpeningHours().getOpenNow())
-                                {
-                                    openCloseTextView.setTextColor(Color.GREEN);
-                                    openCloseTextView.setText("OPEN NOW");
+                                    if (placeDetails.getResult().getOpeningHours().getOpenNow())
+                                    {
+                                        openCloseTextView.setTextColor(Color.GREEN);
+                                        openCloseTextView.setText("OPEN NOW");
+                                    }
+                                    else
+                                    {
+                                        openCloseTextView.setTextColor(Color.RED);
+                                        openCloseTextView.setText("CLOSED");
+                                    }
                                 }
                                 else
                                 {
-                                    openCloseTextView.setTextColor(Color.RED);
-                                    openCloseTextView.setText("CLOSED");
-                                }
+                                    opHours = new String[7];
+                                    opHours[0] = "Operating hours not available \n";
 
+                                    for(int j = 0; j < 6; j++)
+                                    {
+                                        opHours[j] = "";
+                                    }
+
+                                    for (int i = 0; i < 7; i++) {
+                                        textViews[i].setText("Operating hours not available");
+                                    }
+
+                                    hoursTextView.setText("Operating hours not available");
+                                    openCloseTextView.setText("");
+                                }
                             }
                         }, new Response.ErrorListener() {
                             @Override
