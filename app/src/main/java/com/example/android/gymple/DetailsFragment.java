@@ -1,5 +1,6 @@
 package com.example.android.gymple;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
@@ -71,47 +72,44 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-public class DetailsFragment extends Fragment implements OnMapReadyCallback{
-
-    public static Details detail;
-
+public class DetailsFragment extends Fragment implements OnMapReadyCallback
+{
     private static String API_KEY = "AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
     private String pid = null;
 
     public static LatLng position;
-
-    String place_info, postal_Code, placeName;
     public static String place_Title;
+    String place_info, postal_Code, placeName, temp_address, facilities;
 
     private RequestQueue mRequestQueue;
     private DetailsFragment.AddressResultReceiver mResultReceiver;
 
-    //Declare XML components
+    //region Declare XML components
     Button revButt;
     ImageButton shareButton;
     TextView address, mName, gymInfo;
-    String temp_address, facilities;
+    Toolbar toolbar;
+    //endregion
 
     private ArrayList<Photo> mPhotoList;
     private RecyclerView pRecyclerView;
     private PhotosAdapter pExampleAdapter;
 
-
     TextView[] textViews;
     TextView hoursTextView, openCloseTextView, mondayTextView, tuesdayTextView, wednesdayTextView, thursdayTextView, fridayTextView, saturdayTextView, sundayTextView;
 
     PlaceDetails placeDetails;
-    String temp_address_no_format;
-    String share_opening_hours;
-    String[] opHours;
+    String temp_address_no_format, share_opening_hours;
 
+    String[] opHours;
     final ArrayList<String> openingHours = new ArrayList<>();
-    ArrayList<String> openingHours2 = new ArrayList<>();
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = (View) inflater.inflate(R.layout.view_full_details,
                 container, false);
+
+        //getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         //region OnClick Back Button
         ImageButton backButton = (ImageButton) view.findViewById(R.id.back_button);
@@ -150,7 +148,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
         mapFragment.getMapAsync(this);
         //endregion
 
-        //region Get IDs
+        //region findViewByID-s from XML
         revButt = (Button) view.findViewById(R.id.revbut);
         address = (TextView) view.findViewById(R.id.gym_address);
         mName = (TextView) view.findViewById(R.id.gym_title);
@@ -270,16 +268,16 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback{
     public void onActivityCreated(Bundle savedInstanceState)
     {   super.onActivityCreated(savedInstanceState);
 
-        GetFacilities(place_info);
+        getActivity().setTitle(place_Title);
 
         //set name of place based on KML data
         UpdateGymTitle(place_Title);
+        GetFacilities(place_info);
     }
 
 
     private void getPlaceID(String placetitle, String postalCode)
     {
-
         //Clean string
         placetitle = placetitle.replaceAll(" ", "");
         placetitle = placetitle.replaceAll("-", "");
