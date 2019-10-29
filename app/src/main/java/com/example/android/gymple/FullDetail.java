@@ -104,15 +104,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_full_details);
 
-        //region OnClick Back Button
-        ImageButton backButton = (ImageButton)findViewById(R.id.back_button);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        //endregion
 
         //region Get activity centre's values and details, update values
         position = getIntent().getExtras().getParcelable("latLon_values");
@@ -122,7 +113,6 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         //endregion
 
         //region Changing action bar title and button
-        mActionBarToolbar = (Toolbar) findViewById(R.id.title_tab);
         setSupportActionBar(mActionBarToolbar);
         mActionBarToolbar.setTitle(place_Title);
 
@@ -149,9 +139,7 @@ public class FullDetail extends AppCompatActivity implements OnMapReadyCallback 
         //region Get IDs
         revButt = (Button) findViewById(R.id.revbut);
         address = (TextView) findViewById(R.id.gym_address);
-        mName = (TextView) findViewById(R.id.gym_title);
         gymInfo = (TextView) findViewById(R.id.gym_info);
-        shareButton = (ImageButton) findViewById(R.id.share_button);
         //endregion
 
         //set name of place based on KML data

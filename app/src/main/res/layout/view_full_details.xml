@@ -6,58 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/title_tab"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:background="#D3D3D2"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp" >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/back_button"
-                android:layout_width="41dp"
-                android:layout_height="41dp"
-                android:adjustViewBounds="false"
-                android:background="@android:color/transparent"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/arrow_smaller"
-                android:layout_alignParentLeft="true" />
-
-            <TextView
-                android:id="@+id/gym_title"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:text="Loading activity centre.."
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="#484848"
-                android:layout_centerInParent="true"/>
-
-            <ImageButton
-                android:id="@+id/share_button"
-                android:layout_width="41dp"
-                android:layout_height="41dp"
-                android:layout_alignParentRight="true"
-                android:adjustViewBounds="false"
-                android:background="@android:color/transparent"
-                android:padding="9dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/share_icon" />
-        </RelativeLayout>
-    </androidx.appcompat.widget.Toolbar>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -84,7 +32,8 @@
                 android:layout_marginLeft="20dp"
                 android:text="INFO"
                 android:textSize="18dp"
-                android:paddingBottom="5dp"/>
+                android:paddingBottom="5dp"
+                android:layout_marginTop="15dp"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/info_table"

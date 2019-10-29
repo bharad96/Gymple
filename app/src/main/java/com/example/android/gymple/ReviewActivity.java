@@ -51,7 +51,6 @@ public class ReviewActivity extends AppCompatActivity {
         Log.d("place name = ", acName);
 
         //region Set Toolbar Title
-        Toolbar toolbar = findViewById(R.id.title_tab);
         //setSupportActionBar(toolbar);
         //getSupportActionBar().hide();
 
