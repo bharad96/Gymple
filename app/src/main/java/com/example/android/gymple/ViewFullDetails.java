@@ -28,27 +28,4 @@ public class ViewFullDetails extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Get the ActionBar
-                /*
-                    public ActionBar getActionBar ()
-                        Retrieve a reference to this activity's ActionBar.
-
-                    Returns
-                        The Activity's ActionBar, or null if it does not have one.
-                */
-        ActionBar bar = getSupportActionBar();
-
-        // Change the ActionBar title text
-                /*
-                    public abstract void setTitle (CharSequence title)
-                        Set the action bar's title. This will only be
-                        displayed if DISPLAY_SHOW_TITLE is set.
-                */
-        bar.setTitle(this.getIntent().getExtras().getString("place_Title"));
-
-    }
 }
