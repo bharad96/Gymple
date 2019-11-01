@@ -31,6 +31,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.libraries.places.api.Places;
@@ -269,7 +270,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     {
         //Clean string
         placetitle = placetitle.replaceAll(" ", "%20");
-        placetitle = placetitle.replaceAll("-", "%2D");
+        placetitle = placetitle.replaceAll("'", "%27");
 
         //Splitting String
         String[] unameD1 = placetitle.split(" ");
@@ -403,7 +404,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
     //region Opening hours
     public void GetOperatingHours(String placeTitle)
-    {placeTitle = placeTitle.replaceAll(" ", "%20");
+    {
+        placeTitle = placeTitle.replaceAll(" ", "%20");
         placeTitle = placeTitle.replaceAll("'", "%27");
         Log.d("placetitle", placeTitle);
         Log.d("placetitle2", placeName);
@@ -439,75 +441,60 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
                                 Gson gson = new Gson();
                                 placeDetails = gson.fromJson(response, PlaceDetails.class);
 
-                                if(placeDetails.getResult().getOpeningHours() != null || placeDetails.getResult() != null)
+                                if(placeDetails.getResult() != null)
                                 {
-                                    openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
-
-                                    //region For Sharing Info
-                                    share_opening_hours = openingHours.toString();
-                                    share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length()-1);
-
-                                    opHours = share_opening_hours.split(", ");
-                                    //endregion
-
-                                    Calendar calendar = Calendar.getInstance();
-                                    int day = calendar.get(Calendar.DAY_OF_WEEK); //1 to 7, sun/mon/tue/wed/thu/fri/sat
-
-                                    for(int j = 0; j<opHours.length; j++)
+                                    if (placeDetails.getResult().getOpeningHours() != null)
                                     {
-                                        opHours[j] = opHours[j] + "\n";
-                                    }
+                                        openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
 
-                                    for (int i=0; i < openingHours.size(); i++)
-                                    {
-                                        String[] splitString = openingHours.get(i).split(" ", 2);
+                                        //region For Sharing Info
+                                        share_opening_hours = openingHours.toString();
+                                        share_opening_hours = share_opening_hours.substring(1, share_opening_hours.length() - 1);
 
-                                        textViews[i].setText(splitString[1]);
+                                        opHours = share_opening_hours.split(", ");
+                                        //endregion
 
-                                        if(i+2 == day)
-                                        {
-                                            hoursTextView.setText(splitString[1]);
-                                            String temp = i + ", " + day;
-                                            Log.d("i, day", temp);
+                                        Calendar calendar = Calendar.getInstance();
+                                        int day = calendar.get(Calendar.DAY_OF_WEEK); //1 to 7, sun/mon/tue/wed/thu/fri/sat
+
+                                        for (int j = 0; j < opHours.length; j++) {
+                                            opHours[j] = opHours[j] + "\n";
                                         }
-                                        else if(i==6) //sat in arraylist
-                                        {
-                                            if(day==1) //sat in days
-                                            {
+
+                                        for (int i = 0; i < openingHours.size(); i++) {
+                                            String[] splitString = openingHours.get(i).split(" ", 2);
+
+                                            textViews[i].setText(splitString[1]);
+
+                                            if (i + 2 == day) {
                                                 hoursTextView.setText(splitString[1]);
                                                 String temp = i + ", " + day;
                                                 Log.d("i, day", temp);
+                                            } else if (i == 6) //sat in arraylist
+                                            {
+                                                if (day == 1) //sat in days
+                                                {
+                                                    hoursTextView.setText(splitString[1]);
+                                                    String temp = i + ", " + day;
+                                                    Log.d("i, day", temp);
+                                                }
                                             }
                                         }
-                                    }
 
-                                    if (placeDetails.getResult().getOpeningHours().getOpenNow())
-                                    {
-                                        openCloseTextView.setTextColor(Color.GREEN);
-                                        openCloseTextView.setText("OPEN NOW");
+                                        if (placeDetails.getResult().getOpeningHours().getOpenNow()) {
+                                            openCloseTextView.setTextColor(Color.GREEN);
+                                            openCloseTextView.setText("OPEN NOW");
+                                        } else {
+                                            openCloseTextView.setTextColor(Color.RED);
+                                            openCloseTextView.setText("CLOSED");
+                                        }
                                     }
-                                    else
-                                    {
-                                        openCloseTextView.setTextColor(Color.RED);
-                                        openCloseTextView.setText("CLOSED");
+                                    else {
+                                        nullOperationalHours();
                                     }
                                 }
-                                else
-                                {
-                                    opHours = new String[7];
-                                    opHours[0] = "Operating hours not available \n";
-
-                                    for(int j = 0; j < 6; j++)
-                                    {
-                                        opHours[j] = "";
-                                    }
-
-                                    for (int i = 0; i < 7; i++) {
-                                        textViews[i].setText("Operating hours not available");
-                                    }
-
-                                    hoursTextView.setText("Operating hours not available");
-                                    openCloseTextView.setText("");
+                                else {
+                                    nullOperationalHours();
                                 }
                             }
                         }, new Response.ErrorListener() {
@@ -541,10 +528,10 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         // and move the map's camera to the same location.
         LatLng location = new LatLng(position.latitude, position.longitude);
         googleMap.addMarker(new MarkerOptions().position(location)
-                .title("Marker based on location"));
+                .title(place_Title));
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
-
+        googleMap.getUiSettings().setAllGesturesEnabled(false);
     }
     //endregion
 
@@ -604,6 +591,26 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         return 0;
     }
     //endregion
+
+    //region No Operational Hours Available on Google
+    public void nullOperationalHours()
+    {
+        opHours = new String[7];
+        opHours[0] = "Operating hours not available \n";
+
+        for (int j = 0; j < 6; j++) {
+            opHours[j] = "";
+        }
+
+        for (int i = 0; i < 7; i++) {
+            textViews[i].setText("Operating hours not available");
+        }
+
+        hoursTextView.setText("Operating hours not available");
+        openCloseTextView.setText("");
+    }
+
+
     //region Get Facilities
     public void GetFacilities(String placeInfo)
     {
