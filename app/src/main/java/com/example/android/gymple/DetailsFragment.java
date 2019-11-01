@@ -131,8 +131,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         //endregion
 
         //region Interactive map in description page
-        // Get the SupportMapFragment and request notification
-        // when the map is ready to be used.
+        // Get the SupportMapFragment and request notification when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) this.getChildFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -608,15 +607,17 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     //region Get Facilities
     public void GetFacilities(String placeInfo)
     {
-        if(placeInfo.contains("Facilities:") || placeInfo.contains("facilities:"))
+        if(placeInfo.contains("Facilities: ") || placeInfo.contains("facilities: "))
         {
             if(placeInfo.contains("Operating")){
+                //start at 12th character (index 0 ~ 11 = "facilities: ")
                 facilities =  placeInfo.substring(12, placeInfo.indexOf("Operating")-1);
             }
             else{
-                facilities =  placeInfo.substring(placeInfo.indexOf("Facilities"));
+                facilities =  placeInfo.substring(placeInfo.indexOf("Facilities")+12);
             }
 
+            //remove empty space in front of text
             char tempC = facilities.charAt(0);
 
             while(tempC == ' ')
@@ -626,7 +627,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
             }
 
             //replace double space to single space
-            facilities = facilities.replaceAll("  ", " ");
+            facilities = facilities.trim().replaceAll(" +", " ");
 
         }
         else
