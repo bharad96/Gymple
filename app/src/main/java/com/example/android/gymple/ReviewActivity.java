@@ -88,30 +88,31 @@ public class ReviewActivity extends AppCompatActivity {
                     acName = jsonObject.getString("name");
                     JSONArray jsonArray = jsonObject.getJSONArray("reviews");
 
-                    for (int i = 0; i < jsonArray.length(); i++) {
+                    if(jsonArray != null) {
+                        for (int i = 0; i < jsonArray.length(); i++) {
 
-                        JSONObject object = jsonArray.getJSONObject(i);
+                            JSONObject object = jsonArray.getJSONObject(i);
 
-                        String creatorName = object.getString("author_name");
-                        String imageUrl = object.getString("profile_photo_url");
-                        String rating = object.getString("rating");
-                        String comm = object.getString("text");
-                        String time = object.getString("relative_time_description");
+                            String creatorName = object.getString("author_name");
+                            String imageUrl = object.getString("profile_photo_url");
+                            String rating = object.getString("rating");
+                            String comm = object.getString("text");
+                            String time = object.getString("relative_time_description");
 
-                        //int likeCount = object.getInt("likes");
+                            //int likeCount = object.getInt("likes");
 
-                        mExampleList.add(new Reviews(imageUrl, creatorName, comm, rating, time, acName));
+                            mExampleList.add(new Reviews(imageUrl, creatorName, comm, rating, time, acName));
 
-                        Log.d("result", object.getString("author_name"));
-                        Log.d("result2", object.getString("rating"));
-                        Log.d("result3", object.getString("profile_photo_url"));
-                        Log.d("result4", object.getString("text"));
+                            Log.d("result", object.getString("author_name"));
+                            Log.d("result2", object.getString("rating"));
+                            Log.d("result3", object.getString("profile_photo_url"));
+                            Log.d("result4", object.getString("text"));
 
+                        }
+
+                        mExampleAdapter = new ReviewsAdapter(ReviewActivity.this, mExampleList);
+                        mRecyclerView.setAdapter(mExampleAdapter);
                     }
-
-                    mExampleAdapter = new ReviewsAdapter(ReviewActivity.this, mExampleList);
-                    mRecyclerView.setAdapter(mExampleAdapter);
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
