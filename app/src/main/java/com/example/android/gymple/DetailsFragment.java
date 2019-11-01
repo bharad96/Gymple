@@ -268,8 +268,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     private void getPlaceID(String placetitle, String postalCode)
     {
         //Clean string
-        placetitle = placetitle.replaceAll(" ", "");
-        placetitle = placetitle.replaceAll("-", "");
+        placetitle = placetitle.replaceAll(" ", "%20");
+        placetitle = placetitle.replaceAll("-", "%2D");
 
         //Splitting String
         String[] unameD1 = placetitle.split(" ");
@@ -439,7 +439,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
                                 Gson gson = new Gson();
                                 placeDetails = gson.fromJson(response, PlaceDetails.class);
 
-                                if(placeDetails.getResult().getOpeningHours() != null)
+                                if(placeDetails.getResult().getOpeningHours() != null || placeDetails.getResult() != null)
                                 {
                                     openingHours.addAll(placeDetails.getResult().getOpeningHours().getWeekdayText());
 
