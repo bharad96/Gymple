@@ -120,9 +120,9 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         //region Get activity centre's values and details, update values
         position = getActivity().getIntent().getExtras().getParcelable("latLon_values");
         place_Title = getActivity().getIntent().getExtras().getString("place_Title");
-        place_info = getActivity().getIntent().getExtras().getString("place_info");
-        Log.d("placeinfo", place_info);
         postal_Code = getActivity().getIntent().getExtras().getString("postal_code");
+        place_info = ActivityCentreManager.getActivitycentreDesc(postal_Code);
+        Log.d("placeinfo", place_info);
         //endregion
 
         //region Calls to get address from lat/lon
@@ -610,7 +610,13 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     {
         if(placeInfo.contains("Facilities:") || placeInfo.contains("facilities:"))
         {
-            facilities =  placeInfo.substring(12, placeInfo.indexOf("Operating")-1);
+            if(placeInfo.contains("Operating")){
+                facilities =  placeInfo.substring(12, placeInfo.indexOf("Operating")-1);
+            }
+            else{
+                facilities =  placeInfo.substring(placeInfo.indexOf("Facilities"));
+            }
+
         }
         else
         {

@@ -1,33 +1,17 @@
 package com.example.android.gymple;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
-
-import static com.example.android.gymple.ActivityCentreManager.getNearestCentre;
-import static java.lang.Math.round;
 
 
 public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -36,7 +20,13 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
     private TextView textView;
     private BottomSheetBehavior bottomSheetBehavior;
 
-
+    /**
+     * Contructor for creating ListViewController adapter
+     * @param activity activty
+     * @param activityCentreArrayList  ArrayList of activity centre to for ListViewController to generate list view
+     * @param bottomSheetBehavior Android view
+     * @param textView Android user interface view
+     */
     public ListViewController(Activity activity, ArrayList<ActivityCentre> activityCentreArrayList, TextView textView, BottomSheetBehavior bottomSheetBehavior){
         this.activity=activity;
         this.activityCentreArrayList=activityCentreArrayList;
@@ -53,6 +43,12 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     }
 
+    /**
+     * Binds the ViewHolder
+     * And update Textview and bottomSheetBehavior PeekHeight level according to item count
+     * @param myViewHolder ViewHolder a design pattern which can be applied when using a custom adapter.
+     * @param position Index of the ArrayList
+     */
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder myViewHolder,final int position) {
         String name = activityCentreArrayList.get(position).getName();
@@ -66,6 +62,7 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
 
 
     }
+
     private class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView name;
         TextView address;
@@ -94,6 +91,12 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         }
     }
+
+    /**
+     * Return the number of item inside ArrayList
+     * And update Textview and bottomSheetBehavior PeekHeight level according to item count
+     * @return Item count The number of item inside the ArrayList
+     */
     @Override
     public int getItemCount() {
         if(activityCentreArrayList==null || activityCentreArrayList.size()==0){
@@ -108,6 +111,10 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
         return activityCentreArrayList.size();
     }
 
+    /**
+     * Update the list view controller by passing in an updated ArrayList
+     * @param list ArrayList of activity centre
+     */
     public void updateList(ArrayList<ActivityCentre> list){
         if(activityCentreArrayList!=null) {
             activityCentreArrayList.clear();

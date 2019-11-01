@@ -83,7 +83,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         submitResult();
     }
 
-    private void submitResult(){
+    /**
+     * Get the user submitted  filter result
+     */
+    public void submitResult(){
         SparseBooleanArray sparseBooleanArray = searchAdapter.getSelectedItems();
 
         filterResult = new ArrayList<String>();

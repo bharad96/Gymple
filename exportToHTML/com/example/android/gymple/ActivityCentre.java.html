@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>ActivityCentre.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #808080; font-style: italic;}
+.s3 { color: #808080; font-weight: bold; font-style: italic;}
+.s4 { color: #0000ff;}
+.s5 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ActivityCentre.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>com.example.android.gymple;
+<span class="s0">import </span>com.google.android.gms.maps.model.LatLng;
+
+
+<span class="s2">/**</span>
+ * The ActivityCentre class represents a Activity Centre objects.
+ * <span class="s3">@author  </span><span class="s2">Desmond Yeo</span>
+ * <span class="s3">@version </span><span class="s2">1.0, 23 Oct 2019</span>
+ *
+ */
+<span class="s0">public class </span>ActivityCentre <span class="s0">implements </span>Comparable&lt;ActivityCentre&gt; {
+
+    <span class="s0">private </span>String name;
+    <span class="s0">private </span>String desc;
+    <span class="s0">private </span>LatLng coordinates;
+    <span class="s0">private </span>String street_name;
+    <span class="s0">private double </span>distance;
+    <span class="s0">private </span>String postalcode;
+
+    <span class="s2">/**</span>
+     * Returns the postal code of the Activity Centre.
+     * <span class="s3">@return </span><span class="s2">postal code</span>
+     */
+    <span class="s0">public </span>String getPostalcode() {<span class="s0">return </span>postalcode;}
+
+    <span class="s0">public void </span>setPostalcode(String postalcode) {<span class="s0">this</span>.postalcode = postalcode;}
+
+    <span class="s2">/**</span>
+     * Returns the distance of the Activity Centre from the user location.
+     * <span class="s3">@return </span><span class="s2">distance in meter</span>
+     */
+    <span class="s0">public double </span>getDistance() {
+        <span class="s0">return </span>distance;
+    }
+
+    <span class="s0">public void </span>setDistance(<span class="s0">double </span>distance) {
+        <span class="s0">this</span>.distance = distance;
+    }
+
+    <span class="s2">/**</span>
+     * Returns the Coordinates of the Activity Centre.
+     * <span class="s3">@return </span><span class="s2">Coordinates</span>
+     */
+    <span class="s0">public </span>LatLng getCoordinates() {
+        <span class="s0">return </span>coordinates;
+    }
+
+    <span class="s0">public void </span>setCoordinates(LatLng coordinates) {
+        <span class="s0">this</span>.coordinates = coordinates;
+    }
+
+    <span class="s2">/**</span>
+     * Returns the Street Name of the Activity Centre.
+     * <span class="s3">@return </span><span class="s2">Street Name</span>
+     */
+    <span class="s0">public </span>String getStreet_name() {
+        <span class="s0">return </span>street_name;
+    }
+
+    <span class="s0">public void </span>setStreet_name(String street_name) {
+        <span class="s0">this</span>.street_name = street_name;
+    }
+
+    <span class="s2">/**</span>
+     * Returns the Name of the Activity Centre.
+     * <span class="s3">@return </span><span class="s2">Name</span>
+     */
+    <span class="s0">public </span>String getName() {
+        <span class="s0">return </span>name;
+    }
+
+    <span class="s0">public void </span>setName(String name) {
+        <span class="s0">this</span>.name = name;
+    }
+
+    <span class="s2">/**</span>
+     * Returns the description of the Activity Centre.
+     * <span class="s3">@return </span><span class="s2">Description</span>
+     */
+    <span class="s0">public </span>String getDesc() {
+        <span class="s0">return </span>desc;
+    }
+
+    <span class="s0">public void </span>setDesc(String desc) {
+        <span class="s0">this</span>.desc = desc;
+    }
+
+    <span class="s2">/**</span>
+     * Default constructor for class ActivityCentre
+     */
+    <span class="s0">public </span>ActivityCentre() {
+
+    }
+    <span class="s2">/**</span>
+     * Another constructor for class ActivityCentre
+     * <span class="s3">@param </span><span class="s2">coord  Coordinates of the Activity Centre</span>
+     */
+    <span class="s0">public </span>ActivityCentre(String coord){
+        String[] a = coord.substring(<span class="s4">1</span>,(coord.length()-<span class="s4">1</span>)).split(<span class="s5">&quot;,&quot;</span>);
+        coordinates = <span class="s0">new </span>LatLng(Double.parseDouble(a[<span class="s4">1</span>]),Double.parseDouble(a[<span class="s4">0</span>]));
+
+    }
+
+    <span class="s2">/**</span>
+     * {<span class="s3">@inheritDoc</span><span class="s2">}</span>
+     * <span class="s3">@param </span><span class="s2">activityCentre  ActivityCentre object</span>
+     */
+    @Override
+    <span class="s0">public int </span>compareTo(ActivityCentre activityCentre) {
+        <span class="s0">if</span>(activityCentre.getDistance()&gt;<span class="s0">this</span>.getDistance())
+            <span class="s0">return </span>-<span class="s4">1</span>;
+        <span class="s0">else if </span>(activityCentre.getDistance()&lt;<span class="s0">this</span>.getDistance()){
+            <span class="s0">return </span><span class="s4">1</span>;
+        }
+        <span class="s0">else return </span><span class="s4">0</span>;
+    }
+}
+</pre>
+</body>
+</html>

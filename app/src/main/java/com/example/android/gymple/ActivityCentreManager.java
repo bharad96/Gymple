@@ -25,7 +25,6 @@ import java.util.Collections;
 public class ActivityCentreManager {
 
     private Context context;
-    private String jsonString;
     public static ArrayList<ActivityCentre> activitycentreArrayList = new ArrayList<ActivityCentre>();
 
     /**
@@ -36,20 +35,43 @@ public class ActivityCentreManager {
      * @param resources The resource file that the application contain
      */
     public ActivityCentreManager(Resources resources) {
+        String jsonString;
+        String jsonString2;
+        String jsonString3;
+
         InputStream resourceReader = resources.openRawResource(R.raw.datajson);
+        InputStream resourceReader2 = resources.openRawResource(R.raw.playsg);
+        InputStream resourceReader3 = resources.openRawResource(R.raw.aquaticsg);
         Writer writer = new StringWriter();
+        Writer writer2 = new StringWriter();
+        Writer writer3 = new StringWriter();
+
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(resourceReader, "UTF-8"));
+            BufferedReader reader2 = new BufferedReader(new InputStreamReader(resourceReader2, "UTF-8"));
+            BufferedReader reader3 = new BufferedReader(new InputStreamReader(resourceReader3, "UTF-8"));
             String line = reader.readLine();
+            String line2 = reader2.readLine();
+            String line3 = reader3.readLine();
             while (line != null) {
                 writer.write(line);
                 line = reader.readLine();
+            }
+            while (line2 != null) {
+                writer2.write(line2);
+                line2 = reader2.readLine();
+            }
+            while (line3 != null) {
+                writer3.write(line3);
+                line3 = reader3.readLine();
             }
         } catch (Exception e) {
             Log.e("a", "Unhandled exception while using JSONResourceReader", e);
         } finally {
             try {
                 resourceReader.close();
+                resourceReader2.close();
+                resourceReader3.close();
             } catch (Exception e) {
                 Log.e("b", "Unhandled exception while using JSONResourceReader", e);
             }
@@ -57,9 +79,15 @@ public class ActivityCentreManager {
 
         try {
             jsonString = writer.toString();
+            jsonString2 = writer2.toString();
+            jsonString3 = writer3.toString();
             JSONObject jObj = new JSONObject(jsonString);
+            JSONObject jObj2 = new JSONObject(jsonString2);
+            JSONObject jObj3 = new JSONObject(jsonString3);
             //get the list of all lccation
             JSONArray jsonArry = jObj.getJSONArray("features");
+            JSONArray jsonArry2 = jObj2.getJSONArray("features");
+            JSONArray jsonArry3 = jObj3.getJSONArray("features");
             for (int i = 0; i < jsonArry.length(); i++) {
                 //get individual location
                 JSONObject JSONObject = jsonArry.getJSONObject(i);
@@ -72,6 +100,32 @@ public class ActivityCentreManager {
                 activitycentre.setStreet_name(a.getString("ADDRESSSTREETNAME"));
                 activitycentreArrayList.add(activitycentre);
             }
+
+            for (int i = 0; i < jsonArry2.length(); i++) {
+                //get individual location
+                JSONObject JSONObject = jsonArry2.getJSONObject(i);
+                JSONObject a = JSONObject.getJSONObject("properties");
+                JSONObject b = JSONObject.getJSONObject("geometry");
+                ActivityCentre activitycentre = new ActivityCentre(b.getString("coordinates"));
+                activitycentre.setName(a.getString("Name"));
+                activitycentre.setDesc(a.getString("description"));
+                activitycentre.setPostalcode(a.getString("ADDRESSPOSTALCODE"));
+                activitycentre.setStreet_name(a.getString("ADDRESSSTREETNAME"));
+                activitycentreArrayList.add(activitycentre);
+            }
+            for (int i = 0; i < jsonArry3.length(); i++) {
+                //get individual location
+                JSONObject JSONObject = jsonArry3.getJSONObject(i);
+                JSONObject a = JSONObject.getJSONObject("properties");
+                JSONObject b = JSONObject.getJSONObject("geometry");
+                ActivityCentre activitycentre = new ActivityCentre(b.getString("coordinates"));
+                activitycentre.setName(a.getString("Name"));
+                activitycentre.setDesc(a.getString("description"));
+                activitycentre.setPostalcode(a.getString("ADDRESSPOSTALCODE"));
+                activitycentre.setStreet_name(a.getString("ADDRESSSTREETNAME"));
+                activitycentreArrayList.add(activitycentre);
+            }
+
         } catch (JSONException ex) {
             Log.e("JsonParser Example", "unexpected JSON exception", ex);
         }
@@ -197,5 +251,19 @@ public class ActivityCentreManager {
         }
         Collections.sort(filterAndSearchResult);
         return filterAndSearchResult;
+    }
+
+    /**
+     * This method return the description for an activity centre based on their postal code
+     * @param postal The postal code of an activity centre
+     * @return Description of an activity centre
+     */
+    public static String getActivitycentreDesc(String postal) {
+        for (int i = 0; i < activitycentreArrayList.size(); i++){
+            if(activitycentreArrayList.get(i).getPostalcode().equals(postal)){
+                return activitycentreArrayList.get(i).getDesc();
+            }
+        }
+        return null;
     }
 }

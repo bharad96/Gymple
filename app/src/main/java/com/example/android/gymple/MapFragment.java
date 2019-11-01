@@ -67,12 +67,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     private GoogleApiClient mGoogleApiClient;
     private LocationManager locationManager;
     private Context context;
-    private ActivityCentreManager activitycentreManager;
     private ListViewController listViewController;
     private  JSONArray jsonArray;
-    public MapFragment(Context context,ActivityCentreManager activitycentreManager,ListViewController listViewController ){
+    public MapFragment(Context context,ListViewController listViewController ){
         this.context=context;
-        this.activitycentreManager = activitycentreManager;
         this.listViewController = listViewController;
     }
 
@@ -320,6 +318,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
     }
 
+    /**
+     * Update the marker on the map whenever there is a change in users location
+     * @param location The current location of the user
+     */
     public void updateMarkers(Location location){
         mMap.clear();
         ActivityCentreManager.updateDistance(location);
@@ -340,7 +342,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             mMap.addMarker(new MarkerOptions()
                     .position(activitycentre.getCoordinates())
                     .title(activitycentre.getName())
-                    .snippet(activitycentre.getDesc()))
+                    .snippet(activitycentre.getStreet_name()))
                     .setTag(activitycentre.getPostalcode());
 
         }

@@ -55,7 +55,13 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
+/**
+ * The MainActivity is the main user interface that the user will interact with containing a map view
+ * and list view
+ * @author  Desmond Yeo
+ * @version 1.0, 23 Oct 2019
+ *
+ */
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
     //For hamburger menu
@@ -68,14 +74,9 @@ public class MainActivity extends AppCompatActivity implements
     private LinearLayout linearLayout;
     private BottomSheetBehavior bottomSheetBehavior;
 
-
     //For mapview
-    private GoogleMap mMap;
-    private Boolean locationPermissionGranted = false;
     MapFragment mapFragment;
-
     //For Listview
-    private ListView listview;
     private ListViewController listViewController;
 
     //Data
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements
         StrictMode.setThreadPolicy(policy);
 
         setContentView(R.layout.activity_main);
-        ActivityCentreManager activitycentreManager = new ActivityCentreManager(getResources());
+        activitycentreManager = new ActivityCentreManager(getResources());
         sessionManager = new SessionManager(this);
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
         //create mapfragment
-        mapFragment = new MapFragment(getApplicationContext(),activitycentreManager,listViewController);
+        mapFragment = new MapFragment(getApplicationContext(),listViewController);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.mapframe, mapFragment);
         transaction.commit();
@@ -286,22 +287,16 @@ public class MainActivity extends AppCompatActivity implements
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 999) {
             if (resultCode == Activity.RESULT_OK) {
-
                 listViewController.updateList(ActivityCentreManager.getFilterResult(filterArrayList, query));
                 listViewController.notifyDataSetChanged();
-
                 //reset filter
                 button.setVisibility(View.VISIBLE);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 //Write your code if there's no result
-
             }
         }
-
         if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         }
@@ -327,6 +322,7 @@ public class MainActivity extends AppCompatActivity implements
             Log.e("signInResult", "failed code=" + e.getStatusCode());
         }
     }
+
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());

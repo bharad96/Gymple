@@ -1,0 +1,1004 @@
+{
+    "type":"FeatureCollection",
+    "name":"AQUATICSG",
+    "crs":{
+        "type":"name",
+        "properties":{
+            "name":"urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Katong Swimming Complex",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"33872.0788",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"31605.8059",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"31605.8059",
+                "INC_CRC":"D641056C6DE91FF7",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"436752",
+                "ADDRESSSTREETNAME":"Wilkinson Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"33872.0788",
+                "ADDRESSBLOCKHOUSENUMBER":"111",
+                "Field_1":"Katong Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.886081886712802,
+                    1.302105641317937
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Queenstown Sports & Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool, 1 Diving Pool   Operating Hours:   8.00a",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"24557.7723",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"31018.8274",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"31018.8274",
+                "INC_CRC":"D98B8B1480C5795F",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"148948",
+                "ADDRESSSTREETNAME":"Stirling Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"24557.7723",
+                "ADDRESSBLOCKHOUSENUMBER":"473",
+                "Field_1":"Queenstown Sports & Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.802388654322399,
+                    1.296797579337421
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Sengkang Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 2 Teaching Pool, 1 Fun Pool, 1 Jacuzzi, 8 Slides   Operating Hours:   8.",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"33839.2895",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"41932.5033",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"41932.5033",
+                "INC_CRC":"5B3E9E8A34AEEB70",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"544964",
+                "ADDRESSSTREETNAME":"Anchorvale Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"33839.2896",
+                "ADDRESSBLOCKHOUSENUMBER":"57",
+                "Field_1":"Sengkang Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.885789260543504,
+                    1.395496587556361
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Toa Payoh Sports and Recreation Centre",
+                "description":"Facilities:   1 Teaching Pool, 1 Wading Pool, 1 Training Pool   Operating Hours:   8.00am - 9.30pm (Thursd",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"29869.1973",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"34746.1712",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"34746.1713",
+                "INC_CRC":"098A666C39A46950",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"319392",
+                "ADDRESSSTREETNAME":"Toa Payoh Lor. 6",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"29869.1974",
+                "ADDRESSBLOCKHOUSENUMBER":"301",
+                "Field_1":"Toa Payoh Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.850114362780999,
+                    1.330506494872605
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Water-Venture (East Coast)",
+                "description":"Water-Venture",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"41233.04",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"32670.07",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.water-venture.org.sg\/",
+                "LANDYADDRESSPOINT":"32670.07",
+                "INC_CRC":"21A17217DAEDC72C",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"468961",
+                "ADDRESSSTREETNAME":"East Coast Parkway",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"41233.04",
+                "ADDRESSBLOCKHOUSENUMBER":"1390",
+                "Field_1":"Water-Venture (East Coast)"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.952223865531707,
+                    1.311728184031033
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Bishan Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"29878.9896",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"37349.0263",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"37349.0263",
+                "INC_CRC":"63EA27062A974DE5",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"579778",
+                "ADDRESSSTREETNAME":"Bishan Street 4",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"29878.9896",
+                "ADDRESSBLOCKHOUSENUMBER":"1",
+                "Field_1":"Bishan Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.850202512474695,
+                    1.354045789685413
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Jurong West Sports and Recreation Centre",
+                "description":"Facilities:   1 Sheltered Competition Pool, 1 Teaching Pool, 1 Lazy River, 1 Jacuzzi, 1 Kiddy Pool, 1 Sl",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"12469.5954",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"35621.4276",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"35621.4277",
+                "INC_CRC":"2EE2D43BFC6CBF7E",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"648965",
+                "ADDRESSSTREETNAME":"Jurong West St 93",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"12469.5954",
+                "ADDRESSBLOCKHOUSENUMBER":"20",
+                "Field_1":"Jurong West Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.693768901291705,
+                    1.338418064928224
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Kallang Basin Swimming Complex",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"32390.1634",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"33883.1677",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"33883.1678",
+                "INC_CRC":"2C8187B32894D19D",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"339627",
+                "ADDRESSSTREETNAME":"Geylang Bahru Lane",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"32390.1634",
+                "ADDRESSBLOCKHOUSENUMBER":"21",
+                "Field_1":"Kallang Basin Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.872766525673896,
+                    1.322701538807457
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Serangoon Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Wading Pool   Operating Hours:   8.00am - 9.30pm (Thursday to Tuesday",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"32593.4638",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"37680.0307",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"37680.0308",
+                "INC_CRC":"6D75A32B9508CD57",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"545552",
+                "ADDRESSSTREETNAME":"Yio Chu Kang Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"32593.4639",
+                "ADDRESSBLOCKHOUSENUMBER":"35",
+                "Field_1":"Serangoon Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.8745938626694,
+                    1.357038981478489
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Tampines Swimming Complex",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Learner Pool, 1 Wading pool   Operating Hours:   8.00",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"39831.9024",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"37376.8476",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"37376.8476",
+                "INC_CRC":"3FAF4E754B645F72",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"529652",
+                "ADDRESSSTREETNAME":"Tampines Ave 5",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"39831.9024",
+                "ADDRESSBLOCKHOUSENUMBER":"505",
+                "Field_1":"Tampines Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.939635805039302,
+                    1.354295108944629
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Woodlands Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching Pool, 1 Wading Pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"21968.3415",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"46284.6853",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"46284.6853",
+                "INC_CRC":"983A867BF951252C",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"738600",
+                "ADDRESSSTREETNAME":"Woodlands St. 13",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"21968.3415",
+                "ADDRESSBLOCKHOUSENUMBER":"3",
+                "Field_1":"Woodlands Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.779118395124399,
+                    1.434856094214043
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Yishun Swimming Complex",
+                "description":"Operating Hours:    8.00am - 9.30pm   Tel: 6481 9054",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"28041.597",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"45091.2034",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"45091.2034",
+                "INC_CRC":"F7112183D5CA552C",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"769057",
+                "ADDRESSSTREETNAME":"Yishun Avenue 1",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"28041.597",
+                "ADDRESSBLOCKHOUSENUMBER":"351",
+                "Field_1":"Yishun Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.8336923653535,
+                    1.424063322022151
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Water-Venture (Lower Seletar Reservoir)",
+                "description":"Water-Venture",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"27785.58",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"43498.6999",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.water-venture.org.sg\/",
+                "LANDYADDRESSPOINT":"43498.7",
+                "INC_CRC":"3F622CBAE22E2E05",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"769140",
+                "ADDRESSSTREETNAME":"Yishun Avenue 1",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"27785.58",
+                "ADDRESSBLOCKHOUSENUMBER":"100",
+                "Field_1":"Water-Venture (Lower Seletar Reservoir)"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.831391831711997,
+                    1.40966129498569
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Water-Venture (Bedok Reservoir)",
+                "description":"Water-Venture   Bedok Reservoir Road   c\/o 9 King George's Avenue Singapore 208581   Tel: 9710 1697",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"38832.8499",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"36067.63",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.water-venture.org.sg\/",
+                "LANDYADDRESSPOINT":"36067.63",
+                "INC_CRC":"C5EAC6FE48F9953E",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"208581",
+                "ADDRESSSTREETNAME":"<Null>",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"38832.85",
+                "ADDRESSBLOCKHOUSENUMBER":"<Null>",
+                "Field_1":"Water-Venture (Bedok Reservoir)"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.930658217800996,
+                    1.34245540707414
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Water-Venture (Changi)",
+                "description":"Water-Venture",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"45423.1799",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"41442.06",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.water-venture.org.sg\/",
+                "LANDYADDRESSPOINT":"41442.06",
+                "INC_CRC":"34235F2F5C1A69B6",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"498988",
+                "ADDRESSSTREETNAME":"Nicoll Drive Changi Point",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"45423.18",
+                "ADDRESSBLOCKHOUSENUMBER":"285",
+                "Field_1":"Water-Venture (Changi)"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.989879302867394,
+                    1.391056557777362
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Water-Venture (Kallang)",
+                "description":"Water-Venture",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"31816.0999",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"31784.7799",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.water-venture.org.sg\/",
+                "LANDYADDRESSPOINT":"31784.78",
+                "INC_CRC":"2CBD0215E28F4E62",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"199587",
+                "ADDRESSSTREETNAME":"Beach Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"31816.1",
+                "ADDRESSBLOCKHOUSENUMBER":"4876",
+                "Field_1":"Water-Venture (Kallang)"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.867608003726005,
+                    1.303724540626645
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Water-Venture (Pasir Ris)",
+                "description":"Water-Venture",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"40255.79",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"40766.1999",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.water-venture.org.sg\/",
+                "LANDYADDRESSPOINT":"40766.2",
+                "INC_CRC":"E4B246CA9F9D626E",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"519926",
+                "ADDRESSSTREETNAME":"Elias Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"40255.79",
+                "ADDRESSBLOCKHOUSENUMBER":"125",
+                "Field_1":"Water-Venture (Pasir Ris)"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.943446101151494,
+                    1.38494697356842
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Water-Venture (Sembawang)",
+                "description":"Water-Venture",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"29094.3399",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"48969.16",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.water-venture.org.sg\/",
+                "LANDYADDRESSPOINT":"48969.16",
+                "INC_CRC":"00EEBDECCC897597",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"759057",
+                "ADDRESSSTREETNAME":"Jalan Mempurong",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"29094.34",
+                "ADDRESSBLOCKHOUSENUMBER":"57",
+                "Field_1":"Water-Venture (Sembawang)"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.843152369032495,
+                    1.459134133405361
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Ang Mo Kio Swimming Complex",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"29839.9412",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"38347.8672",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"38347.8672",
+                "INC_CRC":"CFA87360B1683F60",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"569978",
+                "ADDRESSSTREETNAME":"Ang Mo Kio Ave 1",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"29839.9412",
+                "ADDRESSBLOCKHOUSENUMBER":"1771",
+                "Field_1":"Ang Mo Kio Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.849851698771801,
+                    1.363078952973613
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Bedok Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool, 1 Learners' pool   Operating Hours:   8.",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"39478.0773",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"34181.8081",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"34181.8081",
+                "INC_CRC":"AAE0BBF977B97B36",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"467355",
+                "ADDRESSSTREETNAME":"New Upper Changi Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"39478.0774",
+                "ADDRESSBLOCKHOUSENUMBER":"901",
+                "Field_1":"Bedok Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.936455255936707,
+                    1.325400490903978
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Bukit Batok Swimming Complex",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"18499.8778",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"36275.0401",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"36275.0401",
+                "INC_CRC":"DCB4AB3677AFBD69",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"659581",
+                "ADDRESSSTREETNAME":"Bukit Batok St. 22",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"18499.8779",
+                "ADDRESSBLOCKHOUSENUMBER":"2",
+                "Field_1":"Bukit Batok Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.747954223107897,
+                    1.34433159736466
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Buona Vista Swimming Complex",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"23527.8552",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"32583.4575",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"32583.4576",
+                "INC_CRC":"411EE4911C562F72",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"278938",
+                "ADDRESSSTREETNAME":"Holland Drive",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"23527.8552",
+                "ADDRESSBLOCKHOUSENUMBER":"76",
+                "Field_1":"Buona Vista Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.793134174577006,
+                    1.310947409346256
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Choa Chu Kang Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Toddler's Pool, 1 Wave Pool, 1 Interactive Pool, 1 Water slide, 1 Ri",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"18507.8403",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"41385.9199",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"41385.9199",
+                "INC_CRC":"DD91D8ADE7BA0833",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"689236",
+                "ADDRESSSTREETNAME":"Choa Chu Kang St 53",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"18507.8403",
+                "ADDRESSBLOCKHOUSENUMBER":"1",
+                "Field_1":"Choa Chu Kang Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.748024138266302,
+                    1.390552520876511
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Clementi Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"20488.7812",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"32527.2802",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"32527.2802",
+                "INC_CRC":"06C3C0E6A6E9C909",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"129908",
+                "ADDRESSSTREETNAME":"Clementi Ave 3",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"20488.7812",
+                "ADDRESSBLOCKHOUSENUMBER":"520",
+                "Field_1":"Clementi Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.765826634595001,
+                    1.310438770100028
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Co-Curricular Activities Branch (CCAB) Sports Fac",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching Pool   Operating Hours:   8.00am - 9.30pm (Thursday to Tuesda",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"26403.1348",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"33393.0995",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"33393.0995",
+                "INC_CRC":"7156ABFC90D873FE",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"259366",
+                "ADDRESSSTREETNAME":"Evans Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"26403.1349",
+                "ADDRESSBLOCKHOUSENUMBER":"21",
+                "Field_1":"Co-Curricular Activities Branch (CCAB) Sports Fac"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.818969923680598,
+                    1.318269807894803
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Delta Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"26442.1801",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"30191.0669",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"30191.067",
+                "INC_CRC":"993DFD5650B66B9A",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"158790",
+                "ADDRESSSTREETNAME":"Tiong Bahru Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"26442.1801",
+                "ADDRESSBLOCKHOUSENUMBER":"900",
+                "Field_1":"Delta Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.819320925012505,
+                    1.289311756754979
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Geylang East Swimming Complex",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"34047.6429",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"33689.9297",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"33689.9297",
+                "INC_CRC":"7B5A5431B96C0AB2",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"389862",
+                "ADDRESSSTREETNAME":"Aljunied Crescent",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"34047.6429",
+                "ADDRESSBLOCKHOUSENUMBER":"601",
+                "Field_1":"Geylang East Swimming Complex"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.887659816208895,
+                    1.320953679431697
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Hougang Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"33984.6457",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"39103.3684",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"39103.3685",
+                "INC_CRC":"31FE34D8A8B4E8AE",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"538830",
+                "ADDRESSSTREETNAME":"Hougang Ave 4",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"33984.6457",
+                "ADDRESSBLOCKHOUSENUMBER":"95",
+                "Field_1":"Hougang Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.887094825237796,
+                    1.369910887228652
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Jalan Besar Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching pool, 1 Wading pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"30965.1294",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"32573.2101",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"<Null>",
+                "LANDYADDRESSPOINT":"32573.2101",
+                "INC_CRC":"A2202F53BA6F579F",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"207542",
+                "ADDRESSSTREETNAME":"Tyrwhitt Road",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"30965.1294",
+                "ADDRESSBLOCKHOUSENUMBER":"100",
+                "Field_1":"Jalan Besar Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.859961714822106,
+                    1.310854916817285
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Jurong East Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Wave Pool, 1 Lazy River, 3 Water Slides, 1 Jacuzzi, 1 Kiddy Fun Stat",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"16406.7607",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"36547.3577",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"36547.3578",
+                "INC_CRC":"0A960FEBE4FFB35E",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"609517",
+                "ADDRESSSTREETNAME":"Jurong East Street 31",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"16406.7607",
+                "ADDRESSBLOCKHOUSENUMBER":"21",
+                "Field_1":"Jurong East Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.729146210769301,
+                    1.34679360312438
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Pasir Ris Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Learner Pool, 1 Wading Pool, 1 Toddlers Pool, 2 Slides, 1 Jacuzzi Po",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"41188.0362",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"39605.3698",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"39605.3699",
+                "INC_CRC":"706331879B24522A",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"519640",
+                "ADDRESSSTREETNAME":"Pasir Ris Central",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"41188.0362",
+                "ADDRESSBLOCKHOUSENUMBER":"120",
+                "Field_1":"Pasir Ris Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.951822505811904,
+                    1.374448457670921
+                ]
+            }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "Name":"Yio Chu Kang Sports and Recreation Centre",
+                "description":"Facilities:   1 Competition Pool, 1 Teaching Pool, 1 Wading Pool   Operating Hours:   8.00am - 9.30pm (Thu",
+                "altitudeMode":"clampToGround",
+                "X_ADDR":"29494.5119",
+                "ADDRESSFLOORNUMBER":"1",
+                "FMEL_UPD_D":"4\/17\/2014 8:55:27 AM",
+                "PHOTOURL":"<Null>",
+                "Y_ADDR":"40388.8725",
+                "ADDRESSBUILDINGNAME":"<Null>",
+                "HYPERLINK":"http:\/\/www.icanbook.com.sg\/",
+                "LANDYADDRESSPOINT":"40388.8725",
+                "INC_CRC":"63736BFA9C4BD94F",
+                "SHAPE":"Point",
+                "ADDRESSPOSTALCODE":"569771",
+                "ADDRESSSTREETNAME":"Ang Mo Kio Ave 9",
+                "ADDRESSUNITNUMBER":"0",
+                "LANDXADDRESSPOINT":"29494.5119",
+                "ADDRESSBLOCKHOUSENUMBER":"202",
+                "Field_1":"Yio Chu Kang Sports and Recreation Centre"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    103.846747885065099,
+                    1.381537094524163
+                ]
+            }
+        }
+    ]
+}
