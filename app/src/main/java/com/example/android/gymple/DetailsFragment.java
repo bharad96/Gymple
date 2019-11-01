@@ -617,6 +617,17 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
                 facilities =  placeInfo.substring(placeInfo.indexOf("Facilities"));
             }
 
+            char tempC = facilities.charAt(0);
+
+            while(tempC == ' ')
+            {
+                facilities = facilities.substring(1);
+                tempC = facilities.charAt(0);
+            }
+
+            //replace double space to single space
+            facilities = facilities.replaceAll("  ", " ");
+
         }
         else
         {
