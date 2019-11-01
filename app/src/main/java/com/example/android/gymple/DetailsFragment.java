@@ -258,6 +258,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
         //set name of place based on KML data
         GetFacilities(place_info);
+        DIYGymInfo(place_Title);
     }
 
     @Override
@@ -296,7 +297,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
                         Log.d("getstring", plid);
                         parseJSON(plid);
                         pid = plid;
-                        HardcodedGymInfoForDemo(plid);
+                        //HardcodedGymInfoForDemo(plid);
                     }
 
                 } catch (JSONException e) {
@@ -400,6 +401,74 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         }
         else
             gymInfo.setText("Null placeID.");
+    }
+
+    public void DIYGymInfo(String checkPlaceTitle)
+    {
+        String checkPlaceTitle2 = checkPlaceTitle.toLowerCase(); //so don't need to check upper cases in if-loops below
+        String gymInfoAppend = "";
+        boolean updated = false;
+
+        //loop if-else checking while there is still a WORD in place title. remove word at the end of every if-loop
+        if(checkPlaceTitle2.contains("yoga"))
+        {
+            gymInfoAppend = gymInfoAppend + checkPlaceTitle + " is a yoga studio. Done right, yoga can directly and positively impact your mental health; Clearing your mind of noise, disorder, and negativity. Soft and stretchable clothing is recommended. ";
+
+            if(checkPlaceTitle2.contains("art"))
+            {
+                gymInfoAppend = gymInfoAppend + "\n\nBeing an art studio as well, " + checkPlaceTitle + " may have activities catered for younger students. Contact " + checkPlaceTitle + " to check on availability. ";
+            }
+
+            checkPlaceTitle2 = checkPlaceTitle2.replaceAll("yoga", "");
+            updated = true;
+        }
+        else if (checkPlaceTitle2.contains("swim"))
+        {
+            gymInfoAppend = gymInfoAppend + checkPlaceTitle + " is a swimming complex that offers a pleasant and safe environment for all swimmers. Leisure swimmers can take a leisure away from the hustle and bustle of the city. " +
+                    checkPlaceTitle + " is also popular with schools for swimming lessons. ";
+
+            checkPlaceTitle2 = checkPlaceTitle2.replaceAll("swim", "");
+            updated = true;
+        }
+        else if(checkPlaceTitle2.contains("secondary school") || checkPlaceTitle2.contains("primary school"))
+        {
+            gymInfoAppend = gymInfoAppend + checkPlaceTitle + " is an educational institute. Fields are available for booking by contacting the school's management office. ";
+
+            checkPlaceTitle2 = checkPlaceTitle2.replaceAll("school", "");
+            updated = true;
+        }
+        else if (checkPlaceTitle2.contains("stadium"))
+        {
+            gymInfoAppend = gymInfoAppend + checkPlaceTitle + " is a public multi-purpose stadium operated by Sport Singapore. Open to the public, there is no need for booking with the exception of private events. ";
+
+            checkPlaceTitle2 = checkPlaceTitle2.replaceAll("stadium", "");
+            updated = true;
+        }
+        else if (checkPlaceTitle2.contains("sports") && checkPlaceTitle2.contains("centre"))
+        {
+            gymInfoAppend = gymInfoAppend + checkPlaceTitle + " is a one-stop integrated community sports facility catering to those who do sports and recreational activities; the perfect sports and leisure venue. " +
+                    "\n\nWith its other facilities like air-conditioned sport hall, stadium, fitness gym, " + checkPlaceTitle + " prides itself as a preferred venue for community events, tournaments and a leisure day out for all. ";
+
+            checkPlaceTitle2 = checkPlaceTitle2.replaceAll("sports", "");
+            checkPlaceTitle2 = checkPlaceTitle2.replaceAll("centre", "");
+            updated = true;
+        }
+        else if (checkPlaceTitle2.contains("amore fitness"))
+        {
+            gymInfoAppend = gymInfoAppend + "Amore Fitness is the leading fitness gym in Singapore providing unique state-of-the-art gym equipment specially designed for women. With imported cardiovascular and strength training equipment from " +
+                    "Technogym (Italy) and Precor (USA), ladies have a wide selection when planning their workouts. \n\nAmore Fitness is the first gym in Asia to feature the Selection Pro series with Unity Mini which displays exercise demonstrations as a follow guide. ";
+
+            checkPlaceTitle2 = checkPlaceTitle2.replaceAll("amore fitness", "");
+            updated = true;
+        }
+
+        if(updated == false) //all others include 'gym'
+        {
+            gymInfoAppend = gymInfoAppend + checkPlaceTitle + " is the leading fitness gym in Singapore. Located all around Singapore and equipped with standard fitness facilities and accessories, newbies " +
+                "who are just starting their fitness journey will have little to worry about. Friendly floor trainers are available and will gladly provide assistance when needed. ";
+        }
+
+        gymInfo.setText(gymInfoAppend);
     }
 
     //region Opening hours
@@ -609,7 +678,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         hoursTextView.setText("Operating hours not available");
         openCloseTextView.setText("");
     }
-
+    //endregion
 
     //region Get Facilities
     public void GetFacilities(String placeInfo)
