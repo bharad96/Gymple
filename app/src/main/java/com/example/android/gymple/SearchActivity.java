@@ -8,14 +8,19 @@ import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.example.android.gymple.MainActivity.filterArrayList;
 import static com.example.android.gymple.MainActivity.query;
@@ -47,7 +52,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         filterVal.add("Pool");
         searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(this);
-        //
+
+        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         GridLayoutManager manager = new GridLayoutManager(this, 2);
         searchAdapter = new RecyclerViewHorizontalListAdapter(filterVal, getApplicationContext());
         recyclerView = findViewById(R.id.searchRV);
@@ -84,31 +91,37 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     /**
-     * Get the user submitted  filter result
+     * Get the user submitted filter result
      */
     public void submitResult(){
         SparseBooleanArray sparseBooleanArray = searchAdapter.getSelectedItems();
 
         filterResult = new ArrayList<String>();
         for(int i = 0;i<searchAdapter.getItemCount();i++){
-            if(sparseBooleanArray.get(i)){
+            if(sparseBooleanArray.get(i))
                 filterResult.add(filterVal.get(i));
-            }
         }
 
-        if(filterResult.isEmpty() || filterResult.size()==0){
+        if(filterResult.isEmpty() || filterResult.size()==0)
             filterArrayList=null;
-        }
         else
             filterArrayList=filterResult;
         //Log.e("filtered text",""+filterArrayList.get(0));
         query = "" + searchView.getQuery();
-        if(query==""){
+        if(query=="")
             query=null;
+        else {
+            Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+            Matcher m = p.matcher(query);
+            boolean b = m.find();
+            if (b){
+                Toast.makeText(this, "Cannot search with special characters", Toast.LENGTH_LONG).show();
+                return;
+            }
         }
 
         Intent returnIntent = new Intent();
-        setResult(Activity.RESULT_OK,returnIntent);
+        setResult(Activity.RESULT_OK, returnIntent);
         finish();
     }
 }

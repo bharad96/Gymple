@@ -173,6 +173,12 @@ public class ActivityCentreManager {
         }
     }
 
+    /**
+     * This method return a list of activity centres that contained user search query
+     * @param query the partial name of an activity centre
+     * @return collections of activity centre which has been filerter based on user search query
+     */
+
     public static ArrayList<ActivityCentre> getFilteredList(String query) {
         ArrayList<ActivityCentre> nearestCentreList = new ArrayList<ActivityCentre>();
         for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
@@ -189,10 +195,10 @@ public class ActivityCentreManager {
     }
 
     /**
-     * This method return an ArrayList of activity centre based on user search result
-     * @param filterResult The activity type of of an activity centre. eg. Gym, Yoga, Swimming pool
+     * This method return an ArrayList of activity centre based on user search input(s)
+     * @param filterResult The activity type of an activity centre. eg. Gym, Yoga, Swimming pool
      * @param name The name of an activity centre
-     * @return An ArrayList of activity centre which has been filtered based on user search result
+     * @return An ArrayList of activity centre which has been filtered based on user search input(s)
      */
     public static ArrayList<ActivityCentre> getFilterResult(ArrayList<String> filterResult, String name) {
         ArrayList<ActivityCentre> filterAndSearchResult = new ArrayList<ActivityCentre>();
