@@ -27,6 +27,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class ReviewActivity extends AppCompatActivity {
@@ -109,6 +112,8 @@ public class ReviewActivity extends AppCompatActivity {
                             Log.d("result4", object.getString("text"));
 
                         }
+                        TextView noReviews = (TextView) findViewById(R.id.noreviews);
+                        noReviews.setVisibility(View.INVISIBLE);
 
                         mExampleAdapter = new ReviewsAdapter(ReviewActivity.this, mExampleList);
                         mRecyclerView.setAdapter(mExampleAdapter);

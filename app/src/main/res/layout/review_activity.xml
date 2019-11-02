@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context="FullDetail">
 
+    <TextView
+        android:id="@+id/noreviews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No reviews"
+        android:textSize="20dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
