@@ -16,17 +16,22 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.ListIterator;
+
 /**
  * The ActivityCentreManager class is a controller class that manages the ActivityCentre class
  * @author  Desmond Yeo
  * @version 1.0, 23 Oct 2019
  *
  */
-public class ActivityCentreManager {
+public class ActivityCentreManager implements Subject {
 
     private Context context;
     public static ArrayList<ActivityCentre> activitycentreArrayList = new ArrayList<ActivityCentre>();
-
+    private static ArrayList<ActivityCentre> datachangeAL;
+    private static ActivityCentreManager INSTANCE = null;
+    private static ArrayList<RepositoryObserver> mObservers;
+    private static Resources resources;
     /**
      * Constructor for class ActivityCentreManager
      * <p>The constructor will load the json file from the resource file and set the data for each
@@ -35,6 +40,10 @@ public class ActivityCentreManager {
      * @param resources The resource file that the application contain
      */
     public ActivityCentreManager(Resources resources) {
+        mObservers = new ArrayList<>();
+        if(activitycentreArrayList!=null)
+            activitycentreArrayList.clear();
+        this.resources = resources;
         String jsonString;
         String jsonString2;
         String jsonString3;
@@ -126,6 +135,20 @@ public class ActivityCentreManager {
                 activitycentreArrayList.add(activitycentre);
             }
 
+
+            for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
+                ActivityCentre activityCentreI = activitycentreArrayList.get(i);
+                for (int k = 0; k < ActivityCentreManager.activitycentreArrayList.size(); k++) {
+                    ActivityCentre activityCentreK = activitycentreArrayList.get(k);
+                    if(i != k && activityCentreI.getPostalcode().equals(activityCentreK.getPostalcode())){
+                        activitycentreArrayList.remove(k);
+                        k--;
+                    }
+
+                }
+            }
+            int a = -0;
+
         } catch (JSONException ex) {
             Log.e("JsonParser Example", "unexpected JSON exception", ex);
         }
@@ -148,6 +171,8 @@ public class ActivityCentreManager {
             }
         }
         Collections.sort(nearestCentreList);
+        datachangeAL=nearestCentreList;
+        notifyObservers();
         return nearestCentreList;
     }
 
@@ -208,7 +233,8 @@ public class ActivityCentreManager {
             {
                 for (int j=0; j<filterResult.size(); j++)
                 {
-                    if (activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase())
+                    if ((activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase())
+                            || activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase()))
                             && activitycentreArrayList.get(i).getName().toLowerCase().contains(name.toLowerCase())) {
                         double distanceInMeters = activitycentreArrayList.get(i).getDistance();
                         if (distanceInMeters < 5000 && distanceInMeters != 0) {
@@ -240,7 +266,7 @@ public class ActivityCentreManager {
             {
                 for (int j=0; j<filterResult.size(); j++)
                 {
-                    if (activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase()))
+                    if (activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase()) || activitycentreArrayList.get(i).getName().toLowerCase().contains(filterResult.get(j).toLowerCase()))
                     {
                         double distanceInMeters = activitycentreArrayList.get(i).getDistance();
                         if (distanceInMeters < 5000 && distanceInMeters != 0) {
@@ -256,6 +282,9 @@ public class ActivityCentreManager {
             return getNearestCentre();
         }
         Collections.sort(filterAndSearchResult);
+        datachangeAL.clear();
+        datachangeAL.addAll(filterAndSearchResult);
+        notifyObservers();
         return filterAndSearchResult;
     }
 
@@ -271,5 +300,47 @@ public class ActivityCentreManager {
             }
         }
         return null;
+    }
+
+    /**
+     * Singleton class that allows only a single instance
+     * @return Instances of itself
+     */
+    public static ActivityCentreManager getInstance() {
+        if(INSTANCE == null) {
+            INSTANCE = new ActivityCentreManager(resources);
+        }
+        return INSTANCE;
+    }
+
+    /**
+     * Register observer class for notification when the data changes
+     * @param repositoryObserver The observer class that wish to be notified for when data change
+     */
+    @Override
+    public void registerObserver(RepositoryObserver repositoryObserver) {
+        if(!mObservers.contains(repositoryObserver)) {
+            mObservers.add(repositoryObserver);
+        }
+    }
+
+    /**
+     * Remove observer class for notification
+     * @param repositoryObserver The observer class that wish to be removed for notification
+     */
+    @Override
+    public void removeObserver(RepositoryObserver repositoryObserver) {
+        if(mObservers.contains(repositoryObserver)) {
+            mObservers.remove(repositoryObserver);
+        }
+    }
+
+    /**
+     * This method will be called whenever there is a change in data to notify the Observer class(ListviewController)
+     */
+    public static void notifyObservers() {
+        for (RepositoryObserver observer: mObservers) {
+            observer.onUserDataChanged(datachangeAL);
+        }
     }
 }

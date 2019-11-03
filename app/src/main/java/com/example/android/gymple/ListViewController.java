@@ -9,16 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
 
 
-public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RepositoryObserver {
     private Activity activity;
     private ArrayList<ActivityCentre> activityCentreArrayList;
     private TextView textView;
     private BottomSheetBehavior bottomSheetBehavior;
+    private Subject mUserDataRepository;
 
     /**
      * Contructor for creating ListViewController adapter
@@ -32,6 +34,8 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
         this.activityCentreArrayList=activityCentreArrayList;
         this.textView=textView;
         this.bottomSheetBehavior=bottomSheetBehavior;
+        mUserDataRepository = ActivityCentreManager.getInstance();
+        mUserDataRepository.registerObserver(this);
     }
 
     @Override
@@ -61,6 +65,18 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
 
 
 
+    }
+
+    @Override
+    public void onUserDataChanged(ArrayList<ActivityCentre> list) {
+        if(activityCentreArrayList!=null) {
+            activityCentreArrayList.clear();
+            activityCentreArrayList.addAll(list);
+        }
+        else{
+            activityCentreArrayList = list;
+        }
+        notifyDataSetChanged();
     }
 
     private class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -116,14 +132,14 @@ public class ListViewController extends RecyclerView.Adapter<RecyclerView.ViewHo
      * @param list ArrayList of activity centre
      */
     public void updateList(ArrayList<ActivityCentre> list){
-        if(activityCentreArrayList!=null) {
-            activityCentreArrayList.clear();
-            activityCentreArrayList.addAll(list);
-        }
-        else{
-            activityCentreArrayList = list;
-        }
-        notifyDataSetChanged();
+//        if(activityCentreArrayList!=null) {
+//            activityCentreArrayList.clear();
+//            activityCentreArrayList.addAll(list);
+//        }
+//        else{
+//            activityCentreArrayList = list;
+//        }
+//        notifyDataSetChanged();
     }
 
 }

@@ -41,12 +41,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.data.kml.KmlLayer;
 
 import org.json.JSONArray;
-import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import static android.content.Context.LOCATION_SERVICE;
@@ -57,7 +54,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener{
 
-    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+    private static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private GoogleMap mMap;
     MapView mMapView;
     private View mView;
@@ -67,11 +64,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     private GoogleApiClient mGoogleApiClient;
     private LocationManager locationManager;
     private Context context;
-    private ListViewController listViewController;
     private  JSONArray jsonArray;
     public MapFragment(Context context,ListViewController listViewController ){
         this.context=context;
-        this.listViewController = listViewController;
     }
 
     @Override
@@ -110,28 +105,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         }
 
     }
-
-    /*
-    private void moveCameraToKml(KmlLayer kmlLayer) {
-        //Retrieve the first container in the KML layer
-        KmlContainer container = kmlLayer.getContainers().iterator().next();
-        //Retrieve a nested container within the first container
-        container = container.getContainers().iterator().next();
-        //Retrieve the first placemark in the nested container
-        KmlPlacemark placemark = container.getPlacemarks().iterator().next();
-        //Retrieve a polygon object in a placemark
-        KmlPolygon polygon = (KmlPolygon) placemark.getGeometry();
-        //Create LatLngBounds of the outer coordinates of the polygon
-        LatLngBounds.Builder builder = new LatLngBounds.Builder();
-        for (LatLng latLng : polygon.getOuterBoundaryCoordinates()) {
-            builder.include(latLng);
-        }
-
-        int width = getResources().getDisplayMetrics().widthPixels;
-        int height = getResources().getDisplayMetrics().heightPixels;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), width, height, 1));
-    }
-    */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -266,6 +239,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         }
     }
 
+    /**
+     * Called whenever the user location has changed
+     * @param location The current location of the user
+     */
     @Override
     public void onLocationChanged(Location location) {
         mLastLocation = location;
@@ -284,7 +261,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         updateMarkers(location);
         //move map camera
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,14));
-
 
     }
 
@@ -325,15 +301,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
     public void updateMarkers(Location location){
         mMap.clear();
         ActivityCentreManager.updateDistance(location);
-
         ArrayList<ActivityCentre> activityCentreArrayList;
         if(MainActivity.query==null && MainActivity.filterArrayList == null){
-            listViewController.updateList(ActivityCentreManager.getNearestCentre());
+            //listViewController.updateList(ActivityCentreManager.getNearestCentre());
             activityCentreArrayList=ActivityCentreManager.getNearestCentre();
             Log.e("testing","1");
         }
         else{
-            listViewController.updateList(ActivityCentreManager.getFilterResult(MainActivity.filterArrayList,MainActivity.query));
+            //listViewController.updateList(ActivityCentreManager.getFilterResult(MainActivity.filterArrayList,MainActivity.query));
             activityCentreArrayList=ActivityCentreManager.getFilterResult(MainActivity.filterArrayList,MainActivity.query);
             Log.e("testing","2");
 

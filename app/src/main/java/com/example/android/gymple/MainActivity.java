@@ -3,10 +3,6 @@ package com.example.android.gymple;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -18,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +26,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.android.gymple.Moments.LoginActivity;
 import com.example.android.gymple.Moments.SessionManager;
 import com.example.android.gymple.Moments.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -39,7 +33,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -51,9 +44,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 /**
  * The MainActivity is the main user interface that the user will interact with containing a map view
@@ -96,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements
     private ImageView profile_img;
     SessionManager sessionManager;
 
+    //Obersever
+    private ArrayList<RepositoryObserver> mObservers;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements
                 //Create the intent to start another activity
                 query=null;
                 filterArrayList=null;
-                listViewController.updateList(ActivityCentreManager.getNearestCentre());
+                ActivityCentreManager.getNearestCentre();
                 mapFragment.onResume();
                 button.setVisibility(View.INVISIBLE);
             }
@@ -287,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 999) {
             if (resultCode == Activity.RESULT_OK) {
-                listViewController.updateList(ActivityCentreManager.getFilterResult(filterArrayList, query));
+                ActivityCentreManager.getFilterResult(filterArrayList, query);
                 listViewController.notifyDataSetChanged();
                 //reset filter
                 button.setVisibility(View.VISIBLE);
@@ -353,4 +347,8 @@ public class MainActivity extends AppCompatActivity implements
                     }
                 });
     }
+
+
+
+
 }

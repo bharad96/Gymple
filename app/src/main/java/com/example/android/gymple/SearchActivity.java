@@ -53,12 +53,13 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(this);
 
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL));
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         GridLayoutManager manager = new GridLayoutManager(this, 2);
         searchAdapter = new RecyclerViewHorizontalListAdapter(filterVal, getApplicationContext());
         recyclerView = findViewById(R.id.searchRV);
         recyclerView.setLayoutManager(manager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
         recyclerView.setAdapter(searchAdapter);
     }
 
@@ -108,7 +109,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             filterArrayList=filterResult;
         //Log.e("filtered text",""+filterArrayList.get(0));
         query = "" + searchView.getQuery();
-        if(query=="")
+        if(query.equals(""))
             query=null;
         else {
             Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
