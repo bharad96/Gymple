@@ -234,7 +234,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
                     message = "\n" + place_Title + "\n\n" +
                             "Facilities: " + facilities + "\n" +
                             "Address: " + temp_address_no_format + "\n\n" +
-                            "Opening hours: \n Not available \n\n";
+                            "Opening hours: \nNot available \n\n";
                 }
                 else
                 {
