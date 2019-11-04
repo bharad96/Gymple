@@ -47,9 +47,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         filterVal = new ArrayList<String>();
         filterVal.add("Gym");
         filterVal.add("Yoga");
-        filterVal.add("Track & field");
-        filterVal.add("Swimming");
+        filterVal.add("Track Centre");
         filterVal.add("Pool");
+        filterVal.add("Field");
+        filterVal.add("Stadium");
         searchBtn = findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(this);
 
