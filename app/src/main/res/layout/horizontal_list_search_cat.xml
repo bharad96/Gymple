@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="28dp"
-        android:text="Gym" />
+        android:text="Search by Name" />
     </LinearLayout>
 </LinearLayout>

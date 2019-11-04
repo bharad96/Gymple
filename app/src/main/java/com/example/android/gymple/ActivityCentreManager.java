@@ -204,20 +204,20 @@ public class ActivityCentreManager implements Subject {
      * @return collections of activity centre which has been filerter based on user search query
      */
 
-    public static ArrayList<ActivityCentre> getFilteredList(String query) {
-        ArrayList<ActivityCentre> nearestCentreList = new ArrayList<ActivityCentre>();
-        for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
-            //Location from Gov Data
-            ActivityCentre activitycentre = ActivityCentreManager.activitycentreArrayList.get(i);
-            double distanceInMeters = activitycentre.getDistance();
-            if (distanceInMeters < 5000 && distanceInMeters != 0) {
-                if (activitycentre.getName().contains(query))
-                    nearestCentreList.add(activitycentre);
-            }
-        }
-        Collections.sort(nearestCentreList);
-        return nearestCentreList;
-    }
+//    public static ArrayList<ActivityCentre> getFilteredList(String query) {
+//        ArrayList<ActivityCentre> nearestCentreList = new ArrayList<ActivityCentre>();
+//        for (int i = 0; i < ActivityCentreManager.activitycentreArrayList.size(); i++) {
+//            //Location from Gov Data
+//            ActivityCentre activitycentre = ActivityCentreManager.activitycentreArrayList.get(i);
+//            double distanceInMeters = activitycentre.getDistance();
+//            if (distanceInMeters < 5000 && distanceInMeters != 0) {
+//                if (activitycentre.getName().contains(query))
+//                    nearestCentreList.add(activitycentre);
+//            }
+//        }
+//        Collections.sort(nearestCentreList);
+//        return nearestCentreList;
+//    }
 
     /**
      * This method return an ArrayList of activity centre based on user search input(s)
