@@ -216,25 +216,39 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         // Pass the event to ActionBarDrawerToggle
         // If it returns true, then it has handled
         // the nav drawer indicator touch event
+        if((place_Title != null || !place_Title.isEmpty()) &&
+                (facilities != null || !facilities.isEmpty()) &&
+                (temp_address_no_format != null || !temp_address_no_format.isEmpty()) &&
+                (opHours.length != 0)) {
 
-        if(item.getItemId()== R.id.actionbar_share_button)
-        {
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("text/plain");
-            i.putExtra(Intent.EXTRA_SUBJECT, "GYMPLE");
 
-            String message = "\n" + place_Title +"\n\n" +
-                    "Facilities: " + facilities + "\n" +
-                    "Address: " + temp_address_no_format + "\n\n" +
-                    "Opening hours: \n" +
-                    opHours[0] + opHours[1] + opHours[2] + opHours[3] + opHours[4] + opHours[5] + opHours[6] + "\n\n";
+            if (item.getItemId() == R.id.actionbar_share_button) {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "GYMPLE");
 
-            i.putExtra(Intent.EXTRA_TEXT, message);
-            startActivity(Intent.createChooser(i, "Share this via"));
-        }
-        else if(item.getItemId() == android.R.id.home /*|| item.getItemId() == R.id.actionbar_back_button*/)
-        {
-            getActivity().finish();
+                String message;
+
+                if(opHours[0] == "")
+                {
+                    message = "\n" + place_Title + "\n\n" +
+                            "Facilities: " + facilities + "\n" +
+                            "Address: " + temp_address_no_format + "\n\n" +
+                            "Opening hours: \n Not available \n\n";
+                }
+                else
+                {
+                    message = "\n" + place_Title + "\n\n" +
+                            "Facilities: " + facilities + "\n" +
+                            "Address: " + temp_address_no_format + "\n\n" +
+                            "Opening hours: \n" +
+                            opHours[0] + opHours[1] + opHours[2] + opHours[3] + opHours[4] + opHours[5] + opHours[6] + "\n\n";
+                }
+                i.putExtra(Intent.EXTRA_TEXT, message);
+                startActivity(Intent.createChooser(i, "Share this via"));
+            } else if (item.getItemId() == android.R.id.home /*|| item.getItemId() == R.id.actionbar_back_button*/) {
+                getActivity().finish();
+            }
         }
 
         return super.onOptionsItemSelected(item);
