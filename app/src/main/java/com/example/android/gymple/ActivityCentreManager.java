@@ -234,7 +234,7 @@ public class ActivityCentreManager implements Subject {
                 for (int j=0; j<filterResult.size(); j++)
                 {
                     if ((activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase())
-                            || activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase()))
+                      || activitycentreArrayList.get(i).getDesc().toLowerCase().contains(filterResult.get(j).toLowerCase()))
                             && activitycentreArrayList.get(i).getName().toLowerCase().contains(name.toLowerCase())) {
                         double distanceInMeters = activitycentreArrayList.get(i).getDistance();
                         if (distanceInMeters < 5000 && distanceInMeters != 0) {

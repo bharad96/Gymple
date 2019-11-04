@@ -53,8 +53,8 @@ public class IntroActivity extends AppCompatActivity {
 
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Gymple","", R.drawable.img1));
-        mList.add(new ScreenItem("Find nearest gyms","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis justo in sapien vestibulum, vitae efficitur lacus efficitur.", R.drawable.img2));
-        mList.add(new ScreenItem("Moments","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis justo in sapien vestibulum, vitae efficitur lacus efficitur.", R.drawable.img3));
+        mList.add(new ScreenItem("Find nearest gyms","Locate activity centre within 5km from your location", R.drawable.img2));
+        mList.add(new ScreenItem("Share your moments","Capture your workout moment and share it!", R.drawable.img3));
 
         // setup view
         screenPager = findViewById(R.id.screen_viewpager);
