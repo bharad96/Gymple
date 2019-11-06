@@ -7,9 +7,10 @@
     android:layout_marginLeft="12dp"
     android:layout_marginTop="12dp"
     android:layout_marginRight="12dp"
+    android:layout_marginBottom="12dp"
 
     app:cardCornerRadius="20dp"
-    app:cardElevation="8dp"
+    app:cardElevation="4dp"
     >
 
     <LinearLayout
@@ -21,7 +22,8 @@
             android:id="@+id/imageview_user_photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/image_18" />
 
         <LinearLayout
