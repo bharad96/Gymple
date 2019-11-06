@@ -7,8 +7,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import static com.example.android.gymple.DetailsFragment.place_Title;
-
 public class ViewFullDetails extends AppCompatActivity {
 
 

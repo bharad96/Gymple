@@ -49,7 +49,8 @@ public class MomentUploadActivity extends AppCompatActivity {
     private ImageView photoImageView;
     EditText momentDescription;
     private String placeName;
-
+    private boolean imageSelected = false;
+    private int descriptionLength;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,13 +68,31 @@ public class MomentUploadActivity extends AppCompatActivity {
         uploadMoment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressDialog.show();
-                uploadPhoto();
+                descriptionLength = momentDescription.getText().toString().length();
+                if(descriptionLength >= 15 && descriptionLength <= 200) {
+                    progressDialog.show();
+                    if(imageSelected) {
+                        uploadPhoto();
+                    }
+                    else{
+                        uploadMomentToDatabase("Null");
+                    }
+                }
+                else {
+                    if(descriptionLength < 15) {
+                        Toasty.error(MomentUploadActivity.this, "Description too short, please try again!").show();
+                    }
+                    else{
+                        Toasty.error(MomentUploadActivity.this, "Description too long, please try again!").show();
+                    }
+                }
             }
         });
 
         photoImageView = findViewById(R.id.userImage);
         momentDescription = findViewById(R.id.userInputEditText);
+
+
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setIndeterminate(true);
@@ -116,14 +135,14 @@ public class MomentUploadActivity extends AppCompatActivity {
                     .onResult(new Action<ArrayList<AlbumFile>>() {
                         @Override
                         public void onAction(@NonNull ArrayList<AlbumFile> result) {
-                            // ToDo add a proper placeID
-                            //placeID = DetailsFragment.getPlaceName();
                             photoPath = result.get(0).getPath();
+                            imageSelected = true;
                         }
                     })
                     .onCancel(new Action<String>() {
                         @Override
                         public void onAction(@NonNull String result) {
+                            imageSelected = false;
                         }
                     })
                     .start();
@@ -180,6 +199,7 @@ public class MomentUploadActivity extends AppCompatActivity {
         Map<String, Object> moment = new HashMap<>();
         moment.put("userName", user.getFirstName() + " " + user.getLastName());
         moment.put("userPhoto", url);
+        // TODO add a upper boundary for moment description and maybe a lowerbound too.
         moment.put("userMomentDescription", momentDescription.getText().toString());
 
 // Add a new document with a generated ID
