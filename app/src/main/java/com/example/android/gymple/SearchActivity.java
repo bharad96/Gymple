@@ -58,9 +58,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         searchAdapter = new RecyclerViewHorizontalListAdapter(filterVal, getApplicationContext());
         recyclerView = findViewById(R.id.searchRV);
         recyclerView.setLayoutManager(manager);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL));
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-
         recyclerView.setAdapter(searchAdapter);
     }
 
