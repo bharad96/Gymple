@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +33,7 @@ public class MomentsFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     public static ArrayList<Moment> momentsArr;
     public String placeName;
+    private TextView noMoments;
 
     public MomentsFragment () {
         // Required empty public constructor
@@ -44,7 +46,7 @@ public class MomentsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.moment_recycler_view, container, false);
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
-
+        noMoments = rootView.findViewById(R.id.nomoments);
         FloatingActionButton fab = rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +106,9 @@ public class MomentsFragment extends Fragment {
 //        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
+        if(!momentsArr.isEmpty()){
+            noMoments.setVisibility(View.INVISIBLE);
+        }
         momentAdapter = new MomentsAdapter(momentsArr, getActivity());
         recyclerView.setAdapter(momentAdapter);
     }
