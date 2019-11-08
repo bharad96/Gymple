@@ -88,6 +88,13 @@ public class MomentsFragment extends Fragment {
 
                             }
                             momentAdapter.notifyDataSetChanged();
+                            if(!momentsArr.isEmpty()){
+                                noMoments.setVisibility(View.INVISIBLE);
+                                Log.d("Moments Fragment", "MomentArray is not empty! $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                            }
+                            else {
+                                Log.d("Moments Fragment", "MomentArray is empty! $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                            }
                         } else {
                             Log.w("Moments Fragment", "Error getting documents.", task.getException());
                         }
@@ -106,9 +113,8 @@ public class MomentsFragment extends Fragment {
 //        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        if(!momentsArr.isEmpty()){
-            noMoments.setVisibility(View.INVISIBLE);
-        }
+
+
         momentAdapter = new MomentsAdapter(momentsArr, getActivity());
         recyclerView.setAdapter(momentAdapter);
     }
