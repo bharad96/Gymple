@@ -214,7 +214,7 @@
                             android:id="@+id/textview_monday_timing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Operating hours not available"
                             android:textSize="10dp"  />
 
                         <TextView
@@ -230,7 +230,7 @@
                             android:id="@+id/textview_tuesday_timing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Operating hours not available"
                             android:textSize="10dp"  />
 
                         <TextView
@@ -246,7 +246,7 @@
                             android:id="@+id/textview_wednesday_timing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Operating hours not available"
                             android:textSize="10dp"  />
 
                         <TextView
@@ -262,7 +262,7 @@
                             android:id="@+id/textview_thursday_timing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Operating hours not available"
                             android:textSize="10dp"  />
 
                         <TextView
@@ -278,7 +278,7 @@
                             android:id="@+id/textview_friday_timing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Operating hours not available"
                             android:textSize="10dp" />
 
                         <TextView
@@ -294,7 +294,7 @@
                             android:id="@+id/textview_saturday_timing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Operating hours not available"
                             android:textSize="10dp" />
 
                         <TextView
@@ -310,7 +310,7 @@
                             android:id="@+id/textview_sunday_timing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:00am - 10:00pm"
+                            android:text="Operating hours not available"
                             android:textSize="10dp" />
                     </LinearLayout>
                 </TableLayout>
