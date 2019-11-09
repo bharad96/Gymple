@@ -25,6 +25,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MomentsFragment extends Fragment {
 
@@ -84,17 +85,18 @@ public class MomentsFragment extends Fragment {
                                 Log.d("Moments Fragment", document.get("userMomentDescription").toString());
 
 
-                                momentsArr.add(new Moment(document.get("userName").toString(), document.get("userMomentDescription").toString(), document.get("userPhoto").toString()));
+                                momentsArr.add(new Moment(document.get("userName").toString(), document.get("userMomentDescription").toString(), document.get("userPhoto").toString(), (long)document.get("timestamp")));
 
                             }
-                            momentAdapter.notifyDataSetChanged();
                             if(!momentsArr.isEmpty()){
                                 noMoments.setVisibility(View.INVISIBLE);
-                                Log.d("Moments Fragment", "MomentArray is not empty! $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                                Log.d("Moments Fragment", "MomentArray is not empty!");
                             }
                             else {
-                                Log.d("Moments Fragment", "MomentArray is empty! $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                                Log.d("Moments Fragment", "MomentArray is empty!");
                             }
+                            Collections.sort(momentsArr, Collections.reverseOrder());
+                            momentAdapter.notifyDataSetChanged();
                         } else {
                             Log.w("Moments Fragment", "Error getting documents.", task.getException());
                         }
@@ -112,7 +114,6 @@ public class MomentsFragment extends Fragment {
 //        layoutManager = new LinearLayoutManager(getActivity());
 //        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
 
 
         momentAdapter = new MomentsAdapter(momentsArr, getActivity());

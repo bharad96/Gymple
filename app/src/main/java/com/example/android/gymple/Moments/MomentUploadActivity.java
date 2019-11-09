@@ -35,6 +35,7 @@ import com.yanzhenjie.album.AlbumFile;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -199,8 +200,8 @@ public class MomentUploadActivity extends AppCompatActivity {
         Map<String, Object> moment = new HashMap<>();
         moment.put("userName", user.getFirstName() + " " + user.getLastName());
         moment.put("userPhoto", url);
-        // TODO add a upper boundary for moment description and maybe a lowerbound too.
         moment.put("userMomentDescription", momentDescription.getText().toString());
+        moment.put("timestamp", Calendar.getInstance().getTimeInMillis());
 
 // Add a new document with a generated ID
         db.collection("Moments\\" + placeName)
