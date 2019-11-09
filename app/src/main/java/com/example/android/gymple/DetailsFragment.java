@@ -334,6 +334,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeID + "&key=" + API_KEY;
         Log.d("urlme", url);
 
+
+
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -358,21 +360,27 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
                     //region Getting PHOTO array elements
                     JSONArray jsonArray = jsonObject.getJSONArray("photos");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject object = jsonArray.getJSONObject(i);
 
-                        String height = object.getString("height");
-                        String photoref = object.getString("photo_reference");
-                        String upref = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=" + photoref + "&key=" + API_KEY;
+                    if(jsonArray != null) {
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject object = jsonArray.getJSONObject(i);
 
-                        mPhotoList.add(new Photo(upref));
+                            String height = object.getString("height");
+                            String photoref = object.getString("photo_reference");
+                            String upref = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=" + photoref + "&key=" + API_KEY;
 
-                        //Photos API reference
-                        //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=YOUR_API_KEY
+                            mPhotoList.add(new Photo(upref));
+
+                            //Photos API reference
+                            //https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=YOUR_API_KEY
+                        }
+
+                        TextView noPhotos = (TextView) getActivity().findViewById(R.id.nophotos);
+                        noPhotos.setVisibility(View.INVISIBLE);
+
+                        pExampleAdapter = new PhotosAdapter(getActivity(), mPhotoList);
+                        pRecyclerView.setAdapter(pExampleAdapter);
                     }
-
-                    pExampleAdapter = new PhotosAdapter(getActivity(), mPhotoList);
-                    pRecyclerView.setAdapter(pExampleAdapter);
                     //endregion
 
                 } catch (JSONException e) {
