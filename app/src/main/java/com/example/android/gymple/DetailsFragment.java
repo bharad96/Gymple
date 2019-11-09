@@ -342,8 +342,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
                     //region Format address, GetOperatingHours, Set Address
                     //region Address formatting
-                    //mName.setText(jsonObject.getString("name"));
-
                     temp_address_no_format = jsonObject.get("formatted_address").toString();
 
                     String temp_address1 = temp_address_no_format.substring(0, temp_address_no_format.indexOf(", Singapore")+2);
