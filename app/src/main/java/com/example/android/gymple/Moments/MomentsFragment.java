@@ -80,12 +80,14 @@ public class MomentsFragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("Moments Fragment", document.getId() + " => " + document.getData());
-                                Log.d("Moments Fragment", document.get("userName").toString());
-                                Log.d("Moments Fragment", document.get("userMomentDescription").toString());
-
-
-                                momentsArr.add(new Moment(document.get("userName").toString(), document.get("userMomentDescription").toString(), document.get("userPhoto").toString(), (long)document.get("timestamp")));
+                                Log.e("Moments Fragment", document.getId() + " => " + document.getData());
+//                                Log.e("Moments Fragment", document.get("userName").toString());
+//                                Log.e("Moments Fragment", document.get("userMomentDescription").toString());
+//                                Log.e("Moments Fragment", document.get("timestamp").toString());
+                                Moment temp = new Moment(document.get("userName").toString(), document.get("userMomentDescription").toString(), document.get("userPhoto").toString(), (Long)document.get("timeStamp"));
+                                Log.e("Moments Fragment", "Description : " + temp.getUserMomentDescription());
+                                Log.e("Moments Fragment", "Time Stamp : " + temp.getTimestamp());
+                                momentsArr.add(temp);
 
                             }
                             if(!momentsArr.isEmpty()){
@@ -95,14 +97,14 @@ public class MomentsFragment extends Fragment {
                             else {
                                 Log.d("Moments Fragment", "MomentArray is empty!");
                             }
-                            Collections.sort(momentsArr, Collections.reverseOrder());
+                            Collections.sort(momentsArr);
                             momentAdapter.notifyDataSetChanged();
+
                         } else {
                             Log.w("Moments Fragment", "Error getting documents.", task.getException());
                         }
                     }
                 });
-
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -114,8 +116,6 @@ public class MomentsFragment extends Fragment {
 //        layoutManager = new LinearLayoutManager(getActivity());
 //        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
         momentAdapter = new MomentsAdapter(momentsArr, getActivity());
         recyclerView.setAdapter(momentAdapter);
     }

@@ -15,6 +15,7 @@ public class Moment implements Comparable<Moment>{
         this.userName = userName;
         this.userMomentDescription = userMomentDescription;
         this.userPhoto = userPhoto;
+        this.timestamp = timestamp;
     }
 
     public String getUserPhoto() {
