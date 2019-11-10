@@ -70,7 +70,7 @@ public class MomentUploadActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 descriptionLength = momentDescription.getText().toString().length();
-                if(descriptionLength >= 15 && descriptionLength <= 200) {
+                if(descriptionLength >= 5 && descriptionLength <= 200) {
                     progressDialog.show();
                     if(imageSelected) {
                         uploadPhoto();
@@ -80,7 +80,7 @@ public class MomentUploadActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    if(descriptionLength < 15) {
+                    if(descriptionLength < 5) {
                         Toasty.error(MomentUploadActivity.this, "Description too short, please try again!").show();
                     }
                     else{
@@ -201,7 +201,7 @@ public class MomentUploadActivity extends AppCompatActivity {
         moment.put("userName", user.getFirstName() + " " + user.getLastName());
         moment.put("userPhoto", url);
         moment.put("userMomentDescription", momentDescription.getText().toString());
-        moment.put("timestamp", Calendar.getInstance().getTimeInMillis());
+        moment.put("timeStamp", Calendar.getInstance().getTimeInMillis());
 
 // Add a new document with a generated ID
         db.collection("Moments\\" + placeName)
