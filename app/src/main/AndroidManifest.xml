@@ -39,7 +39,6 @@
         <activity android:name=".Moments.LoginActivity" />
         <activity android:name=".ReviewActivity" />
 
-        <activity android:name=".FullDetail" />
         <activity
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"

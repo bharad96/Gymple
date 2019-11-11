@@ -87,7 +87,6 @@ import java.util.List;
  * @version 1.0, 11 Nov 2019
  */
 
-
 public class DetailsFragment extends Fragment implements OnMapReadyCallback
 {
     private static String API_KEY = "AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
@@ -119,10 +118,12 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     final ArrayList<String> openingHours = new ArrayList<>();
 
     /**
-     * Constructor for class DetailsFragment
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
+     * Android-level function:
+     * Retrieves intent from ActivityCentreManager, set up map snippet, get IDs of items in XML,
+     * set up toggle click for viewing more operating hours, set up volley of Google photos
+     * @param inflater  Android-level: instantiates menu XML files into Menu objects
+     * @param container Android-level: special view that can contain other views
+     * @param savedInstanceState Android-level bundle object
      * @return
      */
 
@@ -134,8 +135,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         setHasOptionsMenu(true);
 
 
-        //region idk for what ah
-        // Initialize Places.
+        //region Initialize Places.
         Places.initialize(getActivity().getApplicationContext(), API_KEY);
         //endregion
 
@@ -147,10 +147,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         Log.d("placeinfo", place_info);
         //endregion
 
-        //region Calls to get address from lat/lon
-        //mResultReceiver = new DetailsFragment.AddressResultReceiver(null);
-       //startIntentService();
-        //endregion
 
         //region Interactive map in description page
         // Get the SupportMapFragment and request notification when the map is ready to be used.

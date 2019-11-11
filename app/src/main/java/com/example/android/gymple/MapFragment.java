@@ -360,7 +360,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
 
                 Intent myIntent = new Intent(context, ViewFullDetails.class);
-                Intent myIntent2 = new Intent(context, FetchAddressIntentService.class);
                 myIntent.putExtra("latLon_values", latLon); //Optional parameters
                 myIntent.putExtra("postal_code", postalCode);
                 myIntent.putExtra("place_Title", placeTitle);
@@ -392,7 +391,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
             }
 
         }
-
     }
 
     @Override
