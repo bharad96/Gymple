@@ -237,8 +237,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
      * onOptionsItemSelected determines action to perform when:
      * User clicks share button
      * User clicks back button
-     * @param
-     * @retursn
+     * @param item Android-level: interface for direct access to action bar
+     * @retursn super.onOptionsItemSelected(item) value determines if share menu inflated is shown or not
      */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Pass the event to ActionBarDrawerToggle
@@ -285,9 +285,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     /**
      * onActivityCreated will update the Action Bar with the Activity Centre's name,
      * set up back button, update facilities and brief description of Activity Centre
-     * @param savedInstanceState
+     * @param savedInstanceState Android-level bundle object
      */
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {   super.onActivityCreated(savedInstanceState);
@@ -305,8 +304,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
     /**
      * onCreateOptionsMenu will update action bar with a layout for share button
-     * @param menu
-     * @param inflater
+     * @param menu Android-level: option menu for action bar
+     * @param inflater Android-level: instantiates menu XML files into Menu objects
      */
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -637,8 +636,9 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     //endregion
 
     /**
-     *
-     * @param googleMap
+     * Updatss map snippet of current Activity Centre by adding marker on map.
+     * Disables gesture for map such as panning and zooming.
+     * @param googleMap Android-level: map object to display google map
      */
     //region Set up interactive map
     @Override
@@ -680,7 +680,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
      * GetFacilities will retrieve the facilities of the current Activity Centre from the KML data
      * and update into facilities. If no facilities are available, facilities will be updated
      * as "Facilities provided are not specified."
-     * @param placeInfo
+     * @param placeInfo The current Activity Centre's description based on KML data
      */
     //region Get Facilities
     public void GetFacilities(String placeInfo)
@@ -718,5 +718,4 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         facility.setText(facilities);
     }
     //endregion
-
 }
