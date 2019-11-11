@@ -98,7 +98,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     String place_info, postal_Code, placeName, temp_address, facilities;
 
     private RequestQueue mRequestQueue;
-    private DetailsFragment.AddressResultReceiver mResultReceiver;
+    //private DetailsFragment.AddressResultReceiver mResultReceiver;
 
     //region Declare XML components
     Button revButt;
@@ -148,8 +148,8 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         //endregion
 
         //region Calls to get address from lat/lon
-        mResultReceiver = new DetailsFragment.AddressResultReceiver(null);
-        startIntentService();
+        //mResultReceiver = new DetailsFragment.AddressResultReceiver(null);
+       //startIntentService();
         //endregion
 
         //region Interactive map in description page
@@ -238,7 +238,7 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
      * User clicks share button
      * User clicks back button
      * @param
-     * @return
+     * @retursn
      */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Pass the event to ActionBarDrawerToggle
@@ -651,63 +651,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
         googleMap.getUiSettings().setAllGesturesEnabled(false);
-    }
-    //endregion
-
-    //region Get address from lat/lon
-    private void startIntentService() {
-        Intent intent = new Intent(getActivity(), FetchAddressIntentService.class);
-        intent.putExtra(Constants.RECEIVER, mResultReceiver);
-        getActivity().startService(intent);
-    }
-
-    private void displayAddressOutput(final String addressText){
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                //address.setText(addressText);
-                TextView gymAddress = (TextView) getActivity().findViewById(R.id.gym_address);
-                gymAddress.setText(addressText);
-            }
-        });
-    }
-
-    class AddressResultReceiver extends ResultReceiver {
-        public AddressResultReceiver(Handler handler) {
-            super(handler);
-        }
-
-        @Override
-        protected void onReceiveResult(int resultCode, Bundle resultData) {
-
-            if (resultData == null) {
-                return;
-            }
-
-            // Display the address string
-            // or an error message sent from the intent service.
-            String mAddressOutput = resultData.getString(Constants.RESULT_DATA_KEY);
-            if (mAddressOutput == null) {
-                mAddressOutput = "";
-            }
-            displayAddressOutput(mAddressOutput);
-        }
-    }
-
-    public double getLatitude()
-    {
-        /*if( position!= null && position!= null) {
-            return position.latitude;
-        }*/
-        return 0;
-    }
-
-    public double getLongitude()
-    {
-        /*if( position!= null && position!= null) {
-            return position.longitude;
-        }*/
-        return 0;
     }
     //endregion
 
