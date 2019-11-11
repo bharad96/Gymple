@@ -75,6 +75,19 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The DetailsFragment class is a boundary class that interacts with the user
+ * Each Activity Centre has its own DetailsFragment, generated upon selection in map/list view
+ *
+ * Shows the following information:
+ * Google images, Activity Centre's brief description, Facilities, Location, Opening hours,
+ * Map snippet (linked to Google Direction and Google Map), Google reviews
+ *
+ * @author Jess Tan
+ * @version 1.0, 11 Nov 2019
+ */
+
+
 public class DetailsFragment extends Fragment implements OnMapReadyCallback
 {
     private static String API_KEY = "AIzaSyClj6wAO7n_wMSAxu9bs947OUGkw9Kc2mk";
@@ -104,6 +117,14 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
     String[] opHours;
     final ArrayList<String> openingHours = new ArrayList<>();
+
+    /**
+     * Constructor for class DetailsFragment
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -212,6 +233,13 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         return view ;
     }
 
+    /**
+     * onOptionsItemSelected determines action to perform when:
+     * User clicks share button
+     * User clicks back button
+     * @param
+     * @return
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Pass the event to ActionBarDrawerToggle
         // If it returns true, then it has handled
@@ -254,11 +282,11 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         return super.onOptionsItemSelected(item);
     }
 
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        // you can add listener of elements here
-          /*Button mButton = (Button) view.findViewById(R.id.button);
-            mButton.setOnClickListener(this); */
-    }
+    /**
+     * onActivityCreated will update the Action Bar with the Activity Centre's name,
+     * set up back button, update facilities and brief description of Activity Centre
+     * @param savedInstanceState
+     */
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
@@ -275,12 +303,23 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         DIYGymInfo(place_Title);
     }
 
+    /**
+     * onCreateOptionsMenu will update action bar with a layout for share button
+     * @param menu
+     * @param inflater
+     */
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.full_desc_actionbar, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    /**
+     * getPlaceID updates the variable 'pid' with the place ID of the Activity Centre.
+     * Place ID is retrieved from Google Geocoding API
+     * @param placetitle The current Activity Centre's name in the KML data
+     * @param postalCode The curent Activity Centre's postal code in the KML data
+     */
     private void getPlaceID(String placetitle, String postalCode)
     {
         //Clean string
@@ -329,12 +368,15 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         mRequestQueue.add(req);
     }
 
+
+    /**
+     * parseJSON is called from getPlaceID and updates the Activity Centre's operating hours and address from Google.
+     * @param placeID place ID of Activity Centre, retrieved from function getPlaceID
+     */
     private void parseJSON(String placeID) {
 
         String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + placeID + "&key=" + API_KEY;
         Log.d("urlme", url);
-
-
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -397,32 +439,11 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         mRequestQueue.add(request);
     }
 
-    public void HardcodedGymInfoForDemo(String placeID)
-    {
-        if(placeID != null) {
-            switch (placeID) {
-                case "ChIJmRnrx-wP2jERBnqNTg-3Tv0": //amore fitness
-                    gymInfo.setText("Amore Fitness is the leading fitness gym in Singapore providing unique state-of-the-art gym equipment specially designed for women. With imported cardiovascular and strength training equipment from Technogym (Italy) and Precor (USA), ladies have a wide selection when planning their workouts.\n\n" +
-                            "The functional training zone is also equipped with fitness accessories such as: Agility ladder, battle rope, kettlebell, swiss ball, TRX® Suspension Trainer, OMNIA⁸, QUEENAX.\n\n" +
-                            "Amore Fitness is the first gym in Asia to feature the Selection Pro series with Unity Mini which displays exercise demonstrations as a follow guide. Newbies just starting their fitness journey will have little to worry about using the various functions of these new equipment. Our friendly floor trainers will also gladly provide assistance when needed.");
-                    break;
-                case "ChIJWaHnCyAQ2jERPzL-9jFkzWA": //jurong east clubfitt / activesg
-                    gymInfo.setText("Jurong East ActiveSG Gym, formerly known as Jurong East ClubFITT Gym, is a public gym operated by Sport Singapore.\n\nBeing the first one-stop integrated centre, Jurong East Sport Centre, formerly known as Jurong East Sport and Recreation Centre, marks a milestone in Sport Singapore’s facilities development when it opened in 2000. It was the first pool to offer a lazy river, wave pool and fun slides to the masses at an affordable rate.\n\nWith its other facilities like air-conditioned sports hall, stadium, fitness gym, Jurong East Sport Centre prides itself as a preferred venue for community events, tournaments and a leisure day out for all.");
-                    break;
-                case "ChIJEwW7gpoP2jER4o0mrMTZddM": //jurong west clubfitt / activesg
-                    gymInfo.setText("Jurong West ActiveSG Gym, formerly known as Jurong West ClubFITT Gym, is a public gym operated by Sport Singapore. As the 3rd integrated facility with pool features, Jurong West Sport Centre, formerly known as Jurong West Sport and Recreation Centre, has raised the benchmark for all swimming pools in 2006. \n\n" +
-                            "With close proximity to the Pioneer MRT station, it has been able to position itself to be a sport and leisure venue. More than just being a choice venue for sports activities, Jurong West Sport Centre offers a range of food and beverage outlets with ample sheltered parking lots. It is the largest integrated sports centre in Singapore.");
-                    break;
-
-                default:
-                    gymInfo.setText("No information provided.");
-                    break;
-            }
-        }
-        else
-            gymInfo.setText("Null placeID.");
-    }
-
+    /**
+     * DIYGymInfo will update the Activity Centre's brief description with a hard-coded paragraph, based on the Activity Centre's name.
+     * Each type of Activity Centre will have its own set of paragraph.
+     * @param checkPlaceTitle The current Activity Centre's name in the KML data
+     */
     public void DIYGymInfo(String checkPlaceTitle)
     {
         String checkPlaceTitle2 = checkPlaceTitle.toLowerCase(); //so don't need to check upper cases in if-loops below
@@ -491,6 +512,11 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         gymInfo.setText(gymInfoAppend);
     }
 
+    /**
+     * GetOperatingHours will update the operating hour of each Activity Centre, based on the Activity Centre's name
+     * Operating hours is retrieved from Google using Google Places API
+     * @param placeTitle The current Activity Centre's name in the KML data
+     */
     //region Opening hours
     public void GetOperatingHours(String placeTitle)
     {
@@ -610,6 +636,10 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     }
     //endregion
 
+    /**
+     *
+     * @param googleMap
+     */
     //region Set up interactive map
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -681,6 +711,9 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     }
     //endregion
 
+    /**
+     * nullOperatingalHours will update each day's operating hours as "Operating hours not available for the current Activity Centre"
+     */
     //region No Operational Hours Available on Google
     public void nullOperationalHours()
     {
@@ -700,6 +733,12 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
     }
     //endregion
 
+    /**
+     * GetFacilities will retrieve the facilities of the current Activity Centre from the KML data
+     * and update into facilities. If no facilities are available, facilities will be updated
+     * as "Facilities provided are not specified."
+     * @param placeInfo
+     */
     //region Get Facilities
     public void GetFacilities(String placeInfo)
     {
@@ -735,7 +774,6 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
         Log.d("placeinfo2", place_info);
         facility.setText(facilities);
     }
-
     //endregion
 
 }
