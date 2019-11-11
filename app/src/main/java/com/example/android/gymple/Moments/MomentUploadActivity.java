@@ -107,14 +107,14 @@ public class MomentUploadActivity extends AppCompatActivity {
         super.onResume();
 
         placeName = DetailsFragment.place_Title;
-        sessionManager = new SessionManager(this);
-
-        if(sessionManager.isLoggedIn()) {
-            user = sessionManager.getUser();
-            Log.e("User",  "" + user.getEmailID());
-        } else {
-            startActivity(new Intent(MomentUploadActivity.this, LoginActivity.class));
-        }
+//        sessionManager = new SessionManager(this);
+//
+//        if(sessionManager.isLoggedIn()) {
+//            user = sessionManager.getUser();
+//            Log.e("User",  "" + user.getEmailID());
+//        } else {
+//            startActivity(new Intent(MomentUploadActivity.this, LoginActivity.class));
+//        }
 
         Glide.with(this)
                 .load(photoPath)

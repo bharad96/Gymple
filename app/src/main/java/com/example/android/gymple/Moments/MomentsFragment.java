@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.gymple.DetailsFragment;
 import com.example.android.gymple.R;
+import com.example.android.gymple.ViewFullDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -35,6 +36,8 @@ public class MomentsFragment extends Fragment {
     public static ArrayList<Moment> momentsArr;
     public String placeName;
     private TextView noMoments;
+    private SessionManager sessionManager;
+    private User user;
 
     public MomentsFragment () {
         // Required empty public constructor
@@ -52,10 +55,17 @@ public class MomentsFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-                Intent intent = new Intent(getActivity(), MomentUploadActivity.class);
-                startActivity(intent);
+                sessionManager = new SessionManager(MomentsFragment.this.getContext());
+
+                if(!sessionManager.isLoggedIn()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
+                if(sessionManager.isLoggedIn()) {
+                    user = sessionManager.getUser();
+                    Log.e("User",  "" + user.getEmailID());
+                    Intent intent = new Intent(getActivity(), MomentUploadActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
