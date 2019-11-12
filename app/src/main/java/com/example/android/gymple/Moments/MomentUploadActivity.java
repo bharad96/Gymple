@@ -48,8 +48,6 @@ import es.dmoral.toasty.Toasty;
  */
 public class MomentUploadActivity extends AppCompatActivity {
 
-    private SessionManager sessionManager;
-    private User user;
     private String photoPath;
     private ProgressDialog progressDialog;
     private ImageView photoImageView;
@@ -141,34 +139,28 @@ public class MomentUploadActivity extends AppCompatActivity {
      */
     private void openGallery()
     {
-        if (sessionManager.getUser() != null) {
-            Album.initialize(AlbumConfig.newBuilder(this)
-                    .setAlbumLoader(new MediaLoader())
-                    .build());
+    Album.initialize(AlbumConfig.newBuilder(this)
+            .setAlbumLoader(new MediaLoader())
+            .build());
 
-            Album.image(this)
-                    .multipleChoice()
-                    .camera(true)
-                    .selectCount(1)
-                    .onResult(new Action<ArrayList<AlbumFile>>() {
-                        @Override
-                        public void onAction(@NonNull ArrayList<AlbumFile> result) {
-                            photoPath = result.get(0).getPath();
-                            imageSelected = true;
-                        }
-                    })
-                    .onCancel(new Action<String>() {
-                        @Override
-                        public void onAction(@NonNull String result) {
-                            imageSelected = false;
-                        }
-                    })
-                    .start();
-        }
-        else
-        {
-            startActivity(new Intent(MomentUploadActivity.this, LoginActivity.class));
-        }
+    Album.image(this)
+            .multipleChoice()
+            .camera(true)
+            .selectCount(1)
+            .onResult(new Action<ArrayList<AlbumFile>>() {
+                @Override
+                public void onAction(@NonNull ArrayList<AlbumFile> result) {
+                    photoPath = result.get(0).getPath();
+                    imageSelected = true;
+                }
+            })
+            .onCancel(new Action<String>() {
+                @Override
+                public void onAction(@NonNull String result) {
+                    imageSelected = false;
+                }
+            })
+            .start();
     }
 
     /**
