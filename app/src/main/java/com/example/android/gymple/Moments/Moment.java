@@ -1,5 +1,12 @@
 package com.example.android.gymple.Moments;
 
+/**
+ * Moment is object will be used to populate the moment feed
+ *
+ * @author  Akarapu Bharadwaj
+ * @version 1.0, 11 Nov 2019
+ *
+ */
 public class Moment implements Comparable<Moment>{
     private String userName;
     private String userMomentDescription;
@@ -10,7 +17,12 @@ public class Moment implements Comparable<Moment>{
     Moment() {
 
     }
-
+        /**
+             * Moment Constructor:
+             *
+             * @param
+             * @return
+             */
     Moment(String userName, String userMomentDescription, String userPhoto, long timestamp) {
         this.userName = userName;
         this.userMomentDescription = userMomentDescription;
@@ -20,10 +32,6 @@ public class Moment implements Comparable<Moment>{
 
     public String getUserPhoto() {
         return userPhoto;
-    }
-
-    public String getUserProfilePic() {
-        return userProfilePic;
     }
 
     public String getUserMomentDescription() {
@@ -36,10 +44,6 @@ public class Moment implements Comparable<Moment>{
 
     public void setUserPhoto(String userPhoto) {
         this.userPhoto = userPhoto;
-    }
-
-    public void setUserProfilePic(String userProfilePic) {
-        this.userProfilePic = userProfilePic;
     }
 
     public void setUserMomentDescription(String userMomentDescription) {
@@ -60,11 +64,10 @@ public class Moment implements Comparable<Moment>{
 
     @Override
     public int compareTo(Moment moment) {
-        if (timestamp < moment.getTimestamp())
+        if (this.timestamp < moment.getTimestamp())
             return 1;
-        else if (timestamp > moment.getTimestamp())
+        else if (this.timestamp > moment.getTimestamp())
             return -1;
-
         return 0;
     }
 }
