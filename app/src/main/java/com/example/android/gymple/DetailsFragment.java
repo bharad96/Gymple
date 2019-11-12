@@ -119,12 +119,12 @@ public class DetailsFragment extends Fragment implements OnMapReadyCallback
 
     /**
      * Android-level function:
-     * Retrieves intent from ActivityCentreManager, set up map snippet, get IDs of items in XML,
+     * Sets up XML, retrieves intent from ActivityCentreManager, set up map snippet, get IDs of items in XML,
      * set up toggle click for viewing more operating hours, set up volley of Google photos
      * @param inflater  Android-level: instantiates menu XML files into Menu objects
      * @param container Android-level: special view that can contain other views
      * @param savedInstanceState Android-level bundle object
-     * @return
+     * @return The view of DetailsFragment
      */
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
