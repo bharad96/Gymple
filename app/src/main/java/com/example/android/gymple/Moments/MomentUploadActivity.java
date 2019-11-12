@@ -44,7 +44,8 @@ import es.dmoral.toasty.Toasty;
 /**
  * Activity where the user is able to upload his/her moments which include a text description and an optional picture.
  * @author  Akarapu Bharadwaj
- * @version 1.0, 11 Nov 2019
+ * @version 1.0
+ * @since 11 Nov 2019
  */
 public class MomentUploadActivity extends AppCompatActivity {
 
