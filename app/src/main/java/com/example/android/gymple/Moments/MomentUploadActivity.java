@@ -41,6 +41,11 @@ import java.util.Map;
 
 import es.dmoral.toasty.Toasty;
 
+/**
+ * Activity where the user is able to upload his/her moments which include a text description and an optional picture.
+ * @author  Akarapu Bharadwaj
+ * @version 1.0, 11 Nov 2019
+ */
 public class MomentUploadActivity extends AppCompatActivity {
 
     private SessionManager sessionManager;
@@ -58,6 +63,9 @@ public class MomentUploadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_moment_upload);
 
         Button selectPhoto = findViewById(R.id.selectPhotoButton);
+        /**
+         * Open the gallery when the select photo button is pressed
+         */
         selectPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +74,12 @@ public class MomentUploadActivity extends AppCompatActivity {
         });
 
         Button uploadMoment = findViewById(R.id.uploadMomentButton);
+
+        /**
+         * Upload the moment when the upload moment button is pressed.
+         * There is a check is make sure that the description length is between 5 and 200 characters long.
+         * If there is an image selected then the image is first uploaded online to firebase else the url is set to Null
+         */
         uploadMoment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,6 +136,9 @@ public class MomentUploadActivity extends AppCompatActivity {
                 .into(photoImageView);
     }
 
+    /**
+     * This function opens the android gallery for the user to select the photo. The user may choose to take a picture in here.
+     */
     private void openGallery()
     {
         if (sessionManager.getUser() != null) {
@@ -153,7 +170,10 @@ public class MomentUploadActivity extends AppCompatActivity {
             startActivity(new Intent(MomentUploadActivity.this, LoginActivity.class));
         }
     }
-    // TODO add a progressDialog
+
+    /**
+     * The user's photo is uploaded to firebase storage and the url to the photo is saved and the function upload to database is called with the url passed in
+     */
     private void uploadPhoto() {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
@@ -192,6 +212,10 @@ public class MomentUploadActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * A moment is created and uploaded into the firebase database.
+     * @param url is the url which corresponds to the user's uploaded picture
+     */
     private void uploadMomentToDatabase(String url){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         User user = new SessionManager(this).getUser();

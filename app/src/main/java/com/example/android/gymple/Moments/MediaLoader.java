@@ -6,6 +6,10 @@ import com.bumptech.glide.Glide;
 import com.yanzhenjie.album.AlbumFile;
 import com.yanzhenjie.album.AlbumLoader;
 
+/**
+ * Loads images
+ * @author github library
+ */
 public class MediaLoader implements AlbumLoader {
 
     @Override

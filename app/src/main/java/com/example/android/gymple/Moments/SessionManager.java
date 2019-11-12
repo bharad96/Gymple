@@ -5,7 +5,10 @@ import android.content.SharedPreferences;
 
 import com.example.android.gymple.Moments.User;
 
-
+/**
+ * Stores logged in user information in the local storage
+ * @author github
+ */
 public class SessionManager {
 
     SharedPreferences sharedPreferences;

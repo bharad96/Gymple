@@ -1,5 +1,8 @@
 package com.example.android.gymple.Moments;
-
+/**
+ * A user class for storing all the user information
+ * @author github
+ */
 public class User {
     private String userID;
     private String emailID;

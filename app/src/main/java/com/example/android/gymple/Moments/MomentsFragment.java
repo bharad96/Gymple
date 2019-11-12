@@ -28,6 +28,11 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * An activity to display the user moments from the current activity centre and an option to upload the moments.
+ * @author  Akarapu Bharadwaj
+ * @version 1.0, 11 Nov 2019
+ */
 public class MomentsFragment extends Fragment {
 
     private RecyclerView recyclerView;
@@ -39,6 +44,9 @@ public class MomentsFragment extends Fragment {
     private SessionManager sessionManager;
     private User user;
 
+    /**
+     * Empty constructor
+     */
     public MomentsFragment () {
         // Required empty public constructor
     }
@@ -52,6 +60,9 @@ public class MomentsFragment extends Fragment {
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         noMoments = rootView.findViewById(R.id.nomoments);
         FloatingActionButton fab = rootView.findViewById(R.id.fab);
+        /**
+         * Before the user is able to upload moments, the user must first log in with google
+         */
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

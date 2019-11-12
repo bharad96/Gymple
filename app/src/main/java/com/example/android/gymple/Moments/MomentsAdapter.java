@@ -16,7 +16,11 @@ import com.example.android.gymple.R;
 
 import java.util.ArrayList;
 
-
+/**
+ * An adapter to bind the moments to the recycler view
+ * @author  Akarapu Bharadwaj
+ * @version 1.0, 11 Nov 2019
+ */
 public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.MomentsViewHolder> {
     private ArrayList<Moment> momentsArr;
     Context context;

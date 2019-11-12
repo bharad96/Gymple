@@ -29,6 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 /**
  * A login screen that offers login via email/password.
+ * @author github
  */
 public class LoginActivity extends AppCompatActivity implements OnClickListener {
     private GoogleSignInClient mGoogleSignInClient;
