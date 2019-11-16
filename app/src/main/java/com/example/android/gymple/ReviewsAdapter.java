@@ -1,5 +1,10 @@
 package com.example.android.gymple;
-
+/**
+ * The ReviewsAdapter is a controller class that manges review objects
+ * @author  Hisyam J
+ * @version 1.0, 15 Nov 2019
+ *
+ */
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +29,11 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
     private Context mContext;
     private ArrayList<Reviews> mExampleList;
 
+    /**
+     * Reviews constructor
+     * @param context context from previous screen
+     * @param exampleList list of  binded elements to view
+     */
     public ReviewsAdapter(Context context, ArrayList<Reviews> exampleList) {
         mContext = context;
         mExampleList = exampleList;
@@ -35,6 +45,11 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
         return new ExampleViewHolder(v);
     }
 
+    /**
+     * Binding the viewholder for the XML view withe Google reviews from Google places API
+     * @param holder view holder of all the UI elements
+     * @param position position of the current item in list
+     */
     @Override
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
 
@@ -68,11 +83,18 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
         }
     }
 
+    /**
+     * Counts the total number of items in the list (total no of images)
+     * @return total image count
+     */
     @Override
     public int getItemCount() {
         return mExampleList.size();
     }
 
+    /**
+     * Detclaring the different uI elements in the view
+     */
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
         public TextView mTextViewCreator, commentView, mRate, mTime, mNorev;
@@ -82,7 +104,10 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ExampleV
         public RelativeLayout mRel;
 
 
-
+        /**
+         * Initializing the views from XML view
+         * @param itemView
+         */
         public ExampleViewHolder(View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.image_view);

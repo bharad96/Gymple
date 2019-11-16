@@ -1,5 +1,10 @@
 package com.example.android.gymple;
-
+/**
+ * The PhotosAdapter class is a controller class that manages photo objects
+ * @author  Hisyam J
+ * @version 1.0, 15 Nov 2019
+ *
+ */
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,10 +42,15 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ExampleVie
         Picasso.get().load(imageUrl).fit().centerInside().into(holder.mImageView);
     }
 
+    /**
+     * Get the total no of photos
+     * @return quantity of photos
+     */
     @Override
     public int getItemCount() {
         return mPhotoList.size();
     }
+
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;

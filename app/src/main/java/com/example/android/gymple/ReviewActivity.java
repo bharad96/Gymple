@@ -1,5 +1,10 @@
 package com.example.android.gymple;
-
+/**
+ * The ReviewActivty class is a controller class that manges Review objects
+ * @author  Hisyam J
+ * @version 1.0, 15 Nov 2019
+ *
+ */
 import com.example.android.gymple.R;
 import com.example.android.gymple.VolleyController;
 
@@ -78,6 +83,10 @@ public class ReviewActivity extends AppCompatActivity {
         getPlaceID(acName, pos);
     }
 
+    /**
+     * Getting the details of each activity centre using the placeID with Googple places API
+     * @param place placeID of a particular activity centre
+     */
     private void parseJSON(String place) {
         //String url = "https://pixabay.com/api/?key=5303976-fd6581ad4ac165d1b75cc15b3&q=kitten&image_type=photo&pretty=true";
         String url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" + place + "&key=" + API_KEY;
@@ -133,6 +142,11 @@ public class ReviewActivity extends AppCompatActivity {
         mRequestQueue.add(request);
     }
 
+    /**
+     * Returning placeID using the place Title and postal code from KML data
+     * @param placetitle Place name of activity centre
+     * @param postalCode Postal code of activity centre
+     */
     private void getPlaceID(String placetitle, String postalCode) {
 
         //Splitting String
